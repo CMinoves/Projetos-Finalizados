@@ -8,6 +8,4 @@
 
 1. Crie a seguinte GUI e trate alguns eventos do(s) botão(ões) ou do mouse, inserindo, ao menos, três comportamentos desejados:
 
-<p align="center"
-  <img src = "/Imagens/Imagem 01.png">
-</p>
+![imagem](Imagens/Imagem%2001.png)
