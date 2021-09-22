@@ -47,11 +47,7 @@ do jogador.
 
 Um exemplo de tela inicial é dado a seguir:
 
-<p align="center"
-  <img src = "/Imagens/Imagem 01.png">
-</p>
-
-![imagem](Imagens/Imagem 01.png)
+![imagem](Imagens/Imagem%2001.png)
 
 ## 3.1. Gameplay
 
@@ -60,18 +56,14 @@ Após definido o tabuleiro inicial, inicia-se a primeira fase. O jogador 1
 (azul) colocar uma peça. Esse processo continua até que todas as peças sejam
 colocadas. Exemplo de configuração após a conclusão da primeira fase:
 
-<p align="center"
-  <img src = "/Imagens/Imagem 02.png">
-</p>
+![imagem](Imagens/Imagem%2002.png)
 
 Assim, inicia-se a segunda fase, que começa com a vez do jogador 1
 (vermelho). Esse jogador deve clicar na peça que deseja mover. Na configuração
 do exemplo acima, apenas a peça vermelha central pode ser movida, já que é a
 única que tem um espaço livre (à direita). Assim, leva-se a configuração a seguir:
 
-<p align="center"
-  <img src = "/Imagens/Imagem 03.png">
-</p>
+![imagem](Imagens/Imagem%2003.png)
 
 Agora é a vez do jogador 2 (azul). Suponha que ele deseje mover a peça
 que está na linha do meio e primeira coluna. Nesse caso, existem duas
@@ -81,18 +73,14 @@ em uma dessas opções, ou então em outra peça de sua cor para um outro
 movimento. O exemplo abaixo (direita) mostra que ele decidiu mover a peça
 para baixo:
 
-<p align="center"
-  <img src = "/Imagens/Imagem 04.png">
-</p>
+![imagem](Imagens/Imagem%2004.png)
 
 O jogo continua até que um dos jogares cumpra o objetivo do jogo, formar
 3 peças de sua cor em sequência, na horizontal ou vertical (na diagonal não vale).
 O exemplo abaixo mostra a vitória do jogador 2 (azul) que formou a sequência na
 linha de baixo:
 
-<p align="center"
-  <img src = "/Imagens/Imagem 05.png">
-</p>
+![imagem](Imagens/Imagem%2005.png)
 
 ## 4 . Avaliação
 
