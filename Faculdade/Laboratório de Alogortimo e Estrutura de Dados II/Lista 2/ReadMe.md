@@ -1,5 +1,5 @@
 
-#﻿ Exercício 02 - Árvores SBB
+# Exercício 02 - Árvores SBB
 
 ## Centro Federal de Educação Tecnológica de Minas Gerais - Departamento de Computação
 
