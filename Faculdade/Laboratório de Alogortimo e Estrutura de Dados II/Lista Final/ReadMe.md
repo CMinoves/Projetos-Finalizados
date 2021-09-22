@@ -1,5 +1,5 @@
 
-#﻿ Exercício Final - Trabalho Prático
+# Exercício Final - Trabalho Prático
 
 ## Centro Federal de Educação Tecnológica de Minas Gerais - Departamento de Computação
 
