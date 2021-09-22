@@ -51,6 +51,8 @@ Um exemplo de tela inicial é dado a seguir:
   <img src = "/Imagens/Imagem 01.png">
 </p>
 
+![imagem](Imagens/Imagem 01.png)
+
 ## 3.1. Gameplay
 
 Após definido o tabuleiro inicial, inicia-se a primeira fase. O jogador 1
