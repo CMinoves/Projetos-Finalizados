@@ -1,5 +1,5 @@
 
-#﻿ Exercício 03 - Árvore B
+# Exercício 03 - Árvore B
 
 ## Centro Federal de Educação Tecnológica de Minas Gerais - Departamento de Computação
 
