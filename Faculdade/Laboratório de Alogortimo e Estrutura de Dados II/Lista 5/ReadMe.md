@@ -19,9 +19,7 @@ Os objetivos desta tarefa são:
 
 Por exemplo, o texto batata assada possui a seguinte indexação em uma Arvore Patricia com chaves de
 
-<p align="center"
-  <img src = "/Imagens/Imagem 01.png">
-</p>
+![imagem](Imagens/Imagem%2001.png)
 
 **Legenda da ﬁgura acima:**
 
