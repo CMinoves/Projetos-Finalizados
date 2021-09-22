@@ -18,13 +18,12 @@ arestas é apresentado na ﬁgura e na matriz de adjacências abaixo.
 
 **Grafo:**
 
-<p align="center"
-  <img src = "/Imagens/Imagem 01.png">
-</p>
+![imagem](Imagens/Imagem%2001.png)
 
 **Matriz de adjacência:**
 
-| Vértice | 0 | 1 | 2 | 3| ---------|:---:|---:|---:|---:|
+| Vértice | 0 | 1 | 2 | 3|
+|:---------:|---|---|---|---|
 |0| 0 | 5 | 6 | 3 |
 |1| 5 | 0 | 6 | 3 |
 |2| 6 | 6 | 0 | 1 |
@@ -109,7 +108,7 @@ e no terceiro número de cada linha.
 Por exemplo, o arquivo que deﬁne o grafo mostrado na primeira página deste documento é organizado da
 
 seguinte forma:
-
+```
 4 6
 
 0 1 5
@@ -123,7 +122,7 @@ seguinte forma:
 2 2 6
 
 3 2 1
-
+```
 2. Experimento 1:
 
 (a) Execute o algoritmo de construção da árvore geradora mínima iniciando-o com vértice 0 de cada um
