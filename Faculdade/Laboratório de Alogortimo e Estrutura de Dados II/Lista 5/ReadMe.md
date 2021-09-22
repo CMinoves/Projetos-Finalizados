@@ -1,5 +1,5 @@
 
-#﻿ Exercício 05 - Árvore Patrícia
+# Exercício 05 - Árvore Patrícia
 ## Centro Federal de Educação Tecnológica de Minas Gerais - Departamento de Computação
 
 ## Laboratório de Algoritmos e Estruturas de Dados II - Professores: Amadeu Almeida e Thiago Rodrigues
