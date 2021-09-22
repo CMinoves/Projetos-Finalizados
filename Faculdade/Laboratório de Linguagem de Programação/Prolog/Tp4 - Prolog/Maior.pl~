@@ -1,0 +1,2 @@
+maior([], 0).
+maior([X | L], M) :- X>=N, maior(L, N), M is X; X>=N, maior(L, N), M is N .

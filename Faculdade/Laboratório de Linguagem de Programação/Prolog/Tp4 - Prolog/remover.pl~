@@ -1,0 +1,3 @@
+remover(_,[],[]).
+remover(X,[X|L],N) :- remover(X,L,N).
+remover(X, [Y|L], [Y,N]) :- X \== Y, remover(X,L,N).
