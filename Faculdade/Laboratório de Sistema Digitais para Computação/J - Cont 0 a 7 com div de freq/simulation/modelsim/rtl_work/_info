@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Aluno\Documents\TEMP\simulation\modelsim
+vContador3bits
+!i10b 1
+!s100 Wizj9Pgg3d_EYK>ZZTQzN3
+ICEJ8`Di]lQT64c6OI3Z[[3
+VP5IS@BTMCF>dRYOaCcD<k3
+Z1 dC:\Users\Aluno\Documents\TEMP\simulation\modelsim
+w1560450402
+8C:/Users/Aluno/Documents/TEMP/Contador3bits.v
+FC:/Users/Aluno/Documents/TEMP/Contador3bits.v
+L0 4
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1560451139.852000
+!s107 C:/Users/Aluno/Documents/TEMP/Contador3bits.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Aluno/Documents/TEMP|C:/Users/Aluno/Documents/TEMP/Contador3bits.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work +incdir+C:/Users/Aluno/Documents/TEMP -O0
+n@contador3bits

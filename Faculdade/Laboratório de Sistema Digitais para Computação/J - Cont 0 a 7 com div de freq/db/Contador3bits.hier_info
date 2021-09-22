@@ -1,0 +1,92 @@
+|Contador3bits
+CLOCK_50 => CLOCK_50.IN1
+reset => reset.IN1
+led[7] <= decodificadorMARAvilhoso:comb_14.port10
+led[6] <= decodificadorMARAvilhoso:comb_14.port9
+led[5] <= decodificadorMARAvilhoso:comb_14.port8
+led[4] <= decodificadorMARAvilhoso:comb_14.port7
+led[3] <= decodificadorMARAvilhoso:comb_14.port6
+led[2] <= decodificadorMARAvilhoso:comb_14.port5
+led[1] <= decodificadorMARAvilhoso:comb_14.port4
+
+
+|Contador3bits|Divisor:Div
+clock => n[0].CLK
+clock => n[1].CLK
+clock => n[2].CLK
+clock => n[3].CLK
+clock => n[4].CLK
+clock => n[5].CLK
+clock => n[6].CLK
+clock => n[7].CLK
+clock => n[8].CLK
+clock => n[9].CLK
+clock => n[10].CLK
+clock => n[11].CLK
+clock => n[12].CLK
+clock => n[13].CLK
+clock => n[14].CLK
+clock => n[15].CLK
+clock => n[16].CLK
+clock => n[17].CLK
+clock => n[18].CLK
+clock => n[19].CLK
+clock => n[20].CLK
+clock => n[21].CLK
+clock => n[22].CLK
+reset => n[0].ACLR
+reset => n[1].ACLR
+reset => n[2].ACLR
+reset => n[3].ACLR
+reset => n[4].ACLR
+reset => n[5].ACLR
+reset => n[6].ACLR
+reset => n[7].ACLR
+reset => n[8].ACLR
+reset => n[9].ACLR
+reset => n[10].ACLR
+reset => n[11].ACLR
+reset => n[12].ACLR
+reset => n[13].ACLR
+reset => n[14].ACLR
+reset => n[15].ACLR
+reset => n[16].ACLR
+reset => n[17].ACLR
+reset => n[18].ACLR
+reset => n[19].ACLR
+reset => n[20].ACLR
+reset => n[21].ACLR
+reset => n[22].ACLR
+num <= n[22].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Contador3bits|decodificadorMARAvilhoso:comb_14
+a => l1.IN0
+b => l1.IN0
+b => l2.IN0
+b => l1.IN1
+b => l3.IN0
+c => l2.IN1
+c => l3.IN1
+c => l6.IN0
+c => l6.IN1
+c => l1.IN1
+c => l1.IN1
+d => l1.IN1
+d => l2.IN1
+d => l4.IN1
+d => l5.IN1
+d => l6.IN1
+d => l6.IN1
+d => l1.IN1
+d => l2.IN1
+d => l3.IN1
+l1 <= l1.DB_MAX_OUTPUT_PORT_TYPE
+l2 <= l2.DB_MAX_OUTPUT_PORT_TYPE
+l3 <= l3.DB_MAX_OUTPUT_PORT_TYPE
+l4 <= l4.DB_MAX_OUTPUT_PORT_TYPE
+l5 <= l5.DB_MAX_OUTPUT_PORT_TYPE
+l6 <= l6.DB_MAX_OUTPUT_PORT_TYPE
+l7 <= l7.DB_MAX_OUTPUT_PORT_TYPE
+
+

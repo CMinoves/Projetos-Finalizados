@@ -1,0 +1,5 @@
+module comp1bit(a,b,hab,ma,me,ig);
+	input a, b,hab;
+	output ma,me,ig;
+	assign ma = 
+endmodule

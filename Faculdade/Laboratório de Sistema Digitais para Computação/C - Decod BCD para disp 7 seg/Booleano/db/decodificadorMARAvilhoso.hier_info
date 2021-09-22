@@ -1,0 +1,30 @@
+|decodificadorMARAvilhoso
+a => l1.IN0
+b => l1.IN0
+b => l2.IN0
+b => l1.IN1
+b => l3.IN0
+c => l2.IN1
+c => l3.IN1
+c => l6.IN0
+c => l6.IN1
+c => l1.IN1
+c => l1.IN1
+d => l1.IN1
+d => l2.IN1
+d => l4.IN1
+d => l5.IN1
+d => l6.IN1
+d => l6.IN1
+d => l1.IN1
+d => l2.IN1
+d => l3.IN1
+l1 <= l1.DB_MAX_OUTPUT_PORT_TYPE
+l2 <= l2.DB_MAX_OUTPUT_PORT_TYPE
+l3 <= l3.DB_MAX_OUTPUT_PORT_TYPE
+l4 <= l4.DB_MAX_OUTPUT_PORT_TYPE
+l5 <= l5.DB_MAX_OUTPUT_PORT_TYPE
+l6 <= l6.DB_MAX_OUTPUT_PORT_TYPE
+l7 <= l7.DB_MAX_OUTPUT_PORT_TYPE
+
+

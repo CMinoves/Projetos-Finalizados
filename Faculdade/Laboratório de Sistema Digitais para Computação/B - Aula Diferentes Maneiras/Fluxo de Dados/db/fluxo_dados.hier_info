@@ -1,0 +1,14 @@
+|fluxo_dados
+a => S.IN0
+a => S.IN0
+a => S.IN0
+b => S.IN1
+b => S.IN1
+b => S.IN1
+c => S.IN1
+c => S.IN1
+c => S.IN1
+c => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,7 @@
+//Nome: Cristhian Sala Minoves
+//Data: 13/06/2019
+
+module Contador3bits(clock,num);
+	input clock;
+	input [2:0]
+endmodule

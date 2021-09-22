@@ -1,0 +1,16 @@
+|mux_41
+l1 => S.IN1
+l2 => S.IN1
+l3 => S.IN1
+l4 => S.IN1
+a => S.IN0
+a => S.IN0
+a => S.IN0
+a => S.IN0
+b => S.IN1
+b => S.IN1
+b => S.IN1
+b => S.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+
+

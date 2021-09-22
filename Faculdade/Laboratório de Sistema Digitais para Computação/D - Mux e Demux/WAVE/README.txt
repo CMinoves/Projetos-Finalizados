@@ -1,0 +1,1 @@
+Todas as informações sobre a simulação estão dispostas na imagem ao lado.

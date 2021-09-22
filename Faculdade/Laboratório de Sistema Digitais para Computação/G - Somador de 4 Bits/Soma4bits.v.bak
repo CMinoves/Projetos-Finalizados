@@ -1,0 +1,8 @@
+module Soma4bits(n1,n2,disp1,disp2);
+
+	input n1[0:3];
+	input n2[0:3];
+	output disp1[0:6];
+	
+
+endmodule

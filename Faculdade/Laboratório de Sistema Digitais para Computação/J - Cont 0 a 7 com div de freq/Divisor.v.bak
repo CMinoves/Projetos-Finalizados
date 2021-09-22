@@ -1,0 +1,15 @@
+//Nome: Cristhian Sala Minoves
+//Data: 13/06/2019
+
+module Divisor(clock,reset,num);
+	input clock;
+	input reset;
+	output reg [22:0] num;
+	always@(posedge clock, posedge reset)
+	begin
+		if(reset)
+			num = 0;
+		else
+			num = num+1;
+	end
+endmodule

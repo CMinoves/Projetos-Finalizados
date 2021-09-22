@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Cristhian\Documents\CEFET\3 Semestre\LSD\I - Flip Flop de Registrador 06_06\simulation\modelsim
+vFlipFlopResgistrador
+!i10b 1
+!s100 :UIzSKYd5JdAk?:nQPhc]2
+IhA>0HR0]3K:[lUE[`HQP]3
+V<1:AcbZX<[88nNGeaCeR81
+Z1 dC:\Users\Cristhian\Documents\CEFET\3 Semestre\LSD\I - Flip Flop de Registrador 06_06\simulation\modelsim
+w1559846750
+8C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/I - Flip Flop de Registrador 06_06/FlipFlopRegistrador.v
+FC:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/I - Flip Flop de Registrador 06_06/FlipFlopRegistrador.v
+L0 1
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1605464949.290000
+!s107 C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/I - Flip Flop de Registrador 06_06/FlipFlopRegistrador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/I - Flip Flop de Registrador 06_06|C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/I - Flip Flop de Registrador 06_06/FlipFlopRegistrador.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work {+incdir+C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/I - Flip Flop de Registrador 06_06} -O0
+n@flip@flop@resgistrador

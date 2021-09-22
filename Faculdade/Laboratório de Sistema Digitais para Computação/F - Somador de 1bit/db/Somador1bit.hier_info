@@ -1,0 +1,15 @@
+|Somador1bit
+n1 => a.IN0
+n1 => b.IN0
+n2 => a.IN1
+n2 => b.IN1
+te => a.IN1
+l1 <= b.DB_MAX_OUTPUT_PORT_TYPE
+l2 <= <GND>
+l3 <= <GND>
+l4 <= b.DB_MAX_OUTPUT_PORT_TYPE
+l5 <= b.DB_MAX_OUTPUT_PORT_TYPE
+l6 <= <GND>
+l7 <= l7.DB_MAX_OUTPUT_PORT_TYPE
+
+

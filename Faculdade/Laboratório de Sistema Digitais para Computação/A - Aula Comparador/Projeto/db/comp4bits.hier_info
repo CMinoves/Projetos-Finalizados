@@ -1,0 +1,74 @@
+|comp4bits
+x[0] => x[0].IN1
+x[1] => x[1].IN1
+x[2] => x[2].IN1
+x[3] => x[3].IN1
+y[0] => y[0].IN1
+y[1] => y[1].IN1
+y[2] => y[2].IN1
+y[3] => y[3].IN1
+ma <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+me <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ig <= comp1bit:bloco0.port5
+
+
+|comp4bits|comp1bit:bloco3
+a => ig.IN0
+a => ma.IN0
+a => me.IN0
+b => ig.IN1
+b => me.IN1
+b => ma.IN1
+hab => ig.IN1
+hab => ma.IN1
+hab => me.IN1
+ma <= ma.DB_MAX_OUTPUT_PORT_TYPE
+me <= me.DB_MAX_OUTPUT_PORT_TYPE
+ig <= ig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp4bits|comp1bit:bloco2
+a => ig.IN0
+a => ma.IN0
+a => me.IN0
+b => ig.IN1
+b => me.IN1
+b => ma.IN1
+hab => ig.IN1
+hab => ma.IN1
+hab => me.IN1
+ma <= ma.DB_MAX_OUTPUT_PORT_TYPE
+me <= me.DB_MAX_OUTPUT_PORT_TYPE
+ig <= ig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp4bits|comp1bit:bloco1
+a => ig.IN0
+a => ma.IN0
+a => me.IN0
+b => ig.IN1
+b => me.IN1
+b => ma.IN1
+hab => ig.IN1
+hab => ma.IN1
+hab => me.IN1
+ma <= ma.DB_MAX_OUTPUT_PORT_TYPE
+me <= me.DB_MAX_OUTPUT_PORT_TYPE
+ig <= ig.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp4bits|comp1bit:bloco0
+a => ig.IN0
+a => ma.IN0
+a => me.IN0
+b => ig.IN1
+b => me.IN1
+b => ma.IN1
+hab => ig.IN1
+hab => ma.IN1
+hab => me.IN1
+ma <= ma.DB_MAX_OUTPUT_PORT_TYPE
+me <= me.DB_MAX_OUTPUT_PORT_TYPE
+ig <= ig.DB_MAX_OUTPUT_PORT_TYPE
+
+

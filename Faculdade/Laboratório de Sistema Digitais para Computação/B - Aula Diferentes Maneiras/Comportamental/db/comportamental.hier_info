@@ -1,0 +1,7 @@
+|comportamental
+a => Decoder0.IN0
+b => Decoder0.IN1
+c => Decoder0.IN2
+s <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

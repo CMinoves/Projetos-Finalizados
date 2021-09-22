@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -2.117
+TNS   : -27.074
+
+Type  : Slow Model Setup 'Divisor:Div|n[22]'
+Slack : -0.024
+TNS   : -0.024
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.090
+TNS   : -2.090
+
+Type  : Slow Model Hold 'Divisor:Div|n[22]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -24.380
+
+Type  : Slow Model Minimum Pulse Width 'Divisor:Div|n[22]'
+Slack : -0.500
+TNS   : -3.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -0.499
+TNS   : -3.093
+
+Type  : Fast Model Setup 'Divisor:Div|n[22]'
+Slack : 0.525
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.424
+TNS   : -1.424
+
+Type  : Fast Model Hold 'Divisor:Div|n[22]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -24.380
+
+Type  : Fast Model Minimum Pulse Width 'Divisor:Div|n[22]'
+Slack : -0.500
+TNS   : -3.000
+
+------------------------------------------------------------

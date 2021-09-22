@@ -1,0 +1,29 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do decodificadorMARAvilhoso_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/3\ Semestre/LSD/C\ -\ Decodificador\ BCD\ para\ display\ de\ 7\ segmentos/Booleano {C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/C - Decodificador BCD para display de 7 segmentos/Booleano/decodificadorMARAvilhoso.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module decodificadorMARAvilhoso
+# 
+# Top level modules:
+# 	decodificadorMARAvilhoso
+# 
+vsim work.decodificadorMARAvilhoso
+# vsim work.decodificadorMARAvilhoso 
+# Loading work.decodificadorMARAvilhoso
+wave create -driver freeze -pattern counter -startvalue 0 -endvalue 1 -type Range -direction Up -period 200ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps sim:/decodificadorMARAvilhoso/d
+wave create -driver freeze -pattern counter -startvalue 0 -endvalue 1 -type Range -direction Up -period 100ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps sim:/decodificadorMARAvilhoso/c
+wave create -driver freeze -pattern counter -startvalue 0 -endvalue 1 -type Range -direction Up -period 50ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps sim:/decodificadorMARAvilhoso/b
+wave create -driver freeze -pattern counter -startvalue 0 -endvalue 1 -type Range -direction Up -period 25ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps sim:/decodificadorMARAvilhoso/a
+add wave -position end  sim:/decodificadorMARAvilhoso/l1
+run
+run

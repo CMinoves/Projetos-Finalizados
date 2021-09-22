@@ -1,0 +1,30 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Contador3bits_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Aluno/Documents/TEMP {C:/Users/Aluno/Documents/TEMP/Contador3bits.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Contador3bits
+# 
+# Top level modules:
+# 	Contador3bits
+# 
+vsim work.Contador3bits
+# vsim work.Contador3bits 
+# Loading work.Contador3bits
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 10ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/Contador3bits/clock
+wave create -driver freeze -pattern clock -initialvalue 1 -period 1000ps -dutycycle 5 -starttime 0ps -endtime 1000ps sim:/Contador3bits/reset
+add wave -position insertpoint  \
+sim:/Contador3bits/num
+run
+run
+add wave -position end -color Red -format Logic -height 17 -editable 2 Edit:/Contador3bits/reset
+add wave -position 1 -color Red -format Logic -height 17 -editable 2 Edit:/Contador3bits/reset

@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/F - Somador de 1bit 02_05/Somador1bit.v
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/F - Somador de 1bit 02_05/db/Somador1bit.cbx.xml
+design_name = Somador1bit
+instance = comp, \n1~I , n1, Somador1bit, 1
+instance = comp, \n2~I , n2, Somador1bit, 1
+instance = comp, \te~I , te, Somador1bit, 1
+instance = comp, \l7~0 , l7~0, Somador1bit, 1
+instance = comp, \l1~I , l1, Somador1bit, 1
+instance = comp, \l2~I , l2, Somador1bit, 1
+instance = comp, \l3~I , l3, Somador1bit, 1
+instance = comp, \l4~I , l4, Somador1bit, 1
+instance = comp, \l5~I , l5, Somador1bit, 1
+instance = comp, \l6~I , l6, Somador1bit, 1
+instance = comp, \l7~I , l7, Somador1bit, 1

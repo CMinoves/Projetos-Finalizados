@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Cristhian\Documents\CEFET\3 Semestre\LSD\D - Mux e Demux\simulation\modelsim
+vmux_41
+!i10b 1
+!s100 91B[JSBP5>=cB<lMDNO9B3
+IMDU]E1f:VjYY=F^g=aC[l0
+VVPQ=I?IGMmRNP07lcBWDM3
+Z1 dC:\Users\Cristhian\Documents\CEFET\3 Semestre\LSD\D - Mux e Demux\simulation\modelsim
+w1556217453
+8C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux/mux_41.v
+FC:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux/mux_41.v
+L0 1
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1556217568.273000
+!s107 C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux/mux_41.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux|C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux/mux_41.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work {+incdir+C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux} -O0

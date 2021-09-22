@@ -1,0 +1,110 @@
+|Soma4bits
+n1[0] => n1[0].IN1
+n1[1] => n1[1].IN1
+n1[2] => n1[2].IN1
+n1[3] => n1[3].IN1
+n2[0] => n2[0].IN1
+n2[1] => n2[1].IN1
+n2[2] => n2[2].IN1
+n2[3] => n2[3].IN1
+tr0 => tr0.IN1
+disp1[6] <= BCDComportamental:unidade.port1
+disp1[5] <= BCDComportamental:unidade.port1
+disp1[4] <= BCDComportamental:unidade.port1
+disp1[3] <= BCDComportamental:unidade.port1
+disp1[2] <= BCDComportamental:unidade.port1
+disp1[1] <= BCDComportamental:unidade.port1
+disp1[0] <= BCDComportamental:unidade.port1
+disp2[6] <= BCDComportamental:dezena.port1
+disp2[5] <= BCDComportamental:dezena.port1
+disp2[4] <= BCDComportamental:dezena.port1
+disp2[3] <= BCDComportamental:dezena.port1
+disp2[2] <= BCDComportamental:dezena.port1
+disp2[1] <= BCDComportamental:dezena.port1
+disp2[0] <= BCDComportamental:dezena.port1
+
+
+|Soma4bits|Somador1bit:s0
+n1 => r.IN0
+n1 => ts.IN0
+n1 => ts.IN0
+n2 => r.IN1
+n2 => ts.IN1
+n2 => ts.IN0
+te => r.IN1
+te => ts.IN1
+te => ts.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+ts <= ts.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Soma4bits|Somador1bit:s1
+n1 => r.IN0
+n1 => ts.IN0
+n1 => ts.IN0
+n2 => r.IN1
+n2 => ts.IN1
+n2 => ts.IN0
+te => r.IN1
+te => ts.IN1
+te => ts.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+ts <= ts.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Soma4bits|Somador1bit:s2
+n1 => r.IN0
+n1 => ts.IN0
+n1 => ts.IN0
+n2 => r.IN1
+n2 => ts.IN1
+n2 => ts.IN0
+te => r.IN1
+te => ts.IN1
+te => ts.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+ts <= ts.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Soma4bits|Somador1bit:s3
+n1 => r.IN0
+n1 => ts.IN0
+n1 => ts.IN0
+n2 => r.IN1
+n2 => ts.IN1
+n2 => ts.IN0
+te => r.IN1
+te => ts.IN1
+te => ts.IN1
+r <= r.DB_MAX_OUTPUT_PORT_TYPE
+ts <= ts.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Soma4bits|BCDComportamental:unidade
+entrada[3] => Decoder0.IN3
+entrada[2] => Decoder0.IN2
+entrada[1] => Decoder0.IN1
+entrada[0] => Decoder0.IN0
+saida[6] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Soma4bits|BCDComportamental:dezena
+entrada[3] => Decoder0.IN3
+entrada[2] => Decoder0.IN2
+entrada[1] => Decoder0.IN1
+entrada[0] => Decoder0.IN0
+saida[6] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+saida[0] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+

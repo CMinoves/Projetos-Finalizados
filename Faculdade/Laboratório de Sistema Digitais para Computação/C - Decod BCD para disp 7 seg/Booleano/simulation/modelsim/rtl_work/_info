@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Cristhian\Documents\CEFET\3 Semestre\LSD\C - Decodificador BCD para display de 7 segmentos\Booleano\simulation\modelsim
+vdecodificadorMARAvilhoso
+!i10b 1
+!s100 l^YMg<P_JIg<UJTfo1JJ11
+I4OHhA3k>Soc>Rkl[b;E@82
+V`mE2FKKbY]^RF;Gg>zj`N1
+Z1 dC:\Users\Cristhian\Documents\CEFET\3 Semestre\LSD\C - Decodificador BCD para display de 7 segmentos\Booleano\simulation\modelsim
+w1555009721
+8C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/C - Decodificador BCD para display de 7 segmentos/Booleano/decodificadorMARAvilhoso.v
+FC:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/C - Decodificador BCD para display de 7 segmentos/Booleano/decodificadorMARAvilhoso.v
+L0 3
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1605464645.553000
+!s107 C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/C - Decodificador BCD para display de 7 segmentos/Booleano/decodificadorMARAvilhoso.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/C - Decodificador BCD para display de 7 segmentos/Booleano|C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/C - Decodificador BCD para display de 7 segmentos/Booleano/decodificadorMARAvilhoso.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work {+incdir+C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/C - Decodificador BCD para display de 7 segmentos/Booleano} -O0
+ndecodificador@m@a@r@avilhoso

@@ -1,0 +1,5 @@
+set tool_name "ModelSim-Altera (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {BCDComportamental.vo BCDComportamental_v.sdo}}
+	{{"Fast Model"} {BCDComportamental_fast.vo BCDComportamental_v_fast.sdo}}
+}

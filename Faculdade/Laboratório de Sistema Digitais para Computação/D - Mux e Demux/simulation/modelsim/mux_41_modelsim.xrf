@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux/mux_41.v
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/3 Semestre/LSD/D - Mux e Demux/db/mux_41.cbx.xml
+design_name = mux_41
+instance = comp, \l3~I , l3, mux_41, 1
+instance = comp, \b~I , b, mux_41, 1
+instance = comp, \l4~I , l4, mux_41, 1
+instance = comp, \S~0 , S~0, mux_41, 1
+instance = comp, \l2~I , l2, mux_41, 1
+instance = comp, \a~I , a, mux_41, 1
+instance = comp, \l1~I , l1, mux_41, 1
+instance = comp, \S~1 , S~1, mux_41, 1
+instance = comp, \S~I , S, mux_41, 1

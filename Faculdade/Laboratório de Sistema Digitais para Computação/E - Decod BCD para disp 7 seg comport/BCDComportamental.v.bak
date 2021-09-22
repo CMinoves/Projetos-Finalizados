@@ -1,0 +1,15 @@
+//Nome: Cristhian Sala Minoves
+//Data: 02/05/2019
+module BCDCComportamental(entrada,saida);
+	input[3:0]entrada;
+	output[7:0]saida;
+	@always(entrada)
+	begin
+		output reg[7:0]saida;
+		case(entrada)
+			4'b0000: saida = 7'b1111110;
+			4'b0001: saida = 7'b0110000;
+			4'b0010: saida = 7'b1101101;
+			4'b0011: saida = 
+	end;
+endmodule
