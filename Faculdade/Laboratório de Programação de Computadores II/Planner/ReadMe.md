@@ -26,9 +26,7 @@ Faça um aplicativo Java denominado TesteAgenda que permita ao usuário:
 * imprimir a agenda de compromissos da semana;
 Exemplos de agendamentos:
 
-<p align="center"
-  <img src = "/Imagens/Imagem 01.png">
-</p>
+![imagem](Imagens/Imagem%2001.png)
 
 **OBS:** O seu programa deverá validar a tentativa de incluir um compromisso que coincida com um
 horário que não esteja livre, exemplo:
