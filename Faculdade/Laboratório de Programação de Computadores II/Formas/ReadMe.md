@@ -9,9 +9,7 @@
 1. Na aula de hoje você deverá implementar a hierarquia Forma mostrada no diagrama de
     classes abaixo:
 
-<p align="center"
-    <img src = "/Imagens/Imagem 01.png">
-</p>
+![imagem](Imagens/Imagem%2001.png)
 
   * Cada FormaBidimensional deve conter o método obterArea para calcular a área da forma
 bidimensional.
