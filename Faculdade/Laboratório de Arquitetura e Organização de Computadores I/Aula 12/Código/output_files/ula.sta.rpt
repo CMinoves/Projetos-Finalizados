@@ -1,0 +1,1954 @@
+TimeQuest Timing Analyzer report for ula
+Sun Nov 15 15:32:31 2020
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'ALUctl[0]'
+ 12. Slow Model Hold: 'ALUctl[0]'
+ 13. Slow Model Minimum Pulse Width: 'ALUctl[0]'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'ALUctl[0]'
+ 24. Fast Model Hold: 'ALUctl[0]'
+ 25. Fast Model Minimum Pulse Width: 'ALUctl[0]'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; ula                                                               ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C50F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets       ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+; ALUctl[0]  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ALUctl[0] } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 986.19 MHz ; 450.05 MHz      ; ALUctl[0]  ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow Model Setup Summary           ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; ALUctl[0] ; -0.007 ; -0.007        ;
++-----------+--------+---------------+
+
+
++------------------------------------+
+; Slow Model Hold Summary            ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; ALUctl[0] ; -0.922 ; -25.702       ;
++-----------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-----------+--------+-------------------+
+; Clock     ; Slack  ; End Point TNS     ;
++-----------+--------+-------------------+
+; ALUctl[0] ; -1.222 ; -1.222            ;
++-----------+--------+-------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'ALUctl[0]'                                                                               ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.007 ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.813      ; 4.462      ;
+; 0.149  ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.773      ; 4.263      ;
+; 0.169  ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.813      ; 4.319      ;
+; 0.182  ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.930      ; 4.265      ;
+; 0.183  ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.930      ; 4.264      ;
+; 0.188  ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.805      ; 4.243      ;
+; 0.199  ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.805      ; 4.245      ;
+; 0.217  ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.929      ; 4.262      ;
+; 0.221  ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.815      ; 4.267      ;
+; 0.230  ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.930      ; 4.261      ;
+; 0.235  ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.924      ; 4.243      ;
+; 0.248  ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.924      ; 4.237      ;
+; 0.271  ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.789      ; 4.160      ;
+; 0.285  ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.784      ; 4.174      ;
+; 0.292  ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.788      ; 4.138      ;
+; 0.300  ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.896      ; 4.157      ;
+; 0.304  ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.814      ; 4.152      ;
+; 0.321  ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.801      ; 4.152      ;
+; 0.329  ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.813      ; 4.155      ;
+; 0.333  ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.780      ; 4.122      ;
+; 0.337  ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.923      ; 4.114      ;
+; 0.358  ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.799      ; 4.080      ;
+; 0.398  ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.805      ; 4.230      ;
+; 0.451  ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.814      ; 4.031      ;
+; 0.463  ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.812      ; 4.024      ;
+; 0.465  ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.813      ; 4.030      ;
+; 0.472  ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.811      ; 4.014      ;
+; 0.473  ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.781      ; 3.985      ;
+; 0.476  ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.788      ; 4.136      ;
+; 0.493  ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.813      ; 4.462      ;
+; 0.498  ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.786      ; 4.106      ;
+; 0.518  ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.939      ; 4.253      ;
+; 0.524  ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.938      ; 4.236      ;
+; 0.533  ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 4.939      ; 4.228      ;
+; 0.649  ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.773      ; 4.263      ;
+; 0.669  ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.813      ; 4.319      ;
+; 0.682  ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.930      ; 4.265      ;
+; 0.683  ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.930      ; 4.264      ;
+; 0.688  ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.805      ; 4.243      ;
+; 0.699  ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.805      ; 4.245      ;
+; 0.717  ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.929      ; 4.262      ;
+; 0.721  ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.815      ; 4.267      ;
+; 0.730  ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.930      ; 4.261      ;
+; 0.735  ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.924      ; 4.243      ;
+; 0.748  ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.924      ; 4.237      ;
+; 0.771  ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.789      ; 4.160      ;
+; 0.785  ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.784      ; 4.174      ;
+; 0.792  ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.788      ; 4.138      ;
+; 0.800  ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.896      ; 4.157      ;
+; 0.804  ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.814      ; 4.152      ;
+; 0.821  ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.801      ; 4.152      ;
+; 0.829  ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.813      ; 4.155      ;
+; 0.833  ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.780      ; 4.122      ;
+; 0.837  ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.923      ; 4.114      ;
+; 0.858  ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.799      ; 4.080      ;
+; 0.898  ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.805      ; 4.230      ;
+; 0.951  ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.814      ; 4.031      ;
+; 0.963  ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.812      ; 4.024      ;
+; 0.965  ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.813      ; 4.030      ;
+; 0.972  ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.811      ; 4.014      ;
+; 0.973  ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.781      ; 3.985      ;
+; 0.976  ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.788      ; 4.136      ;
+; 0.998  ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.786      ; 4.106      ;
+; 1.018  ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.939      ; 4.253      ;
+; 1.024  ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.938      ; 4.236      ;
+; 1.033  ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 4.939      ; 4.228      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'ALUctl[0]'                                                                                ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.922 ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.930      ; 4.008      ;
+; -0.880 ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.924      ; 4.044      ;
+; -0.876 ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.930      ; 4.054      ;
+; -0.875 ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.923      ; 4.048      ;
+; -0.870 ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.924      ; 4.054      ;
+; -0.869 ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.930      ; 4.061      ;
+; -0.866 ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.929      ; 4.063      ;
+; -0.826 ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.938      ; 4.112      ;
+; -0.809 ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.896      ; 4.087      ;
+; -0.801 ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.811      ; 4.010      ;
+; -0.799 ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.814      ; 4.015      ;
+; -0.798 ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.939      ; 4.141      ;
+; -0.796 ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.781      ; 3.985      ;
+; -0.796 ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.812      ; 4.016      ;
+; -0.790 ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.813      ; 4.023      ;
+; -0.790 ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.799      ; 4.009      ;
+; -0.783 ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.814      ; 4.031      ;
+; -0.780 ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.939      ; 4.159      ;
+; -0.780 ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.815      ; 4.035      ;
+; -0.779 ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.813      ; 4.034      ;
+; -0.778 ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.813      ; 4.035      ;
+; -0.751 ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.801      ; 4.050      ;
+; -0.734 ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.784      ; 4.050      ;
+; -0.724 ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.788      ; 4.064      ;
+; -0.720 ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.788      ; 4.068      ;
+; -0.713 ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.805      ; 4.092      ;
+; -0.707 ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.786      ; 4.079      ;
+; -0.707 ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.805      ; 4.098      ;
+; -0.697 ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.789      ; 4.092      ;
+; -0.693 ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.805      ; 4.112      ;
+; -0.691 ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.780      ; 4.089      ;
+; -0.672 ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.773      ; 4.101      ;
+; -0.630 ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 4.813      ; 4.183      ;
+; -0.422 ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.930      ; 4.008      ;
+; -0.380 ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.924      ; 4.044      ;
+; -0.376 ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.930      ; 4.054      ;
+; -0.375 ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.923      ; 4.048      ;
+; -0.370 ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.924      ; 4.054      ;
+; -0.369 ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.930      ; 4.061      ;
+; -0.366 ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.929      ; 4.063      ;
+; -0.326 ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.938      ; 4.112      ;
+; -0.309 ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.896      ; 4.087      ;
+; -0.301 ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.811      ; 4.010      ;
+; -0.299 ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.814      ; 4.015      ;
+; -0.298 ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.939      ; 4.141      ;
+; -0.296 ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.781      ; 3.985      ;
+; -0.296 ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.812      ; 4.016      ;
+; -0.290 ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.813      ; 4.023      ;
+; -0.290 ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.799      ; 4.009      ;
+; -0.283 ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.814      ; 4.031      ;
+; -0.280 ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.939      ; 4.159      ;
+; -0.280 ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.815      ; 4.035      ;
+; -0.279 ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.813      ; 4.034      ;
+; -0.278 ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.813      ; 4.035      ;
+; -0.251 ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.801      ; 4.050      ;
+; -0.234 ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.784      ; 4.050      ;
+; -0.224 ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.788      ; 4.064      ;
+; -0.220 ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.788      ; 4.068      ;
+; -0.213 ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.805      ; 4.092      ;
+; -0.207 ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.786      ; 4.079      ;
+; -0.207 ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.805      ; 4.098      ;
+; -0.197 ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.789      ; 4.092      ;
+; -0.193 ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.805      ; 4.112      ;
+; -0.191 ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.780      ; 4.089      ;
+; -0.172 ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.773      ; 4.101      ;
+; -0.130 ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 4.813      ; 4.183      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'ALUctl[0]'                                                                 ;
++--------+--------------+----------------+------------------+-----------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-----------+------------+------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; ALUctl[0] ; Rise       ; ALUctl[0]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[0]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[0]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[0]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[0]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[10]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[10]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[10]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[10]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[11]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[11]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[11]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[11]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[12]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[12]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[12]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[12]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[13]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[13]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[13]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[13]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[14]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[14]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[14]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[14]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[15]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[15]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[15]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[15]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[16]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[16]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[16]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[16]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[17]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[17]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[17]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[17]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[18]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[18]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[18]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[18]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[19]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[19]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[19]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[19]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[1]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[1]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[1]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[1]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[20]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[20]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[20]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[20]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[21]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[21]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[21]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[21]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[22]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[22]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[22]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[22]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[23]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[23]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[23]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[23]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[24]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[24]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[24]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[24]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[25]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[25]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[25]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[25]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[26]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[26]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[26]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[26]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[27]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[27]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[27]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[27]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[28]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[28]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[28]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[28]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[29]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[29]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[29]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[29]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[2]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[2]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[2]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[2]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[30]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[30]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[30]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[30]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[31]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[31]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[31]$latch|datac ;
++--------+--------------+----------------+------------------+-----------+------------+------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; A[*]       ; ALUctl[0]  ; 6.871 ; 6.871 ; Rise       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 1.129 ; 1.129 ; Rise       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; 5.672 ; 5.672 ; Rise       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; 5.832 ; 5.832 ; Rise       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; 5.277 ; 5.277 ; Rise       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; 5.924 ; 5.924 ; Rise       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; 5.849 ; 5.849 ; Rise       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; 5.570 ; 5.570 ; Rise       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; 5.919 ; 5.919 ; Rise       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; 4.443 ; 4.443 ; Rise       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; 4.361 ; 4.361 ; Rise       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; 4.672 ; 4.672 ; Rise       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; 4.912 ; 4.912 ; Rise       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; 5.118 ; 5.118 ; Rise       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; 5.178 ; 5.178 ; Rise       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; 4.406 ; 4.406 ; Rise       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; 4.983 ; 4.983 ; Rise       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; 6.259 ; 6.259 ; Rise       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; 6.326 ; 6.326 ; Rise       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; 5.967 ; 5.967 ; Rise       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; 5.937 ; 5.937 ; Rise       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; 5.744 ; 5.744 ; Rise       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; 5.896 ; 5.896 ; Rise       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; 5.474 ; 5.474 ; Rise       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; 6.195 ; 6.195 ; Rise       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; 6.558 ; 6.558 ; Rise       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; 6.088 ; 6.088 ; Rise       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; 4.974 ; 4.974 ; Rise       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; 6.871 ; 6.871 ; Rise       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; 5.738 ; 5.738 ; Rise       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; 6.083 ; 6.083 ; Rise       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; 5.023 ; 5.023 ; Rise       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; 4.635 ; 4.635 ; Rise       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.027 ; 0.027 ; Rise       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.027 ; 0.027 ; Rise       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 7.521 ; 7.521 ; Rise       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 1.342 ; 1.342 ; Rise       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; 6.345 ; 6.345 ; Rise       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; 5.747 ; 5.747 ; Rise       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; 4.523 ; 4.523 ; Rise       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; 5.778 ; 5.778 ; Rise       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; 5.445 ; 5.445 ; Rise       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; 5.609 ; 5.609 ; Rise       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; 7.521 ; 7.521 ; Rise       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; 4.820 ; 4.820 ; Rise       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; 4.493 ; 4.493 ; Rise       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; 5.472 ; 5.472 ; Rise       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; 5.829 ; 5.829 ; Rise       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; 5.271 ; 5.271 ; Rise       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; 5.158 ; 5.158 ; Rise       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; 5.019 ; 5.019 ; Rise       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; 5.297 ; 5.297 ; Rise       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; 6.319 ; 6.319 ; Rise       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; 6.235 ; 6.235 ; Rise       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; 6.279 ; 6.279 ; Rise       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; 6.581 ; 6.581 ; Rise       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; 6.595 ; 6.595 ; Rise       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; 6.697 ; 6.697 ; Rise       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; 5.932 ; 5.932 ; Rise       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; 5.972 ; 5.972 ; Rise       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; 6.750 ; 6.750 ; Rise       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; 6.366 ; 6.366 ; Rise       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; 5.517 ; 5.517 ; Rise       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; 6.237 ; 6.237 ; Rise       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; 5.695 ; 5.695 ; Rise       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; 6.311 ; 6.311 ; Rise       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; 5.922 ; 5.922 ; Rise       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; 5.538 ; 5.538 ; Rise       ; ALUctl[0]       ;
+; A[*]       ; ALUctl[0]  ; 7.816 ; 7.816 ; Fall       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 3.537 ; 3.537 ; Fall       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; 7.409 ; 7.409 ; Fall       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; 7.816 ; 7.816 ; Fall       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; 7.710 ; 7.710 ; Fall       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; 7.691 ; 7.691 ; Fall       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; 7.642 ; 7.642 ; Fall       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; 7.407 ; 7.407 ; Fall       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; 6.546 ; 6.546 ; Fall       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; 6.882 ; 6.882 ; Fall       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; 6.331 ; 6.331 ; Fall       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; 6.222 ; 6.222 ; Fall       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; 6.689 ; 6.689 ; Fall       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; 6.357 ; 6.357 ; Fall       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; 6.608 ; 6.608 ; Fall       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; 5.718 ; 5.718 ; Fall       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; 6.617 ; 6.617 ; Fall       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; 6.580 ; 6.580 ; Fall       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; 6.412 ; 6.412 ; Fall       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; 6.078 ; 6.078 ; Fall       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; 6.125 ; 6.125 ; Fall       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; 5.445 ; 5.445 ; Fall       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; 5.381 ; 5.381 ; Fall       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; 5.554 ; 5.554 ; Fall       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; 5.725 ; 5.725 ; Fall       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; 5.845 ; 5.845 ; Fall       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; 5.002 ; 5.002 ; Fall       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; 4.683 ; 4.683 ; Fall       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; 5.398 ; 5.398 ; Fall       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; 5.289 ; 5.289 ; Fall       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; 5.493 ; 5.493 ; Fall       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; 4.955 ; 4.955 ; Fall       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; 3.997 ; 3.997 ; Fall       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 5.715 ; 5.715 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.507 ; 0.507 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[1] ; ALUctl[0]  ; 4.472 ; 4.472 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[2] ; ALUctl[0]  ; 5.715 ; 5.715 ; Fall       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 8.389 ; 8.389 ; Fall       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 3.368 ; 3.368 ; Fall       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; 7.405 ; 7.405 ; Fall       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; 7.773 ; 7.773 ; Fall       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; 6.628 ; 6.628 ; Fall       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; 7.260 ; 7.260 ; Fall       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; 7.172 ; 7.172 ; Fall       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; 7.236 ; 7.236 ; Fall       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; 8.389 ; 8.389 ; Fall       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; 6.880 ; 6.880 ; Fall       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; 6.712 ; 6.712 ; Fall       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; 6.967 ; 6.967 ; Fall       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; 7.126 ; 7.126 ; Fall       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; 6.660 ; 6.660 ; Fall       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; 6.634 ; 6.634 ; Fall       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; 6.619 ; 6.619 ; Fall       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; 6.502 ; 6.502 ; Fall       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; 6.268 ; 6.268 ; Fall       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; 6.143 ; 6.143 ; Fall       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; 6.276 ; 6.276 ; Fall       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; 6.069 ; 6.069 ; Fall       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; 6.217 ; 6.217 ; Fall       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; 6.169 ; 6.169 ; Fall       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; 5.811 ; 5.811 ; Fall       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; 5.914 ; 5.914 ; Fall       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; 5.816 ; 5.816 ; Fall       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; 5.707 ; 5.707 ; Fall       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; 5.357 ; 5.357 ; Fall       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; 5.568 ; 5.568 ; Fall       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; 5.642 ; 5.642 ; Fall       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; 5.325 ; 5.325 ; Fall       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; 5.579 ; 5.579 ; Fall       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; 4.982 ; 4.982 ; Fall       ; ALUctl[0]       ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A[*]       ; ALUctl[0]  ; -0.306 ; -0.306 ; Rise       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; -0.306 ; -0.306 ; Rise       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; -4.849 ; -4.849 ; Rise       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; -5.009 ; -5.009 ; Rise       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; -4.454 ; -4.454 ; Rise       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; -5.101 ; -5.101 ; Rise       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; -5.026 ; -5.026 ; Rise       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; -4.747 ; -4.747 ; Rise       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; -5.096 ; -5.096 ; Rise       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; -3.620 ; -3.620 ; Rise       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; -3.538 ; -3.538 ; Rise       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; -3.849 ; -3.849 ; Rise       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; -4.089 ; -4.089 ; Rise       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; -4.295 ; -4.295 ; Rise       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; -4.355 ; -4.355 ; Rise       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; -3.583 ; -3.583 ; Rise       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; -4.160 ; -4.160 ; Rise       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; -5.436 ; -5.436 ; Rise       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; -5.503 ; -5.503 ; Rise       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; -5.144 ; -5.144 ; Rise       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; -5.114 ; -5.114 ; Rise       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; -4.921 ; -4.921 ; Rise       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; -5.073 ; -5.073 ; Rise       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; -4.651 ; -4.651 ; Rise       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; -5.372 ; -5.372 ; Rise       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; -5.735 ; -5.735 ; Rise       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; -5.265 ; -5.265 ; Rise       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; -4.151 ; -4.151 ; Rise       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; -6.048 ; -6.048 ; Rise       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; -4.915 ; -4.915 ; Rise       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; -5.260 ; -5.260 ; Rise       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; -4.200 ; -4.200 ; Rise       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; -3.812 ; -3.812 ; Rise       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.796  ; 0.796  ; Rise       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.796  ; 0.796  ; Rise       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; -0.519 ; -0.519 ; Rise       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; -0.519 ; -0.519 ; Rise       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; -5.522 ; -5.522 ; Rise       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; -4.924 ; -4.924 ; Rise       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; -3.700 ; -3.700 ; Rise       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; -4.955 ; -4.955 ; Rise       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; -4.622 ; -4.622 ; Rise       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; -4.786 ; -4.786 ; Rise       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; -6.698 ; -6.698 ; Rise       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; -3.997 ; -3.997 ; Rise       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; -3.670 ; -3.670 ; Rise       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; -4.649 ; -4.649 ; Rise       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; -5.006 ; -5.006 ; Rise       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; -4.448 ; -4.448 ; Rise       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; -4.335 ; -4.335 ; Rise       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; -4.196 ; -4.196 ; Rise       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; -4.474 ; -4.474 ; Rise       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; -5.496 ; -5.496 ; Rise       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; -5.412 ; -5.412 ; Rise       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; -5.456 ; -5.456 ; Rise       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; -5.758 ; -5.758 ; Rise       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; -5.772 ; -5.772 ; Rise       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; -5.874 ; -5.874 ; Rise       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; -5.109 ; -5.109 ; Rise       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; -5.149 ; -5.149 ; Rise       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; -5.927 ; -5.927 ; Rise       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; -5.543 ; -5.543 ; Rise       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; -4.694 ; -4.694 ; Rise       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; -5.414 ; -5.414 ; Rise       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; -4.872 ; -4.872 ; Rise       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; -5.488 ; -5.488 ; Rise       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; -5.099 ; -5.099 ; Rise       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; -4.715 ; -4.715 ; Rise       ; ALUctl[0]       ;
+; A[*]       ; ALUctl[0]  ; 1.675  ; 1.675  ; Fall       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 1.675  ; 1.675  ; Fall       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; -2.752 ; -2.752 ; Fall       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; -3.199 ; -3.199 ; Fall       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; -3.226 ; -3.226 ; Fall       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; -3.376 ; -3.376 ; Fall       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; -3.087 ; -3.087 ; Fall       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; -3.438 ; -3.438 ; Fall       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; -2.217 ; -2.217 ; Fall       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; -2.328 ; -2.328 ; Fall       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; -2.031 ; -2.031 ; Fall       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; -1.938 ; -1.938 ; Fall       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; -2.771 ; -2.771 ; Fall       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; -2.334 ; -2.334 ; Fall       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; -2.866 ; -2.866 ; Fall       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; -2.326 ; -2.326 ; Fall       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; -2.439 ; -2.439 ; Fall       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; -2.607 ; -2.607 ; Fall       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; -2.820 ; -2.820 ; Fall       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; -2.550 ; -2.550 ; Fall       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; -2.632 ; -2.632 ; Fall       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; -2.255 ; -2.255 ; Fall       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; -2.059 ; -2.059 ; Fall       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; -2.009 ; -2.009 ; Fall       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; -2.168 ; -2.168 ; Fall       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; -2.793 ; -2.793 ; Fall       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; -1.712 ; -1.712 ; Fall       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; -2.548 ; -2.548 ; Fall       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; -2.545 ; -2.545 ; Fall       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; -3.354 ; -3.354 ; Fall       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; -3.366 ; -3.366 ; Fall       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; -2.930 ; -2.930 ; Fall       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; -2.737 ; -2.737 ; Fall       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.922  ; 0.922  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.922  ; 0.922  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[1] ; ALUctl[0]  ; -1.639 ; -1.639 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[2] ; ALUctl[0]  ; -3.328 ; -3.328 ; Fall       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; -0.294 ; -0.294 ; Fall       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; -0.294 ; -0.294 ; Fall       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; -4.446 ; -4.446 ; Fall       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; -4.568 ; -4.568 ; Fall       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; -3.497 ; -3.497 ; Fall       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; -4.618 ; -4.618 ; Fall       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; -4.377 ; -4.377 ; Fall       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; -4.888 ; -4.888 ; Fall       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; -6.313 ; -6.313 ; Fall       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; -4.595 ; -4.595 ; Fall       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; -4.662 ; -4.662 ; Fall       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; -4.963 ; -4.963 ; Fall       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; -5.301 ; -5.301 ; Fall       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; -4.835 ; -4.835 ; Fall       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; -4.809 ; -4.809 ; Fall       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; -4.794 ; -4.794 ; Fall       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; -4.677 ; -4.677 ; Fall       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; -4.443 ; -4.443 ; Fall       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; -4.318 ; -4.318 ; Fall       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; -4.136 ; -4.136 ; Fall       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; -3.981 ; -3.981 ; Fall       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; -4.445 ; -4.445 ; Fall       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; -4.602 ; -4.602 ; Fall       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; -4.292 ; -4.292 ; Fall       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; -4.289 ; -4.289 ; Fall       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; -4.444 ; -4.444 ; Fall       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; -4.355 ; -4.355 ; Fall       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; -3.873 ; -3.873 ; Fall       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; -4.216 ; -4.216 ; Fall       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; -3.975 ; -3.975 ; Fall       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; -3.849 ; -3.849 ; Fall       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; -4.047 ; -4.047 ; Fall       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; -4.010 ; -4.010 ; Fall       ; ALUctl[0]       ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; Zero        ; ALUctl[0]  ; 9.341  ; 9.341  ; Rise       ; ALUctl[0]       ;
+; ALUOut[*]   ; ALUctl[0]  ; 11.261 ; 11.261 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[0]  ; ALUctl[0]  ; 9.553  ; 9.553  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[1]  ; ALUctl[0]  ; 10.013 ; 10.013 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[2]  ; ALUctl[0]  ; 9.341  ; 9.341  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[3]  ; ALUctl[0]  ; 10.017 ; 10.017 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[4]  ; ALUctl[0]  ; 9.792  ; 9.792  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[5]  ; ALUctl[0]  ; 9.571  ; 9.571  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[6]  ; ALUctl[0]  ; 9.923  ; 9.923  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[7]  ; ALUctl[0]  ; 8.915  ; 8.915  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[8]  ; ALUctl[0]  ; 9.963  ; 9.963  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[9]  ; ALUctl[0]  ; 9.884  ; 9.884  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[10] ; ALUctl[0]  ; 9.001  ; 9.001  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[11] ; ALUctl[0]  ; 10.150 ; 10.150 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[12] ; ALUctl[0]  ; 8.818  ; 8.818  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[13] ; ALUctl[0]  ; 10.179 ; 10.179 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[14] ; ALUctl[0]  ; 8.839  ; 8.839  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[15] ; ALUctl[0]  ; 8.879  ; 8.879  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[16] ; ALUctl[0]  ; 10.106 ; 10.106 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[17] ; ALUctl[0]  ; 8.889  ; 8.889  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[18] ; ALUctl[0]  ; 9.232  ; 9.232  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[19] ; ALUctl[0]  ; 9.916  ; 9.916  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[20] ; ALUctl[0]  ; 8.656  ; 8.656  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[21] ; ALUctl[0]  ; 9.284  ; 9.284  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[22] ; ALUctl[0]  ; 10.362 ; 10.362 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[23] ; ALUctl[0]  ; 10.164 ; 10.164 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[24] ; ALUctl[0]  ; 9.718  ; 9.718  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[25] ; ALUctl[0]  ; 8.866  ; 8.866  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[26] ; ALUctl[0]  ; 9.392  ; 9.392  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[27] ; ALUctl[0]  ; 10.125 ; 10.125 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[28] ; ALUctl[0]  ; 10.093 ; 10.093 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[29] ; ALUctl[0]  ; 9.148  ; 9.148  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[30] ; ALUctl[0]  ; 9.817  ; 9.817  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[31] ; ALUctl[0]  ; 11.261 ; 11.261 ; Fall       ; ALUctl[0]       ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; Zero        ; ALUctl[0]  ; 9.341  ; 9.341  ; Rise       ; ALUctl[0]       ;
+; ALUOut[*]   ; ALUctl[0]  ; 8.656  ; 8.656  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[0]  ; ALUctl[0]  ; 9.553  ; 9.553  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[1]  ; ALUctl[0]  ; 10.013 ; 10.013 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[2]  ; ALUctl[0]  ; 9.341  ; 9.341  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[3]  ; ALUctl[0]  ; 10.017 ; 10.017 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[4]  ; ALUctl[0]  ; 9.792  ; 9.792  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[5]  ; ALUctl[0]  ; 9.571  ; 9.571  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[6]  ; ALUctl[0]  ; 9.923  ; 9.923  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[7]  ; ALUctl[0]  ; 8.915  ; 8.915  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[8]  ; ALUctl[0]  ; 9.963  ; 9.963  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[9]  ; ALUctl[0]  ; 9.884  ; 9.884  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[10] ; ALUctl[0]  ; 9.001  ; 9.001  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[11] ; ALUctl[0]  ; 10.150 ; 10.150 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[12] ; ALUctl[0]  ; 8.818  ; 8.818  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[13] ; ALUctl[0]  ; 10.179 ; 10.179 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[14] ; ALUctl[0]  ; 8.839  ; 8.839  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[15] ; ALUctl[0]  ; 8.879  ; 8.879  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[16] ; ALUctl[0]  ; 10.106 ; 10.106 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[17] ; ALUctl[0]  ; 8.889  ; 8.889  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[18] ; ALUctl[0]  ; 9.232  ; 9.232  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[19] ; ALUctl[0]  ; 9.916  ; 9.916  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[20] ; ALUctl[0]  ; 8.656  ; 8.656  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[21] ; ALUctl[0]  ; 9.284  ; 9.284  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[22] ; ALUctl[0]  ; 10.362 ; 10.362 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[23] ; ALUctl[0]  ; 10.164 ; 10.164 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[24] ; ALUctl[0]  ; 9.718  ; 9.718  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[25] ; ALUctl[0]  ; 8.866  ; 8.866  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[26] ; ALUctl[0]  ; 9.392  ; 9.392  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[27] ; ALUctl[0]  ; 10.125 ; 10.125 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[28] ; ALUctl[0]  ; 10.093 ; 10.093 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[29] ; ALUctl[0]  ; 9.148  ; 9.148  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[30] ; ALUctl[0]  ; 9.817  ; 9.817  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[31] ; ALUctl[0]  ; 11.261 ; 11.261 ; Fall       ; ALUctl[0]       ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------+
+; Fast Model Setup Summary          ;
++-----------+-------+---------------+
+; Clock     ; Slack ; End Point TNS ;
++-----------+-------+---------------+
+; ALUctl[0] ; 0.647 ; 0.000         ;
++-----------+-------+---------------+
+
+
++------------------------------------+
+; Fast Model Hold Summary            ;
++-----------+--------+---------------+
+; Clock     ; Slack  ; End Point TNS ;
++-----------+--------+---------------+
+; ALUctl[0] ; -0.753 ; -22.259       ;
++-----------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-----------+--------+-------------------+
+; Clock     ; Slack  ; End Point TNS     ;
++-----------+--------+-------------------+
+; ALUctl[0] ; -1.222 ; -1.222            ;
++-----------+--------+-------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'ALUctl[0]'                                                                              ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; 0.647 ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.597      ; 2.098      ;
+; 0.697 ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.574      ; 2.023      ;
+; 0.711 ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.589      ; 2.016      ;
+; 0.721 ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.642      ; 2.018      ;
+; 0.723 ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.642      ; 2.016      ;
+; 0.724 ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.597      ; 2.032      ;
+; 0.731 ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.641      ; 2.018      ;
+; 0.736 ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.590      ; 1.999      ;
+; 0.738 ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.642      ; 2.017      ;
+; 0.739 ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.599      ; 2.018      ;
+; 0.740 ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.641      ; 2.012      ;
+; 0.746 ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.640      ; 2.008      ;
+; 0.760 ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.584      ; 1.972      ;
+; 0.767 ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.622      ; 1.968      ;
+; 0.771 ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.581      ; 1.969      ;
+; 0.774 ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.583      ; 1.957      ;
+; 0.777 ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.577      ; 1.959      ;
+; 0.779 ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.599      ; 1.968      ;
+; 0.781 ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.597      ; 1.972      ;
+; 0.782 ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.589      ; 1.964      ;
+; 0.792 ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.639      ; 1.949      ;
+; 0.796 ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.578      ; 1.936      ;
+; 0.804 ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.588      ; 1.930      ;
+; 0.808 ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.590      ; 2.011      ;
+; 0.843 ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.596      ; 1.908      ;
+; 0.847 ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.596      ; 1.910      ;
+; 0.847 ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.594      ; 1.903      ;
+; 0.847 ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.644      ; 2.029      ;
+; 0.849 ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.595      ; 1.905      ;
+; 0.850 ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.642      ; 2.018      ;
+; 0.855 ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.583      ; 1.957      ;
+; 0.861 ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.643      ; 2.009      ;
+; 0.873 ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.500        ; 2.583      ; 1.937      ;
+; 1.147 ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.597      ; 2.098      ;
+; 1.197 ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.574      ; 2.023      ;
+; 1.211 ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.589      ; 2.016      ;
+; 1.221 ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.642      ; 2.018      ;
+; 1.223 ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.642      ; 2.016      ;
+; 1.224 ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.597      ; 2.032      ;
+; 1.231 ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.641      ; 2.018      ;
+; 1.236 ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.590      ; 1.999      ;
+; 1.238 ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.642      ; 2.017      ;
+; 1.239 ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.599      ; 2.018      ;
+; 1.240 ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.641      ; 2.012      ;
+; 1.246 ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.640      ; 2.008      ;
+; 1.260 ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.584      ; 1.972      ;
+; 1.267 ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.622      ; 1.968      ;
+; 1.271 ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.581      ; 1.969      ;
+; 1.274 ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.583      ; 1.957      ;
+; 1.277 ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.577      ; 1.959      ;
+; 1.279 ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.599      ; 1.968      ;
+; 1.281 ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.597      ; 1.972      ;
+; 1.282 ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.589      ; 1.964      ;
+; 1.292 ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.639      ; 1.949      ;
+; 1.296 ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.578      ; 1.936      ;
+; 1.304 ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.588      ; 1.930      ;
+; 1.308 ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.590      ; 2.011      ;
+; 1.343 ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.596      ; 1.908      ;
+; 1.347 ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.596      ; 1.910      ;
+; 1.347 ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.594      ; 1.903      ;
+; 1.347 ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.644      ; 2.029      ;
+; 1.349 ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.595      ; 1.905      ;
+; 1.350 ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.642      ; 2.018      ;
+; 1.355 ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.583      ; 1.957      ;
+; 1.361 ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.643      ; 2.009      ;
+; 1.373 ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 1.000        ; 2.583      ; 1.937      ;
++-------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'ALUctl[0]'                                                                                ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+; -0.753 ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.642      ; 1.889      ;
+; -0.733 ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.639      ; 1.906      ;
+; -0.729 ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.642      ; 1.913      ;
+; -0.724 ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.640      ; 1.916      ;
+; -0.722 ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.641      ; 1.919      ;
+; -0.721 ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.642      ; 1.921      ;
+; -0.716 ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.641      ; 1.925      ;
+; -0.704 ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.642      ; 1.938      ;
+; -0.703 ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.596      ; 1.893      ;
+; -0.695 ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.595      ; 1.900      ;
+; -0.693 ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.594      ; 1.901      ;
+; -0.692 ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.644      ; 1.952      ;
+; -0.689 ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.596      ; 1.907      ;
+; -0.682 ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.643      ; 1.961      ;
+; -0.677 ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.589      ; 1.912      ;
+; -0.675 ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.588      ; 1.913      ;
+; -0.669 ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.622      ; 1.953      ;
+; -0.665 ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.583      ; 1.918      ;
+; -0.664 ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.583      ; 1.919      ;
+; -0.660 ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.599      ; 1.939      ;
+; -0.659 ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.583      ; 1.924      ;
+; -0.658 ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.581      ; 1.923      ;
+; -0.654 ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.597      ; 1.943      ;
+; -0.651 ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.584      ; 1.933      ;
+; -0.645 ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.577      ; 1.932      ;
+; -0.642 ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.578      ; 1.936      ;
+; -0.642 ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.590      ; 1.948      ;
+; -0.641 ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.574      ; 1.933      ;
+; -0.639 ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.590      ; 1.951      ;
+; -0.634 ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.589      ; 1.955      ;
+; -0.634 ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.599      ; 1.965      ;
+; -0.632 ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.597      ; 1.965      ;
+; -0.562 ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; 0.000        ; 2.597      ; 2.035      ;
+; -0.253 ; ALUctl[0] ; ALUOut[25]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.642      ; 1.889      ;
+; -0.233 ; ALUctl[0] ; ALUOut[31]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.639      ; 1.906      ;
+; -0.229 ; ALUctl[0] ; ALUOut[22]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.642      ; 1.913      ;
+; -0.224 ; ALUctl[0] ; ALUOut[6]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.640      ; 1.916      ;
+; -0.222 ; ALUctl[0] ; ALUOut[24]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.641      ; 1.919      ;
+; -0.221 ; ALUctl[0] ; ALUOut[23]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.642      ; 1.921      ;
+; -0.216 ; ALUctl[0] ; ALUOut[9]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.641      ; 1.925      ;
+; -0.204 ; ALUctl[0] ; ALUOut[14]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.642      ; 1.938      ;
+; -0.203 ; ALUctl[0] ; ALUOut[0]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.596      ; 1.893      ;
+; -0.195 ; ALUctl[0] ; ALUOut[2]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.595      ; 1.900      ;
+; -0.193 ; ALUctl[0] ; ALUOut[3]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.594      ; 1.901      ;
+; -0.192 ; ALUctl[0] ; ALUOut[13]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.644      ; 1.952      ;
+; -0.189 ; ALUctl[0] ; ALUOut[1]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.596      ; 1.907      ;
+; -0.182 ; ALUctl[0] ; ALUOut[12]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.643      ; 1.961      ;
+; -0.177 ; ALUctl[0] ; ALUOut[21]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.589      ; 1.912      ;
+; -0.175 ; ALUctl[0] ; ALUOut[18]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.588      ; 1.913      ;
+; -0.169 ; ALUctl[0] ; ALUOut[19]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.622      ; 1.953      ;
+; -0.165 ; ALUctl[0] ; ALUOut[15]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.583      ; 1.918      ;
+; -0.164 ; ALUctl[0] ; ALUOut[16]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.583      ; 1.919      ;
+; -0.160 ; ALUctl[0] ; ALUOut[26]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.599      ; 1.939      ;
+; -0.159 ; ALUctl[0] ; ALUOut[4]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.583      ; 1.924      ;
+; -0.158 ; ALUctl[0] ; ALUOut[5]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.581      ; 1.923      ;
+; -0.154 ; ALUctl[0] ; ALUOut[28]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.597      ; 1.943      ;
+; -0.151 ; ALUctl[0] ; ALUOut[17]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.584      ; 1.933      ;
+; -0.145 ; ALUctl[0] ; ALUOut[8]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.577      ; 1.932      ;
+; -0.142 ; ALUctl[0] ; Zero$latch       ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.578      ; 1.936      ;
+; -0.142 ; ALUctl[0] ; ALUOut[7]$latch  ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.590      ; 1.948      ;
+; -0.141 ; ALUctl[0] ; ALUOut[20]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.574      ; 1.933      ;
+; -0.139 ; ALUctl[0] ; ALUOut[10]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.590      ; 1.951      ;
+; -0.134 ; ALUctl[0] ; ALUOut[11]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.589      ; 1.955      ;
+; -0.134 ; ALUctl[0] ; ALUOut[29]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.599      ; 1.965      ;
+; -0.132 ; ALUctl[0] ; ALUOut[30]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.597      ; 1.965      ;
+; -0.062 ; ALUctl[0] ; ALUOut[27]$latch ; ALUctl[0]    ; ALUctl[0]   ; -0.500       ; 2.597      ; 2.035      ;
++--------+-----------+------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'ALUctl[0]'                                                                 ;
++--------+--------------+----------------+------------------+-----------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock     ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-----------+------------+------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; ALUctl[0] ; Rise       ; ALUctl[0]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[0]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[0]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[0]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[0]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[10]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[10]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[10]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[10]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[11]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[11]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[11]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[11]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[12]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[12]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[12]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[12]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[13]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[13]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[13]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[13]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[14]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[14]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[14]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[14]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[15]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[15]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[15]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[15]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[16]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[16]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[16]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[16]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[17]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[17]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[17]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[17]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[18]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[18]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[18]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[18]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[19]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[19]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[19]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[19]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[1]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[1]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[1]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[1]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[20]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[20]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[20]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[20]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[21]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[21]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[21]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[21]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[22]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[22]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[22]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[22]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[23]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[23]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[23]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[23]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[24]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[24]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[24]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[24]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[25]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[25]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[25]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[25]$latch|datac ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[26]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[26]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[26]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[26]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[27]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[27]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[27]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[27]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[28]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[28]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[28]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[28]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[29]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[29]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[29]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[29]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[2]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[2]$latch        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[2]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[2]$latch|datad  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[30]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[30]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[30]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Rise       ; ALUOut[30]$latch|datad ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Fall       ; ALUOut[31]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ALUctl[0] ; Fall       ; ALUOut[31]$latch       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ALUctl[0] ; Rise       ; ALUOut[31]$latch|datac ;
++--------+--------------+----------------+------------------+-----------+------------+------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A[*]       ; ALUctl[0]  ; 3.358  ; 3.358  ; Rise       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 0.145  ; 0.145  ; Rise       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; 2.856  ; 2.856  ; Rise       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; 2.870  ; 2.870  ; Rise       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; 2.666  ; 2.666  ; Rise       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; 2.930  ; 2.930  ; Rise       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; 2.950  ; 2.950  ; Rise       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; 2.816  ; 2.816  ; Rise       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; 2.937  ; 2.937  ; Rise       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; 2.256  ; 2.256  ; Rise       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; 2.239  ; 2.239  ; Rise       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; 2.392  ; 2.392  ; Rise       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; 2.578  ; 2.578  ; Rise       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; 2.568  ; 2.568  ; Rise       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; 2.681  ; 2.681  ; Rise       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; 2.282  ; 2.282  ; Rise       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; 2.554  ; 2.554  ; Rise       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; 3.177  ; 3.177  ; Rise       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; 3.128  ; 3.128  ; Rise       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; 3.011  ; 3.011  ; Rise       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; 3.009  ; 3.009  ; Rise       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; 2.821  ; 2.821  ; Rise       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; 2.893  ; 2.893  ; Rise       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; 2.714  ; 2.714  ; Rise       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; 3.107  ; 3.107  ; Rise       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; 3.243  ; 3.243  ; Rise       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; 3.006  ; 3.006  ; Rise       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; 2.502  ; 2.502  ; Rise       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; 3.358  ; 3.358  ; Rise       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; 2.927  ; 2.927  ; Rise       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; 3.074  ; 3.074  ; Rise       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; 2.520  ; 2.520  ; Rise       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; 2.349  ; 2.349  ; Rise       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; -0.296 ; -0.296 ; Rise       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; -0.296 ; -0.296 ; Rise       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 3.707  ; 3.707  ; Rise       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 0.248  ; 0.248  ; Rise       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; 3.149  ; 3.149  ; Rise       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; 2.824  ; 2.824  ; Rise       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; 2.293  ; 2.293  ; Rise       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; 2.918  ; 2.918  ; Rise       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; 2.771  ; 2.771  ; Rise       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; 2.855  ; 2.855  ; Rise       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; 3.707  ; 3.707  ; Rise       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; 2.493  ; 2.493  ; Rise       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; 2.270  ; 2.270  ; Rise       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; 2.787  ; 2.787  ; Rise       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; 2.968  ; 2.968  ; Rise       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; 2.698  ; 2.698  ; Rise       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; 2.660  ; 2.660  ; Rise       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; 2.578  ; 2.578  ; Rise       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; 2.729  ; 2.729  ; Rise       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; 3.193  ; 3.193  ; Rise       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; 3.068  ; 3.068  ; Rise       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; 3.062  ; 3.062  ; Rise       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; 3.272  ; 3.272  ; Rise       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; 3.269  ; 3.269  ; Rise       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; 3.295  ; 3.295  ; Rise       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; 2.936  ; 2.936  ; Rise       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; 2.942  ; 2.942  ; Rise       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; 3.366  ; 3.366  ; Rise       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; 3.157  ; 3.157  ; Rise       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; 2.778  ; 2.778  ; Rise       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; 3.148  ; 3.148  ; Rise       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; 2.909  ; 2.909  ; Rise       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; 3.202  ; 3.202  ; Rise       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; 2.967  ; 2.967  ; Rise       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; 2.752  ; 2.752  ; Rise       ; ALUctl[0]       ;
+; A[*]       ; ALUctl[0]  ; 3.852  ; 3.852  ; Fall       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 1.306  ; 1.306  ; Fall       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; 3.724  ; 3.724  ; Fall       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; 3.852  ; 3.852  ; Fall       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; 3.844  ; 3.844  ; Fall       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; 3.792  ; 3.792  ; Fall       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; 3.828  ; 3.828  ; Fall       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; 3.721  ; 3.721  ; Fall       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; 3.263  ; 3.263  ; Fall       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; 3.411  ; 3.411  ; Fall       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; 3.148  ; 3.148  ; Fall       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; 3.103  ; 3.103  ; Fall       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; 3.387  ; 3.387  ; Fall       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; 3.151  ; 3.151  ; Fall       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; 3.328  ; 3.328  ; Fall       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; 2.870  ; 2.870  ; Fall       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; 3.296  ; 3.296  ; Fall       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; 3.323  ; 3.323  ; Fall       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; 3.183  ; 3.183  ; Fall       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; 3.069  ; 3.069  ; Fall       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; 3.086  ; 3.086  ; Fall       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; 2.699  ; 2.699  ; Fall       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; 2.670  ; 2.670  ; Fall       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; 2.751  ; 2.751  ; Fall       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; 2.881  ; 2.881  ; Fall       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; 2.891  ; 2.891  ; Fall       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; 2.468  ; 2.468  ; Fall       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; 2.335  ; 2.335  ; Fall       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; 2.647  ; 2.647  ; Fall       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; 2.657  ; 2.657  ; Fall       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; 2.744  ; 2.744  ; Fall       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; 2.440  ; 2.440  ; Fall       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; 2.044  ; 2.044  ; Fall       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 2.867  ; 2.867  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; -0.147 ; -0.147 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[1] ; ALUctl[0]  ; 2.261  ; 2.261  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[2] ; ALUctl[0]  ; 2.867  ; 2.867  ; Fall       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 4.135  ; 4.135  ; Fall       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 1.253  ; 1.253  ; Fall       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; 3.707  ; 3.707  ; Fall       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; 3.830  ; 3.830  ; Fall       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; 3.328  ; 3.328  ; Fall       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; 3.662  ; 3.662  ; Fall       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; 3.611  ; 3.611  ; Fall       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; 3.660  ; 3.660  ; Fall       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; 4.135  ; 4.135  ; Fall       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; 3.457  ; 3.457  ; Fall       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; 3.306  ; 3.306  ; Fall       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; 3.488  ; 3.488  ; Fall       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; 3.548  ; 3.548  ; Fall       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; 3.351  ; 3.351  ; Fall       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; 3.343  ; 3.343  ; Fall       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; 3.304  ; 3.304  ; Fall       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; 3.276  ; 3.276  ; Fall       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; 3.172  ; 3.172  ; Fall       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; 3.037  ; 3.037  ; Fall       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; 3.067  ; 3.067  ; Fall       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; 3.038  ; 3.038  ; Fall       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; 3.100  ; 3.100  ; Fall       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; 3.064  ; 3.064  ; Fall       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; 2.872  ; 2.872  ; Fall       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; 2.919  ; 2.919  ; Fall       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; 2.917  ; 2.917  ; Fall       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; 2.836  ; 2.836  ; Fall       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; 2.663  ; 2.663  ; Fall       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; 2.802  ; 2.802  ; Fall       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; 2.820  ; 2.820  ; Fall       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; 2.677  ; 2.677  ; Fall       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; 2.769  ; 2.769  ; Fall       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; 2.463  ; 2.463  ; Fall       ; ALUctl[0]       ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A[*]       ; ALUctl[0]  ; 0.201  ; 0.201  ; Rise       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 0.201  ; 0.201  ; Rise       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; -2.510 ; -2.510 ; Rise       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; -2.524 ; -2.524 ; Rise       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; -2.320 ; -2.320 ; Rise       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; -2.584 ; -2.584 ; Rise       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; -2.604 ; -2.604 ; Rise       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; -2.470 ; -2.470 ; Rise       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; -2.591 ; -2.591 ; Rise       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; -1.910 ; -1.910 ; Rise       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; -1.893 ; -1.893 ; Rise       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; -2.046 ; -2.046 ; Rise       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; -2.232 ; -2.232 ; Rise       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; -2.222 ; -2.222 ; Rise       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; -2.335 ; -2.335 ; Rise       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; -1.936 ; -1.936 ; Rise       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; -2.208 ; -2.208 ; Rise       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; -2.831 ; -2.831 ; Rise       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; -2.782 ; -2.782 ; Rise       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; -2.665 ; -2.665 ; Rise       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; -2.663 ; -2.663 ; Rise       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; -2.475 ; -2.475 ; Rise       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; -2.547 ; -2.547 ; Rise       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; -2.368 ; -2.368 ; Rise       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; -2.761 ; -2.761 ; Rise       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; -2.897 ; -2.897 ; Rise       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; -2.660 ; -2.660 ; Rise       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; -2.156 ; -2.156 ; Rise       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; -3.012 ; -3.012 ; Rise       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; -2.581 ; -2.581 ; Rise       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; -2.728 ; -2.728 ; Rise       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; -2.174 ; -2.174 ; Rise       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; -2.003 ; -2.003 ; Rise       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.642  ; 0.642  ; Rise       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.642  ; 0.642  ; Rise       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 0.098  ; 0.098  ; Rise       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 0.098  ; 0.098  ; Rise       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; -2.803 ; -2.803 ; Rise       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; -2.478 ; -2.478 ; Rise       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; -1.947 ; -1.947 ; Rise       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; -2.572 ; -2.572 ; Rise       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; -2.425 ; -2.425 ; Rise       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; -2.509 ; -2.509 ; Rise       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; -3.361 ; -3.361 ; Rise       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; -2.147 ; -2.147 ; Rise       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; -1.924 ; -1.924 ; Rise       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; -2.441 ; -2.441 ; Rise       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; -2.622 ; -2.622 ; Rise       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; -2.352 ; -2.352 ; Rise       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; -2.314 ; -2.314 ; Rise       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; -2.232 ; -2.232 ; Rise       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; -2.383 ; -2.383 ; Rise       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; -2.847 ; -2.847 ; Rise       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; -2.722 ; -2.722 ; Rise       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; -2.716 ; -2.716 ; Rise       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; -2.926 ; -2.926 ; Rise       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; -2.923 ; -2.923 ; Rise       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; -2.949 ; -2.949 ; Rise       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; -2.590 ; -2.590 ; Rise       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; -2.596 ; -2.596 ; Rise       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; -3.020 ; -3.020 ; Rise       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; -2.811 ; -2.811 ; Rise       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; -2.432 ; -2.432 ; Rise       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; -2.802 ; -2.802 ; Rise       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; -2.563 ; -2.563 ; Rise       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; -2.856 ; -2.856 ; Rise       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; -2.621 ; -2.621 ; Rise       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; -2.406 ; -2.406 ; Rise       ; ALUctl[0]       ;
+; A[*]       ; ALUctl[0]  ; 1.086  ; 1.086  ; Fall       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 1.086  ; 1.086  ; Fall       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; -1.590 ; -1.590 ; Fall       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; -1.743 ; -1.743 ; Fall       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; -1.797 ; -1.797 ; Fall       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; -1.825 ; -1.825 ; Fall       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; -1.737 ; -1.737 ; Fall       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; -1.936 ; -1.936 ; Fall       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; -1.307 ; -1.307 ; Fall       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; -1.347 ; -1.347 ; Fall       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; -1.221 ; -1.221 ; Fall       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; -1.173 ; -1.173 ; Fall       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; -1.613 ; -1.613 ; Fall       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; -1.360 ; -1.360 ; Fall       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; -1.650 ; -1.650 ; Fall       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; -1.373 ; -1.373 ; Fall       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; -1.465 ; -1.465 ; Fall       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; -1.566 ; -1.566 ; Fall       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; -1.614 ; -1.614 ; Fall       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; -1.526 ; -1.526 ; Fall       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; -1.578 ; -1.578 ; Fall       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; -1.317 ; -1.317 ; Fall       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; -1.225 ; -1.225 ; Fall       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; -1.230 ; -1.230 ; Fall       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; -1.365 ; -1.365 ; Fall       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; -1.603 ; -1.603 ; Fall       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; -1.083 ; -1.083 ; Fall       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; -1.423 ; -1.423 ; Fall       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; -1.440 ; -1.440 ; Fall       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; -1.862 ; -1.862 ; Fall       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; -1.871 ; -1.871 ; Fall       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; -1.612 ; -1.612 ; Fall       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; -1.501 ; -1.501 ; Fall       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.753  ; 0.753  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.753  ; 0.753  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[1] ; ALUctl[0]  ; -1.021 ; -1.021 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[2] ; ALUctl[0]  ; -1.864 ; -1.864 ; Fall       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 0.224  ; 0.224  ; Fall       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 0.224  ; 0.224  ; Fall       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; -2.287 ; -2.287 ; Fall       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; -2.310 ; -2.310 ; Fall       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; -1.846 ; -1.846 ; Fall       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; -2.406 ; -2.406 ; Fall       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; -2.286 ; -2.286 ; Fall       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; -2.538 ; -2.538 ; Fall       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; -3.155 ; -3.155 ; Fall       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; -2.388 ; -2.388 ; Fall       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; -2.351 ; -2.351 ; Fall       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; -2.557 ; -2.557 ; Fall       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; -2.698 ; -2.698 ; Fall       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; -2.501 ; -2.501 ; Fall       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; -2.493 ; -2.493 ; Fall       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; -2.454 ; -2.454 ; Fall       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; -2.426 ; -2.426 ; Fall       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; -2.322 ; -2.322 ; Fall       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; -2.187 ; -2.187 ; Fall       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; -2.112 ; -2.112 ; Fall       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; -2.124 ; -2.124 ; Fall       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; -2.333 ; -2.333 ; Fall       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; -2.374 ; -2.374 ; Fall       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; -2.231 ; -2.231 ; Fall       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; -2.220 ; -2.220 ; Fall       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; -2.333 ; -2.333 ; Fall       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; -2.252 ; -2.252 ; Fall       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; -2.074 ; -2.074 ; Fall       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; -2.218 ; -2.218 ; Fall       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; -2.131 ; -2.131 ; Fall       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; -2.067 ; -2.067 ; Fall       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; -2.146 ; -2.146 ; Fall       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; -2.065 ; -2.065 ; Fall       ; ALUctl[0]       ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Zero        ; ALUctl[0]  ; 4.954 ; 4.954 ; Rise       ; ALUctl[0]       ;
+; ALUOut[*]   ; ALUctl[0]  ; 5.959 ; 5.959 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[0]  ; ALUctl[0]  ; 5.040 ; 5.040 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[1]  ; ALUctl[0]  ; 5.214 ; 5.214 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[2]  ; ALUctl[0]  ; 4.955 ; 4.955 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[3]  ; ALUctl[0]  ; 5.212 ; 5.212 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[4]  ; ALUctl[0]  ; 5.154 ; 5.154 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[5]  ; ALUctl[0]  ; 5.057 ; 5.057 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[6]  ; ALUctl[0]  ; 5.168 ; 5.168 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[7]  ; ALUctl[0]  ; 4.734 ; 4.734 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[8]  ; ALUctl[0]  ; 5.228 ; 5.228 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[9]  ; ALUctl[0]  ; 5.136 ; 5.136 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[10] ; ALUctl[0]  ; 4.792 ; 4.792 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[11] ; ALUctl[0]  ; 5.307 ; 5.307 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[12] ; ALUctl[0]  ; 4.680 ; 4.680 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[13] ; ALUctl[0]  ; 5.293 ; 5.293 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[14] ; ALUctl[0]  ; 4.692 ; 4.692 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[15] ; ALUctl[0]  ; 4.703 ; 4.703 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[16] ; ALUctl[0]  ; 5.287 ; 5.287 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[17] ; ALUctl[0]  ; 4.713 ; 4.713 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[18] ; ALUctl[0]  ; 4.843 ; 4.843 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[19] ; ALUctl[0]  ; 5.170 ; 5.170 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[20] ; ALUctl[0]  ; 4.612 ; 4.612 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[21] ; ALUctl[0]  ; 4.873 ; 4.873 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[22] ; ALUctl[0]  ; 5.363 ; 5.363 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[23] ; ALUctl[0]  ; 5.279 ; 5.279 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[24] ; ALUctl[0]  ; 5.083 ; 5.083 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[25] ; ALUctl[0]  ; 4.715 ; 4.715 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[26] ; ALUctl[0]  ; 4.995 ; 4.995 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[27] ; ALUctl[0]  ; 5.288 ; 5.288 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[28] ; ALUctl[0]  ; 5.269 ; 5.269 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[29] ; ALUctl[0]  ; 4.874 ; 4.874 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[30] ; ALUctl[0]  ; 5.165 ; 5.165 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[31] ; ALUctl[0]  ; 5.959 ; 5.959 ; Fall       ; ALUctl[0]       ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Zero        ; ALUctl[0]  ; 4.954 ; 4.954 ; Rise       ; ALUctl[0]       ;
+; ALUOut[*]   ; ALUctl[0]  ; 4.612 ; 4.612 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[0]  ; ALUctl[0]  ; 5.040 ; 5.040 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[1]  ; ALUctl[0]  ; 5.214 ; 5.214 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[2]  ; ALUctl[0]  ; 4.955 ; 4.955 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[3]  ; ALUctl[0]  ; 5.212 ; 5.212 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[4]  ; ALUctl[0]  ; 5.154 ; 5.154 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[5]  ; ALUctl[0]  ; 5.057 ; 5.057 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[6]  ; ALUctl[0]  ; 5.168 ; 5.168 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[7]  ; ALUctl[0]  ; 4.734 ; 4.734 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[8]  ; ALUctl[0]  ; 5.228 ; 5.228 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[9]  ; ALUctl[0]  ; 5.136 ; 5.136 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[10] ; ALUctl[0]  ; 4.792 ; 4.792 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[11] ; ALUctl[0]  ; 5.307 ; 5.307 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[12] ; ALUctl[0]  ; 4.680 ; 4.680 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[13] ; ALUctl[0]  ; 5.293 ; 5.293 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[14] ; ALUctl[0]  ; 4.692 ; 4.692 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[15] ; ALUctl[0]  ; 4.703 ; 4.703 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[16] ; ALUctl[0]  ; 5.287 ; 5.287 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[17] ; ALUctl[0]  ; 4.713 ; 4.713 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[18] ; ALUctl[0]  ; 4.843 ; 4.843 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[19] ; ALUctl[0]  ; 5.170 ; 5.170 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[20] ; ALUctl[0]  ; 4.612 ; 4.612 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[21] ; ALUctl[0]  ; 4.873 ; 4.873 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[22] ; ALUctl[0]  ; 5.363 ; 5.363 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[23] ; ALUctl[0]  ; 5.279 ; 5.279 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[24] ; ALUctl[0]  ; 5.083 ; 5.083 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[25] ; ALUctl[0]  ; 4.715 ; 4.715 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[26] ; ALUctl[0]  ; 4.995 ; 4.995 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[27] ; ALUctl[0]  ; 5.288 ; 5.288 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[28] ; ALUctl[0]  ; 5.269 ; 5.269 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[29] ; ALUctl[0]  ; 4.874 ; 4.874 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[30] ; ALUctl[0]  ; 5.165 ; 5.165 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[31] ; ALUctl[0]  ; 5.959 ; 5.959 ; Fall       ; ALUctl[0]       ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+--------+---------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+---------+----------+---------+---------------------+
+; Worst-case Slack ; -0.007 ; -0.922  ; N/A      ; N/A     ; -1.222              ;
+;  ALUctl[0]       ; -0.007 ; -0.922  ; N/A      ; N/A     ; -1.222              ;
+; Design-wide TNS  ; -0.007 ; -25.702 ; 0.0      ; 0.0     ; -1.222              ;
+;  ALUctl[0]       ; -0.007 ; -25.702 ; N/A      ; N/A     ; -1.222              ;
++------------------+--------+---------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; A[*]       ; ALUctl[0]  ; 6.871 ; 6.871 ; Rise       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 1.129 ; 1.129 ; Rise       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; 5.672 ; 5.672 ; Rise       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; 5.832 ; 5.832 ; Rise       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; 5.277 ; 5.277 ; Rise       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; 5.924 ; 5.924 ; Rise       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; 5.849 ; 5.849 ; Rise       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; 5.570 ; 5.570 ; Rise       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; 5.919 ; 5.919 ; Rise       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; 4.443 ; 4.443 ; Rise       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; 4.361 ; 4.361 ; Rise       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; 4.672 ; 4.672 ; Rise       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; 4.912 ; 4.912 ; Rise       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; 5.118 ; 5.118 ; Rise       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; 5.178 ; 5.178 ; Rise       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; 4.406 ; 4.406 ; Rise       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; 4.983 ; 4.983 ; Rise       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; 6.259 ; 6.259 ; Rise       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; 6.326 ; 6.326 ; Rise       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; 5.967 ; 5.967 ; Rise       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; 5.937 ; 5.937 ; Rise       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; 5.744 ; 5.744 ; Rise       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; 5.896 ; 5.896 ; Rise       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; 5.474 ; 5.474 ; Rise       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; 6.195 ; 6.195 ; Rise       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; 6.558 ; 6.558 ; Rise       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; 6.088 ; 6.088 ; Rise       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; 4.974 ; 4.974 ; Rise       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; 6.871 ; 6.871 ; Rise       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; 5.738 ; 5.738 ; Rise       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; 6.083 ; 6.083 ; Rise       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; 5.023 ; 5.023 ; Rise       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; 4.635 ; 4.635 ; Rise       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.027 ; 0.027 ; Rise       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.027 ; 0.027 ; Rise       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 7.521 ; 7.521 ; Rise       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 1.342 ; 1.342 ; Rise       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; 6.345 ; 6.345 ; Rise       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; 5.747 ; 5.747 ; Rise       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; 4.523 ; 4.523 ; Rise       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; 5.778 ; 5.778 ; Rise       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; 5.445 ; 5.445 ; Rise       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; 5.609 ; 5.609 ; Rise       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; 7.521 ; 7.521 ; Rise       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; 4.820 ; 4.820 ; Rise       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; 4.493 ; 4.493 ; Rise       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; 5.472 ; 5.472 ; Rise       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; 5.829 ; 5.829 ; Rise       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; 5.271 ; 5.271 ; Rise       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; 5.158 ; 5.158 ; Rise       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; 5.019 ; 5.019 ; Rise       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; 5.297 ; 5.297 ; Rise       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; 6.319 ; 6.319 ; Rise       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; 6.235 ; 6.235 ; Rise       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; 6.279 ; 6.279 ; Rise       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; 6.581 ; 6.581 ; Rise       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; 6.595 ; 6.595 ; Rise       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; 6.697 ; 6.697 ; Rise       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; 5.932 ; 5.932 ; Rise       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; 5.972 ; 5.972 ; Rise       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; 6.750 ; 6.750 ; Rise       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; 6.366 ; 6.366 ; Rise       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; 5.517 ; 5.517 ; Rise       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; 6.237 ; 6.237 ; Rise       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; 5.695 ; 5.695 ; Rise       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; 6.311 ; 6.311 ; Rise       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; 5.922 ; 5.922 ; Rise       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; 5.538 ; 5.538 ; Rise       ; ALUctl[0]       ;
+; A[*]       ; ALUctl[0]  ; 7.816 ; 7.816 ; Fall       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 3.537 ; 3.537 ; Fall       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; 7.409 ; 7.409 ; Fall       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; 7.816 ; 7.816 ; Fall       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; 7.710 ; 7.710 ; Fall       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; 7.691 ; 7.691 ; Fall       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; 7.642 ; 7.642 ; Fall       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; 7.407 ; 7.407 ; Fall       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; 6.546 ; 6.546 ; Fall       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; 6.882 ; 6.882 ; Fall       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; 6.331 ; 6.331 ; Fall       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; 6.222 ; 6.222 ; Fall       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; 6.689 ; 6.689 ; Fall       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; 6.357 ; 6.357 ; Fall       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; 6.608 ; 6.608 ; Fall       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; 5.718 ; 5.718 ; Fall       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; 6.617 ; 6.617 ; Fall       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; 6.580 ; 6.580 ; Fall       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; 6.412 ; 6.412 ; Fall       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; 6.078 ; 6.078 ; Fall       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; 6.125 ; 6.125 ; Fall       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; 5.445 ; 5.445 ; Fall       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; 5.381 ; 5.381 ; Fall       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; 5.554 ; 5.554 ; Fall       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; 5.725 ; 5.725 ; Fall       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; 5.845 ; 5.845 ; Fall       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; 5.002 ; 5.002 ; Fall       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; 4.683 ; 4.683 ; Fall       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; 5.398 ; 5.398 ; Fall       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; 5.289 ; 5.289 ; Fall       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; 5.493 ; 5.493 ; Fall       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; 4.955 ; 4.955 ; Fall       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; 3.997 ; 3.997 ; Fall       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 5.715 ; 5.715 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.507 ; 0.507 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[1] ; ALUctl[0]  ; 4.472 ; 4.472 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[2] ; ALUctl[0]  ; 5.715 ; 5.715 ; Fall       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 8.389 ; 8.389 ; Fall       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 3.368 ; 3.368 ; Fall       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; 7.405 ; 7.405 ; Fall       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; 7.773 ; 7.773 ; Fall       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; 6.628 ; 6.628 ; Fall       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; 7.260 ; 7.260 ; Fall       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; 7.172 ; 7.172 ; Fall       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; 7.236 ; 7.236 ; Fall       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; 8.389 ; 8.389 ; Fall       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; 6.880 ; 6.880 ; Fall       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; 6.712 ; 6.712 ; Fall       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; 6.967 ; 6.967 ; Fall       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; 7.126 ; 7.126 ; Fall       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; 6.660 ; 6.660 ; Fall       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; 6.634 ; 6.634 ; Fall       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; 6.619 ; 6.619 ; Fall       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; 6.502 ; 6.502 ; Fall       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; 6.268 ; 6.268 ; Fall       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; 6.143 ; 6.143 ; Fall       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; 6.276 ; 6.276 ; Fall       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; 6.069 ; 6.069 ; Fall       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; 6.217 ; 6.217 ; Fall       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; 6.169 ; 6.169 ; Fall       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; 5.811 ; 5.811 ; Fall       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; 5.914 ; 5.914 ; Fall       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; 5.816 ; 5.816 ; Fall       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; 5.707 ; 5.707 ; Fall       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; 5.357 ; 5.357 ; Fall       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; 5.568 ; 5.568 ; Fall       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; 5.642 ; 5.642 ; Fall       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; 5.325 ; 5.325 ; Fall       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; 5.579 ; 5.579 ; Fall       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; 4.982 ; 4.982 ; Fall       ; ALUctl[0]       ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; A[*]       ; ALUctl[0]  ; 0.201  ; 0.201  ; Rise       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 0.201  ; 0.201  ; Rise       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; -2.510 ; -2.510 ; Rise       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; -2.524 ; -2.524 ; Rise       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; -2.320 ; -2.320 ; Rise       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; -2.584 ; -2.584 ; Rise       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; -2.604 ; -2.604 ; Rise       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; -2.470 ; -2.470 ; Rise       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; -2.591 ; -2.591 ; Rise       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; -1.910 ; -1.910 ; Rise       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; -1.893 ; -1.893 ; Rise       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; -2.046 ; -2.046 ; Rise       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; -2.232 ; -2.232 ; Rise       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; -2.222 ; -2.222 ; Rise       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; -2.335 ; -2.335 ; Rise       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; -1.936 ; -1.936 ; Rise       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; -2.208 ; -2.208 ; Rise       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; -2.831 ; -2.831 ; Rise       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; -2.782 ; -2.782 ; Rise       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; -2.665 ; -2.665 ; Rise       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; -2.663 ; -2.663 ; Rise       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; -2.475 ; -2.475 ; Rise       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; -2.547 ; -2.547 ; Rise       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; -2.368 ; -2.368 ; Rise       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; -2.761 ; -2.761 ; Rise       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; -2.897 ; -2.897 ; Rise       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; -2.660 ; -2.660 ; Rise       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; -2.156 ; -2.156 ; Rise       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; -3.012 ; -3.012 ; Rise       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; -2.581 ; -2.581 ; Rise       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; -2.728 ; -2.728 ; Rise       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; -2.174 ; -2.174 ; Rise       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; -2.003 ; -2.003 ; Rise       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.796  ; 0.796  ; Rise       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.796  ; 0.796  ; Rise       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 0.098  ; 0.098  ; Rise       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 0.098  ; 0.098  ; Rise       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; -2.803 ; -2.803 ; Rise       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; -2.478 ; -2.478 ; Rise       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; -1.947 ; -1.947 ; Rise       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; -2.572 ; -2.572 ; Rise       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; -2.425 ; -2.425 ; Rise       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; -2.509 ; -2.509 ; Rise       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; -3.361 ; -3.361 ; Rise       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; -2.147 ; -2.147 ; Rise       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; -1.924 ; -1.924 ; Rise       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; -2.441 ; -2.441 ; Rise       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; -2.622 ; -2.622 ; Rise       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; -2.352 ; -2.352 ; Rise       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; -2.314 ; -2.314 ; Rise       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; -2.232 ; -2.232 ; Rise       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; -2.383 ; -2.383 ; Rise       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; -2.847 ; -2.847 ; Rise       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; -2.722 ; -2.722 ; Rise       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; -2.716 ; -2.716 ; Rise       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; -2.926 ; -2.926 ; Rise       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; -2.923 ; -2.923 ; Rise       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; -2.949 ; -2.949 ; Rise       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; -2.590 ; -2.590 ; Rise       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; -2.596 ; -2.596 ; Rise       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; -3.020 ; -3.020 ; Rise       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; -2.811 ; -2.811 ; Rise       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; -2.432 ; -2.432 ; Rise       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; -2.802 ; -2.802 ; Rise       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; -2.563 ; -2.563 ; Rise       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; -2.856 ; -2.856 ; Rise       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; -2.621 ; -2.621 ; Rise       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; -2.406 ; -2.406 ; Rise       ; ALUctl[0]       ;
+; A[*]       ; ALUctl[0]  ; 1.675  ; 1.675  ; Fall       ; ALUctl[0]       ;
+;  A[0]      ; ALUctl[0]  ; 1.675  ; 1.675  ; Fall       ; ALUctl[0]       ;
+;  A[1]      ; ALUctl[0]  ; -1.590 ; -1.590 ; Fall       ; ALUctl[0]       ;
+;  A[2]      ; ALUctl[0]  ; -1.743 ; -1.743 ; Fall       ; ALUctl[0]       ;
+;  A[3]      ; ALUctl[0]  ; -1.797 ; -1.797 ; Fall       ; ALUctl[0]       ;
+;  A[4]      ; ALUctl[0]  ; -1.825 ; -1.825 ; Fall       ; ALUctl[0]       ;
+;  A[5]      ; ALUctl[0]  ; -1.737 ; -1.737 ; Fall       ; ALUctl[0]       ;
+;  A[6]      ; ALUctl[0]  ; -1.936 ; -1.936 ; Fall       ; ALUctl[0]       ;
+;  A[7]      ; ALUctl[0]  ; -1.307 ; -1.307 ; Fall       ; ALUctl[0]       ;
+;  A[8]      ; ALUctl[0]  ; -1.347 ; -1.347 ; Fall       ; ALUctl[0]       ;
+;  A[9]      ; ALUctl[0]  ; -1.221 ; -1.221 ; Fall       ; ALUctl[0]       ;
+;  A[10]     ; ALUctl[0]  ; -1.173 ; -1.173 ; Fall       ; ALUctl[0]       ;
+;  A[11]     ; ALUctl[0]  ; -1.613 ; -1.613 ; Fall       ; ALUctl[0]       ;
+;  A[12]     ; ALUctl[0]  ; -1.360 ; -1.360 ; Fall       ; ALUctl[0]       ;
+;  A[13]     ; ALUctl[0]  ; -1.650 ; -1.650 ; Fall       ; ALUctl[0]       ;
+;  A[14]     ; ALUctl[0]  ; -1.373 ; -1.373 ; Fall       ; ALUctl[0]       ;
+;  A[15]     ; ALUctl[0]  ; -1.465 ; -1.465 ; Fall       ; ALUctl[0]       ;
+;  A[16]     ; ALUctl[0]  ; -1.566 ; -1.566 ; Fall       ; ALUctl[0]       ;
+;  A[17]     ; ALUctl[0]  ; -1.614 ; -1.614 ; Fall       ; ALUctl[0]       ;
+;  A[18]     ; ALUctl[0]  ; -1.526 ; -1.526 ; Fall       ; ALUctl[0]       ;
+;  A[19]     ; ALUctl[0]  ; -1.578 ; -1.578 ; Fall       ; ALUctl[0]       ;
+;  A[20]     ; ALUctl[0]  ; -1.317 ; -1.317 ; Fall       ; ALUctl[0]       ;
+;  A[21]     ; ALUctl[0]  ; -1.225 ; -1.225 ; Fall       ; ALUctl[0]       ;
+;  A[22]     ; ALUctl[0]  ; -1.230 ; -1.230 ; Fall       ; ALUctl[0]       ;
+;  A[23]     ; ALUctl[0]  ; -1.365 ; -1.365 ; Fall       ; ALUctl[0]       ;
+;  A[24]     ; ALUctl[0]  ; -1.603 ; -1.603 ; Fall       ; ALUctl[0]       ;
+;  A[25]     ; ALUctl[0]  ; -1.083 ; -1.083 ; Fall       ; ALUctl[0]       ;
+;  A[26]     ; ALUctl[0]  ; -1.423 ; -1.423 ; Fall       ; ALUctl[0]       ;
+;  A[27]     ; ALUctl[0]  ; -1.440 ; -1.440 ; Fall       ; ALUctl[0]       ;
+;  A[28]     ; ALUctl[0]  ; -1.862 ; -1.862 ; Fall       ; ALUctl[0]       ;
+;  A[29]     ; ALUctl[0]  ; -1.871 ; -1.871 ; Fall       ; ALUctl[0]       ;
+;  A[30]     ; ALUctl[0]  ; -1.612 ; -1.612 ; Fall       ; ALUctl[0]       ;
+;  A[31]     ; ALUctl[0]  ; -1.501 ; -1.501 ; Fall       ; ALUctl[0]       ;
+; ALUctl[*]  ; ALUctl[0]  ; 0.922  ; 0.922  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[0] ; ALUctl[0]  ; 0.922  ; 0.922  ; Fall       ; ALUctl[0]       ;
+;  ALUctl[1] ; ALUctl[0]  ; -1.021 ; -1.021 ; Fall       ; ALUctl[0]       ;
+;  ALUctl[2] ; ALUctl[0]  ; -1.864 ; -1.864 ; Fall       ; ALUctl[0]       ;
+; B[*]       ; ALUctl[0]  ; 0.224  ; 0.224  ; Fall       ; ALUctl[0]       ;
+;  B[0]      ; ALUctl[0]  ; 0.224  ; 0.224  ; Fall       ; ALUctl[0]       ;
+;  B[1]      ; ALUctl[0]  ; -2.287 ; -2.287 ; Fall       ; ALUctl[0]       ;
+;  B[2]      ; ALUctl[0]  ; -2.310 ; -2.310 ; Fall       ; ALUctl[0]       ;
+;  B[3]      ; ALUctl[0]  ; -1.846 ; -1.846 ; Fall       ; ALUctl[0]       ;
+;  B[4]      ; ALUctl[0]  ; -2.406 ; -2.406 ; Fall       ; ALUctl[0]       ;
+;  B[5]      ; ALUctl[0]  ; -2.286 ; -2.286 ; Fall       ; ALUctl[0]       ;
+;  B[6]      ; ALUctl[0]  ; -2.538 ; -2.538 ; Fall       ; ALUctl[0]       ;
+;  B[7]      ; ALUctl[0]  ; -3.155 ; -3.155 ; Fall       ; ALUctl[0]       ;
+;  B[8]      ; ALUctl[0]  ; -2.388 ; -2.388 ; Fall       ; ALUctl[0]       ;
+;  B[9]      ; ALUctl[0]  ; -2.351 ; -2.351 ; Fall       ; ALUctl[0]       ;
+;  B[10]     ; ALUctl[0]  ; -2.557 ; -2.557 ; Fall       ; ALUctl[0]       ;
+;  B[11]     ; ALUctl[0]  ; -2.698 ; -2.698 ; Fall       ; ALUctl[0]       ;
+;  B[12]     ; ALUctl[0]  ; -2.501 ; -2.501 ; Fall       ; ALUctl[0]       ;
+;  B[13]     ; ALUctl[0]  ; -2.493 ; -2.493 ; Fall       ; ALUctl[0]       ;
+;  B[14]     ; ALUctl[0]  ; -2.454 ; -2.454 ; Fall       ; ALUctl[0]       ;
+;  B[15]     ; ALUctl[0]  ; -2.426 ; -2.426 ; Fall       ; ALUctl[0]       ;
+;  B[16]     ; ALUctl[0]  ; -2.322 ; -2.322 ; Fall       ; ALUctl[0]       ;
+;  B[17]     ; ALUctl[0]  ; -2.187 ; -2.187 ; Fall       ; ALUctl[0]       ;
+;  B[18]     ; ALUctl[0]  ; -2.112 ; -2.112 ; Fall       ; ALUctl[0]       ;
+;  B[19]     ; ALUctl[0]  ; -2.124 ; -2.124 ; Fall       ; ALUctl[0]       ;
+;  B[20]     ; ALUctl[0]  ; -2.333 ; -2.333 ; Fall       ; ALUctl[0]       ;
+;  B[21]     ; ALUctl[0]  ; -2.374 ; -2.374 ; Fall       ; ALUctl[0]       ;
+;  B[22]     ; ALUctl[0]  ; -2.231 ; -2.231 ; Fall       ; ALUctl[0]       ;
+;  B[23]     ; ALUctl[0]  ; -2.220 ; -2.220 ; Fall       ; ALUctl[0]       ;
+;  B[24]     ; ALUctl[0]  ; -2.333 ; -2.333 ; Fall       ; ALUctl[0]       ;
+;  B[25]     ; ALUctl[0]  ; -2.252 ; -2.252 ; Fall       ; ALUctl[0]       ;
+;  B[26]     ; ALUctl[0]  ; -2.074 ; -2.074 ; Fall       ; ALUctl[0]       ;
+;  B[27]     ; ALUctl[0]  ; -2.218 ; -2.218 ; Fall       ; ALUctl[0]       ;
+;  B[28]     ; ALUctl[0]  ; -2.131 ; -2.131 ; Fall       ; ALUctl[0]       ;
+;  B[29]     ; ALUctl[0]  ; -2.067 ; -2.067 ; Fall       ; ALUctl[0]       ;
+;  B[30]     ; ALUctl[0]  ; -2.146 ; -2.146 ; Fall       ; ALUctl[0]       ;
+;  B[31]     ; ALUctl[0]  ; -2.065 ; -2.065 ; Fall       ; ALUctl[0]       ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; Zero        ; ALUctl[0]  ; 9.341  ; 9.341  ; Rise       ; ALUctl[0]       ;
+; ALUOut[*]   ; ALUctl[0]  ; 11.261 ; 11.261 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[0]  ; ALUctl[0]  ; 9.553  ; 9.553  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[1]  ; ALUctl[0]  ; 10.013 ; 10.013 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[2]  ; ALUctl[0]  ; 9.341  ; 9.341  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[3]  ; ALUctl[0]  ; 10.017 ; 10.017 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[4]  ; ALUctl[0]  ; 9.792  ; 9.792  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[5]  ; ALUctl[0]  ; 9.571  ; 9.571  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[6]  ; ALUctl[0]  ; 9.923  ; 9.923  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[7]  ; ALUctl[0]  ; 8.915  ; 8.915  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[8]  ; ALUctl[0]  ; 9.963  ; 9.963  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[9]  ; ALUctl[0]  ; 9.884  ; 9.884  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[10] ; ALUctl[0]  ; 9.001  ; 9.001  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[11] ; ALUctl[0]  ; 10.150 ; 10.150 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[12] ; ALUctl[0]  ; 8.818  ; 8.818  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[13] ; ALUctl[0]  ; 10.179 ; 10.179 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[14] ; ALUctl[0]  ; 8.839  ; 8.839  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[15] ; ALUctl[0]  ; 8.879  ; 8.879  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[16] ; ALUctl[0]  ; 10.106 ; 10.106 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[17] ; ALUctl[0]  ; 8.889  ; 8.889  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[18] ; ALUctl[0]  ; 9.232  ; 9.232  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[19] ; ALUctl[0]  ; 9.916  ; 9.916  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[20] ; ALUctl[0]  ; 8.656  ; 8.656  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[21] ; ALUctl[0]  ; 9.284  ; 9.284  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[22] ; ALUctl[0]  ; 10.362 ; 10.362 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[23] ; ALUctl[0]  ; 10.164 ; 10.164 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[24] ; ALUctl[0]  ; 9.718  ; 9.718  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[25] ; ALUctl[0]  ; 8.866  ; 8.866  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[26] ; ALUctl[0]  ; 9.392  ; 9.392  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[27] ; ALUctl[0]  ; 10.125 ; 10.125 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[28] ; ALUctl[0]  ; 10.093 ; 10.093 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[29] ; ALUctl[0]  ; 9.148  ; 9.148  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[30] ; ALUctl[0]  ; 9.817  ; 9.817  ; Fall       ; ALUctl[0]       ;
+;  ALUOut[31] ; ALUctl[0]  ; 11.261 ; 11.261 ; Fall       ; ALUctl[0]       ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; Zero        ; ALUctl[0]  ; 4.954 ; 4.954 ; Rise       ; ALUctl[0]       ;
+; ALUOut[*]   ; ALUctl[0]  ; 4.612 ; 4.612 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[0]  ; ALUctl[0]  ; 5.040 ; 5.040 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[1]  ; ALUctl[0]  ; 5.214 ; 5.214 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[2]  ; ALUctl[0]  ; 4.955 ; 4.955 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[3]  ; ALUctl[0]  ; 5.212 ; 5.212 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[4]  ; ALUctl[0]  ; 5.154 ; 5.154 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[5]  ; ALUctl[0]  ; 5.057 ; 5.057 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[6]  ; ALUctl[0]  ; 5.168 ; 5.168 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[7]  ; ALUctl[0]  ; 4.734 ; 4.734 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[8]  ; ALUctl[0]  ; 5.228 ; 5.228 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[9]  ; ALUctl[0]  ; 5.136 ; 5.136 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[10] ; ALUctl[0]  ; 4.792 ; 4.792 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[11] ; ALUctl[0]  ; 5.307 ; 5.307 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[12] ; ALUctl[0]  ; 4.680 ; 4.680 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[13] ; ALUctl[0]  ; 5.293 ; 5.293 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[14] ; ALUctl[0]  ; 4.692 ; 4.692 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[15] ; ALUctl[0]  ; 4.703 ; 4.703 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[16] ; ALUctl[0]  ; 5.287 ; 5.287 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[17] ; ALUctl[0]  ; 4.713 ; 4.713 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[18] ; ALUctl[0]  ; 4.843 ; 4.843 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[19] ; ALUctl[0]  ; 5.170 ; 5.170 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[20] ; ALUctl[0]  ; 4.612 ; 4.612 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[21] ; ALUctl[0]  ; 4.873 ; 4.873 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[22] ; ALUctl[0]  ; 5.363 ; 5.363 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[23] ; ALUctl[0]  ; 5.279 ; 5.279 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[24] ; ALUctl[0]  ; 5.083 ; 5.083 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[25] ; ALUctl[0]  ; 4.715 ; 4.715 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[26] ; ALUctl[0]  ; 4.995 ; 4.995 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[27] ; ALUctl[0]  ; 5.288 ; 5.288 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[28] ; ALUctl[0]  ; 5.269 ; 5.269 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[29] ; ALUctl[0]  ; 4.874 ; 4.874 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[30] ; ALUctl[0]  ; 5.165 ; 5.165 ; Fall       ; ALUctl[0]       ;
+;  ALUOut[31] ; ALUctl[0]  ; 5.959 ; 5.959 ; Fall       ; ALUctl[0]       ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------+
+; Setup Transfers                                                    ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; ALUctl[0]  ; ALUctl[0] ; 1        ; 1        ; 90       ; 90       ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------+
+; Hold Transfers                                                     ;
++------------+-----------+----------+----------+----------+----------+
+; From Clock ; To Clock  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-----------+----------+----------+----------+----------+
+; ALUctl[0]  ; ALUctl[0] ; 1        ; 1        ; 90       ; 90       ;
++------------+-----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 66    ; 66   ;
+; Unconstrained Input Port Paths  ; 1215  ; 1215 ;
+; Unconstrained Output Ports      ; 33    ; 33   ;
+; Unconstrained Output Port Paths ; 33    ; 33   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Nov 15 15:32:30 2020
+Info: Command: quartus_sta ula -c ula
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 33 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ula.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name ALUctl[0] ALUctl[0]
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: Mux34~0  from: datad  to: combout
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.007
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.007        -0.007 ALUctl[0] 
+Info (332146): Worst-case hold slack is -0.922
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.922       -25.702 ALUctl[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -1.222 ALUctl[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: Mux34~0  from: datad  to: combout
+Info (332146): Worst-case setup slack is 0.647
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.647         0.000 ALUctl[0] 
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case hold slack is -0.753
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.753       -22.259 ALUctl[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.222        -1.222 ALUctl[0] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 331 megabytes
+    Info: Processing ended: Sun Nov 15 15:32:31 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

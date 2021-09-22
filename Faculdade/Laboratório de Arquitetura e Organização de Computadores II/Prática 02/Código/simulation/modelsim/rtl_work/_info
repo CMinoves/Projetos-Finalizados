@@ -1,0 +1,145 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Cristhian\Documents\CEFET\6 Semestre (ERE)\LAOC II\Prática 02\Pratica bruno 2 fix\Pratica bruno 2\Pratica bruno 2\simulation\modelsim
+vcounter
+IejdNI3Wlk`>YQk`<FLbDC0
+Vo:f97[=7e=EcHe^8_GaZ70
+Z1 dC:\Users\Cristhian\Documents\CEFET\6 Semestre (ERE)\LAOC II\Prática 02\Pratica bruno 2 fix\Pratica bruno 2\Pratica bruno 2\simulation\modelsim
+Z2 w1614170013
+Z3 8C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v
+Z4 FC:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v
+L0 19
+Z5 OV;L;10.1d;51
+r1
+31
+Z6 !s108 1614207389.387000
+Z7 !s107 C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2|C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work {+incdir+C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2} -O0
+!i10b 1
+!s100 n]0CUPC?N`oW>9OGLCdPC1
+!s85 0
+!s101 -O0
+vdec3to8
+IT<;6a;OlU1Jj:hgO[aizg3
+V3MQ7SOW6nNK?k^ze_@^7O1
+R1
+R2
+R3
+R4
+L0 187
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 RnSeMG:l]nZo5kb^IPEk70
+!s85 0
+!s101 -O0
+vmemory2
+!i10b 1
+!s100 =i6@YlWS5;P_b^i2`@hSd1
+IJNG4EdM8IGjaM68X:PC=T2
+VAjGXXOXzl@05D?Y<DTfgG1
+R1
+w1614003552
+8C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/memory2.v
+FC:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/memory2.v
+L0 39
+R5
+r1
+!s85 0
+31
+!s108 1614207389.855000
+!s107 C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/memory2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2|C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/memory2.v|
+!s101 -O0
+R9
+R10
+vpratica2
+I9iJ40Hk5j<U;d^S4X1=Q`1
+VGDFGVjCRB^22e4Da=W[Rm2
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 R6EBV8S`k3gUP9bDT<9Uj1
+!s85 0
+!s101 -O0
+vprocessor
+IDgK]BS>OgUb]KkCbf1i152
+V_zMLcUDe8?N]_B53dUTl12
+R1
+R2
+R3
+R4
+L0 31
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 bTj^=TJ1fX2^b;`o[Hhfd1
+!s85 0
+!s101 -O0
+vregn
+I0aL=RgE2eNZX6gk;@Jzal1
+VUc6I3VM5DDQ[zOJ4a2HfK0
+R1
+R2
+R3
+R4
+L0 211
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 @FN0FBkZBj:830dR=zO`N3
+!s85 0
+!s101 -O0
+vupcount
+IhIQUd4LzMF6>fkA62TfSQ2
+V6F[W^nTWj`kicHA9eP>;d3
+R1
+R2
+R3
+R4
+L0 175
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+!i10b 1
+!s100 X^HR?CA9I^hXd^06UQe[o0
+!s85 0
+!s101 -O0

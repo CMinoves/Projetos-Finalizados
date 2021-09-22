@@ -1,0 +1,13 @@
+Os experimentos mostraram que quando a árvore é criada a partir de elementos aleatórios, o 
+número de comparações é muito menor do que o caso de números ordenados. Esse resultado 
+já era de se esperar, pois enquanto a complexidade de busca de uma árvore aleatória é 
+O(logn) e, quando ordenada, torna-se O(n).
+
+No entanto, em se tratando de tempo de execução, houve algumas alterações imprevistas: em 
+média, o tempo dos experimentos ficaram muito semelhantes, com exceção da árvore de 1000 
+elementos, que teve um tempo sensivelmente maior no caso ordenado. Além disso, era 
+esperado que conforme aumentasse o número de elementos, o tempo de busca também fosse 
+maior, o que não ocorreu.
+
+Especula-se que um provável erro no JDK ao usar a função System.nanoTime() tenha 
+acarretado nessa discrepância entre os valores de tempo esperados e os valores obtidos.

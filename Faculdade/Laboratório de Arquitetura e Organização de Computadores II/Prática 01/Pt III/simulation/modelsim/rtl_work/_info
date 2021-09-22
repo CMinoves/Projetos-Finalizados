@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Cristhian\Documents\CEFET\6 Semestre (ERE)\LAOC II\Prática 01\Prática 01_3\BrunoRochaRibeiro_CristhianMinoves\parte3\simulation\modelsim
+vchoose_data
+!i10b 1
+!s100 HnMhJh?D0XG@YcJEn`>bF3
+IWI3KH<X>;kCoRndn19Ri[2
+VUh]l:NDLkOfB4B?HhTJg_2
+Z1 dC:\Users\Cristhian\Documents\CEFET\6 Semestre (ERE)\LAOC II\Prática 01\Prática 01_3\BrunoRochaRibeiro_CristhianMinoves\parte3\simulation\modelsim
+Z2 w1613071966
+Z3 8C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v
+Z4 FC:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v
+L0 2
+Z5 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z6 !s108 1613072201.013000
+Z7 !s107 C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3|C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v|
+!s101 -O0
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work {+incdir+C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3} -O0
+vparte3
+!i10b 1
+!s100 ao907GVVzCD=?0JNmMaeE2
+I1KkFWaJG<O=m8=5Zo@9a91
+V>2]WVWh04i;8lWKJdMA2M0
+R1
+R2
+R3
+R4
+L0 27
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10

@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'ALUctl[0]'
+Slack : -0.007
+TNS   : -0.007
+
+Type  : Slow Model Hold 'ALUctl[0]'
+Slack : -0.922
+TNS   : -25.702
+
+Type  : Slow Model Minimum Pulse Width 'ALUctl[0]'
+Slack : -1.222
+TNS   : -1.222
+
+Type  : Fast Model Setup 'ALUctl[0]'
+Slack : 0.647
+TNS   : 0.000
+
+Type  : Fast Model Hold 'ALUctl[0]'
+Slack : -0.753
+TNS   : -22.259
+
+Type  : Fast Model Minimum Pulse Width 'ALUctl[0]'
+Slack : -1.222
+TNS   : -1.222
+
+------------------------------------------------------------

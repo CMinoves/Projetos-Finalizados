@@ -1,0 +1,10 @@
+module Mex2 (
+	clock,
+	data,
+	rdaddress,
+	wraddress,
+	wren,
+	q);
+	
+
+endmodule

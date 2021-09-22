@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Sala Minoves\Documents\Cristhian\CEFET\LAOC II\Prática 01_2\simulation\modelsim
+vEx2
+!i10b 1
+!s100 ^7C[=l1RMBaYJA;[;M@<l3
+ISNJf^h32akFJX4Mh33eI42
+VEblE;fg2D5`_7N4iNiI]N2
+Z1 dC:\Users\Sala Minoves\Documents\Cristhian\CEFET\LAOC II\Prática 01_2\simulation\modelsim
+w1611092444
+8C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2/Ex2.v
+FC:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2/Ex2.v
+L0 39
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1611170468.630000
+!s107 C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2/Ex2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2|C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2/Ex2.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work {+incdir+C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2} -O0
+n@ex2

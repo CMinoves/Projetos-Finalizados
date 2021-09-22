@@ -1,0 +1,28 @@
+|state_machine2
+acao[0] => Equal0.IN3
+acao[0] => Equal1.IN3
+acao[0] => Mux0.IN4
+acao[0] => Mux1.IN4
+acao[0] => Mux2.IN4
+acao[0] => Decoder0.IN1
+acao[0] => Selector6.IN2
+acao[1] => Equal0.IN2
+acao[1] => Equal1.IN2
+acao[1] => Mux0.IN3
+acao[1] => Mux1.IN3
+acao[1] => Mux2.IN3
+acao[1] => Decoder0.IN0
+escrita[0] <= escrita[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+escrita[1] <= escrita[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clock => dataValueReply~reg0.CLK
+clock => sharers[0]~reg0.CLK
+clock => sharers[1]~reg0.CLK
+clock => escrita[0]~reg0.CLK
+clock => escrita[1]~reg0.CLK
+clock => estado~2.DATAIN
+dataWriteBack => ~NO_FANOUT~
+dataValueReply <= dataValueReply~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sharers[0] <= sharers[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sharers[1] <= sharers[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

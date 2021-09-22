@@ -1,0 +1,1508 @@
+TimeQuest Timing Analyzer report for pratica2
+Wed Feb 24 19:52:25 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'PClock'
+ 12. Slow Model Setup: 'MClock'
+ 13. Slow Model Hold: 'PClock'
+ 14. Slow Model Hold: 'MClock'
+ 15. Slow Model Minimum Pulse Width: 'MClock'
+ 16. Slow Model Minimum Pulse Width: 'PClock'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'PClock'
+ 27. Fast Model Setup: 'MClock'
+ 28. Fast Model Hold: 'PClock'
+ 29. Fast Model Hold: 'MClock'
+ 30. Fast Model Minimum Pulse Width: 'MClock'
+ 31. Fast Model Minimum Pulse Width: 'PClock'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; pratica2                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; MClock     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { MClock } ;
+; PClock     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { PClock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                          ;
++-----------+-----------------+------------+-------------------------------------------------------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note                                                  ;
++-----------+-----------------+------------+-------------------------------------------------------+
+; 87.74 MHz ; 87.74 MHz       ; PClock     ;                                                       ;
+; 616.9 MHz ; 260.01 MHz      ; MClock     ; limit due to high minimum pulse width violation (tch) ;
++-----------+-----------------+------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------+
+; Slow Model Setup Summary         ;
++--------+---------+---------------+
+; Clock  ; Slack   ; End Point TNS ;
++--------+---------+---------------+
+; PClock ; -10.397 ; -1417.114     ;
+; MClock ; -0.621  ; -4.308        ;
++--------+---------+---------------+
+
+
++--------------------------------+
+; Slow Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; PClock ; 0.391 ; 0.000         ;
+; MClock ; 0.526 ; 0.000         ;
++--------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; MClock ; -1.423 ; -20.610              ;
+; PClock ; -1.380 ; -172.380             ;
++--------+--------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'PClock'                                                                                                                                        ;
++---------+------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -10.397 ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.432     ;
+; -10.355 ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.390     ;
+; -10.288 ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.323     ;
+; -10.279 ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.314     ;
+; -10.238 ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.273     ;
+; -10.196 ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.231     ;
+; -10.187 ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.222     ;
+; -10.178 ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.213     ;
+; -10.167 ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.202     ;
+; -10.153 ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 11.189     ;
+; -10.129 ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.164     ;
+; -10.125 ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.160     ;
+; -10.120 ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.155     ;
+; -10.096 ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.131     ;
+; -10.070 ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 11.106     ;
+; -10.058 ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.093     ;
+; -10.054 ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.089     ;
+; -10.049 ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.084     ;
+; -10.028 ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.063     ;
+; -10.025 ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.060     ;
+; -10.019 ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.054     ;
+; -9.994  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 11.030     ;
+; -9.987  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.022     ;
+; -9.983  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.018     ;
+; -9.978  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 11.013     ;
+; -9.974  ; processor:processador|regn:reg_IR|Q[4]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 11.010     ;
+; -9.957  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.992     ;
+; -9.954  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.989     ;
+; -9.948  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.983     ;
+; -9.923  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.959     ;
+; -9.916  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.951     ;
+; -9.912  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.947     ;
+; -9.911  ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.947     ;
+; -9.907  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.942     ;
+; -9.886  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.921     ;
+; -9.883  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.918     ;
+; -9.877  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.912     ;
+; -9.852  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.888     ;
+; -9.845  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.880     ;
+; -9.841  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.876     ;
+; -9.840  ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.876     ;
+; -9.836  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.871     ;
+; -9.815  ; processor:processador|regn:reg_IR|Q[4]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.851     ;
+; -9.815  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.850     ;
+; -9.812  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.847     ;
+; -9.806  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.841     ;
+; -9.800  ; processor:processador|regn:reg_IR|Q[0]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.835     ;
+; -9.781  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.817     ;
+; -9.776  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.809     ;
+; -9.774  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.809     ;
+; -9.770  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.805     ;
+; -9.769  ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.805     ;
+; -9.767  ; processor:processador|regn:reg_IR|Q[5]   ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.803     ;
+; -9.765  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.800     ;
+; -9.744  ; processor:processador|regn:reg_IR|Q[4]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.780     ;
+; -9.744  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.779     ;
+; -9.741  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.776     ;
+; -9.735  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.770     ;
+; -9.734  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.767     ;
+; -9.710  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.746     ;
+; -9.703  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.738     ;
+; -9.699  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.734     ;
+; -9.698  ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.734     ;
+; -9.694  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.729     ;
+; -9.673  ; processor:processador|regn:reg_IR|Q[4]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.709     ;
+; -9.673  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.708     ;
+; -9.667  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.700     ;
+; -9.664  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.699     ;
+; -9.658  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.691     ;
+; -9.641  ; processor:processador|regn:reg_IR|Q[0]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.676     ;
+; -9.639  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.675     ;
+; -9.632  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.667     ;
+; -9.627  ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.663     ;
+; -9.623  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.658     ;
+; -9.608  ; processor:processador|regn:reg_IR|Q[5]   ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.644     ;
+; -9.602  ; processor:processador|regn:reg_IR|Q[4]   ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.638     ;
+; -9.602  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.637     ;
+; -9.594  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[6]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.630     ;
+; -9.593  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.628     ;
+; -9.587  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_7|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.620     ;
+; -9.570  ; processor:processador|regn:reg_IR|Q[0]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.605     ;
+; -9.568  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.604     ;
+; -9.566  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.599     ;
+; -9.557  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.590     ;
+; -9.556  ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.592     ;
+; -9.552  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[6]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.588     ;
+; -9.545  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_7|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.578     ;
+; -9.537  ; processor:processador|regn:reg_IR|Q[5]   ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.573     ;
+; -9.532  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 10.566     ;
+; -9.531  ; processor:processador|regn:reg_IR|Q[4]   ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.567     ;
+; -9.531  ; processor:processador|regn:reg_IR|Q[7]   ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.566     ;
+; -9.523  ; processor:processador|regn:reg_IR|Q[8]   ; processor:processador|regn:reg_G|Q[5]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.559     ;
+; -9.522  ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.557     ;
+; -9.499  ; processor:processador|regn:reg_IR|Q[0]   ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 10.534     ;
+; -9.497  ; processor:processador|regn:reg_IR|Q[1]   ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.533     ;
+; -9.485  ; processor:processador|regn:reg_IR|Q[2]   ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.521     ;
+; -9.485  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_G|Q[6]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.521     ;
+; -9.481  ; processor:processador|upcount:Tstep|Q[0] ; processor:processador|regn:reg_G|Q[5]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.517     ;
+; -9.478  ; processor:processador|regn:reg_IR|Q[6]   ; processor:processador|regn:reg_7|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.003     ; 10.511     ;
+; -9.476  ; processor:processador|regn:reg_IR|Q[3]   ; processor:processador|regn:reg_G|Q[6]  ; PClock       ; PClock      ; 1.000        ; 0.000      ; 10.512     ;
++---------+------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'MClock'                                                                                                                                                                                            ;
++--------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node                                                                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.621 ; counter:contador|n[0] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.657      ;
+; -0.556 ; counter:contador|n[1] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.592      ;
+; -0.550 ; counter:contador|n[0] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.586      ;
+; -0.522 ; counter:contador|n[2] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.558      ;
+; -0.507 ; counter:contador|n[1] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; MClock       ; MClock      ; 1.000        ; 0.054      ; 1.526      ;
+; -0.498 ; counter:contador|n[2] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; MClock       ; MClock      ; 1.000        ; 0.054      ; 1.517      ;
+; -0.497 ; counter:contador|n[4] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; MClock       ; MClock      ; 1.000        ; 0.054      ; 1.516      ;
+; -0.485 ; counter:contador|n[1] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.521      ;
+; -0.484 ; counter:contador|n[3] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; MClock       ; MClock      ; 1.000        ; 0.054      ; 1.503      ;
+; -0.479 ; counter:contador|n[0] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.515      ;
+; -0.451 ; counter:contador|n[2] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.487      ;
+; -0.415 ; counter:contador|n[3] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.451      ;
+; -0.414 ; counter:contador|n[1] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.450      ;
+; -0.408 ; counter:contador|n[0] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.444      ;
+; -0.239 ; counter:contador|n[0] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; MClock       ; MClock      ; 1.000        ; 0.054      ; 1.258      ;
+; -0.065 ; counter:contador|n[2] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.101      ;
+; -0.032 ; counter:contador|n[3] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.068      ;
+; -0.031 ; counter:contador|n[1] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.067      ;
+; -0.025 ; counter:contador|n[0] ; counter:contador|n[0]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 1.061      ;
+; 0.244  ; counter:contador|n[4] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.792      ;
++--------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'PClock'                                                                                                                                         ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|upcount:Tstep|Q[1] ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_2|Q[0]    ; processor:processador|regn:reg_2|Q[0]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_0|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_2|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_1|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_0|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_0|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_0|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_1|Q[7]    ; processor:processador|regn:reg_1|Q[7]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_2|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_1|Q[9]    ; processor:processador|regn:reg_1|Q[9]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_2|Q[10]   ; processor:processador|regn:reg_2|Q[10]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_1|Q[11]   ; processor:processador|regn:reg_1|Q[11]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_0|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_0|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_0|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_0|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.657      ;
+; 0.778 ; processor:processador|regn:reg_2|Q[5]    ; processor:processador|regn:reg_0|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.044      ;
+; 0.781 ; processor:processador|regn:reg_1|Q[4]    ; processor:processador|regn:reg_0|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.047      ;
+; 0.781 ; processor:processador|regn:reg_1|Q[12]   ; processor:processador|regn:reg_0|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.047      ;
+; 0.783 ; processor:processador|regn:reg_1|Q[6]    ; processor:processador|regn:reg_0|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.049      ;
+; 0.785 ; processor:processador|regn:reg_2|Q[1]    ; processor:processador|regn:reg_0|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.051      ;
+; 0.790 ; processor:processador|regn:reg_2|Q[13]   ; processor:processador|regn:reg_0|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.056      ;
+; 0.796 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_A|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.062      ;
+; 0.798 ; processor:processador|regn:reg_1|Q[15]   ; processor:processador|regn:reg_0|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.064      ;
+; 0.800 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_1|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.066      ;
+; 0.813 ; processor:processador|regn:reg_1|Q[14]   ; processor:processador|regn:reg_0|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.079      ;
+; 0.933 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_2|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.199      ;
+; 0.936 ; processor:processador|regn:reg_1|Q[11]   ; processor:processador|regn:reg_A|Q[11]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.202      ;
+; 0.940 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_1|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.206      ;
+; 0.947 ; processor:processador|regn:reg_2|Q[14]   ; processor:processador|regn:reg_0|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.213      ;
+; 0.962 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_5|Q[12]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.227      ;
+; 0.962 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_2|Q[12]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.227      ;
+; 0.967 ; processor:processador|regn:reg_1|Q[13]   ; processor:processador|regn:reg_0|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.234      ;
+; 0.968 ; processor:processador|regn:reg_A|Q[6]    ; processor:processador|regn:reg_G|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.235      ;
+; 0.970 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_1|Q[13]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.235      ;
+; 0.970 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_A|Q[13]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.235      ;
+; 0.971 ; processor:processador|regn:reg_A|Q[12]   ; processor:processador|regn:reg_G|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.238      ;
+; 0.976 ; processor:processador|regn:reg_1|Q[0]    ; processor:processador|regn:reg_2|Q[0]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.241      ;
+; 0.977 ; processor:processador|regn:reg_1|Q[2]    ; processor:processador|regn:reg_2|Q[2]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.242      ;
+; 0.977 ; processor:processador|regn:reg_2|Q[11]   ; processor:processador|regn:reg_1|Q[11]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.242      ;
+; 0.978 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_2|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.244      ;
+; 0.985 ; processor:processador|regn:reg_2|Q[6]    ; processor:processador|regn:reg_0|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.251      ;
+; 0.988 ; processor:processador|regn:reg_2|Q[0]    ; processor:processador|regn:reg_0|Q[0]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.255      ;
+; 0.988 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_A|Q[2]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.253      ;
+; 0.993 ; processor:processador|regn:reg_1|Q[11]   ; processor:processador|regn:reg_4|Q[11]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.258      ;
+; 0.999 ; processor:processador|regn:reg_A|Q[9]    ; processor:processador|regn:reg_G|Q[9]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.266      ;
+; 1.001 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_2|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.268      ;
+; 1.001 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_0|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.268      ;
+; 1.001 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_3|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.267      ;
+; 1.001 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_2|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.267      ;
+; 1.003 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_3|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.269      ;
+; 1.003 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_2|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.269      ;
+; 1.003 ; processor:processador|regn:reg_1|Q[5]    ; processor:processador|regn:reg_0|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.270      ;
+; 1.005 ; processor:processador|regn:reg_2|Q[12]   ; processor:processador|regn:reg_0|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.272      ;
+; 1.007 ; processor:processador|regn:reg_1|Q[1]    ; processor:processador|regn:reg_0|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.274      ;
+; 1.010 ; processor:processador|regn:reg_1|Q[7]    ; processor:processador|regn:reg_4|Q[7]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.275      ;
+; 1.010 ; processor:processador|regn:reg_1|Q[9]    ; processor:processador|regn:reg_A|Q[9]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.275      ;
+; 1.010 ; processor:processador|regn:reg_A|Q[10]   ; processor:processador|regn:reg_G|Q[10]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.277      ;
+; 1.011 ; processor:processador|regn:reg_0|Q[0]    ; processor:processador|regn:reg_2|Q[0]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.276      ;
+; 1.012 ; processor:processador|regn:reg_A|Q[4]    ; processor:processador|regn:reg_G|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.279      ;
+; 1.013 ; processor:processador|regn:reg_1|Q[7]    ; processor:processador|regn:reg_A|Q[7]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.278      ;
+; 1.013 ; processor:processador|regn:reg_1|Q[9]    ; processor:processador|regn:reg_4|Q[9]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.278      ;
+; 1.013 ; processor:processador|regn:reg_2|Q[4]    ; processor:processador|regn:reg_0|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.280      ;
+; 1.016 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_1|Q[1]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.281      ;
+; 1.016 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_A|Q[1]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.281      ;
+; 1.017 ; processor:processador|regn:reg_A|Q[7]    ; processor:processador|regn:reg_G|Q[7]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.284      ;
+; 1.019 ; processor:processador|regn:reg_0|Q[11]   ; processor:processador|regn:reg_1|Q[11]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.284      ;
+; 1.028 ; processor:processador|regn:reg_A|Q[2]    ; processor:processador|regn:reg_G|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.295      ;
+; 1.046 ; processor:processador|regn:reg_0|Q[2]    ; processor:processador|regn:reg_2|Q[2]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.311      ;
+; 1.091 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_1|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.357      ;
+; 1.095 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_2|Q[4]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.360      ;
+; 1.096 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_6|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.362      ;
+; 1.100 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_2|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.366      ;
+; 1.113 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_3|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.380      ;
+; 1.114 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_4|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.381      ;
+; 1.114 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_3|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.381      ;
+; 1.114 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_5|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.381      ;
+; 1.129 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_7|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.396      ;
+; 1.131 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_5|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.398      ;
+; 1.134 ; processor:processador|regn:reg_2|Q[0]    ; processor:processador|regn:reg_A|Q[0]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.399      ;
+; 1.134 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_2|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.400      ;
+; 1.144 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_0|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.411      ;
+; 1.147 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_1|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.414      ;
+; 1.148 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_1|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.414      ;
+; 1.200 ; processor:processador|regn:reg_A|Q[0]    ; processor:processador|regn:reg_G|Q[0]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.467      ;
+; 1.207 ; processor:processador|regn:reg_1|Q[15]   ; processor:processador|regn:reg_1|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.473      ;
+; 1.209 ; processor:processador|regn:reg_0|Q[10]   ; processor:processador|regn:reg_2|Q[10]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.475      ;
+; 1.232 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_A|Q[6]    ; PClock       ; PClock      ; 0.000        ; -0.002     ; 1.496      ;
+; 1.233 ; processor:processador|regn:reg_0|Q[3]    ; processor:processador|regn:reg_1|Q[3]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.498      ;
+; 1.236 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_A|Q[14]   ; PClock       ; PClock      ; 0.000        ; -0.002     ; 1.500      ;
+; 1.237 ; processor:processador|regn:reg_A|Q[15]   ; processor:processador|regn:reg_G|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.503      ;
+; 1.239 ; processor:processador|regn:reg_A|Q[8]    ; processor:processador|regn:reg_G|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.505      ;
+; 1.244 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_5|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 1.511      ;
+; 1.245 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_1|Q[5]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.510      ;
+; 1.245 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_A|Q[5]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 1.510      ;
+; 1.247 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_7|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.003      ; 1.516      ;
+; 1.247 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_0|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.513      ;
+; 1.248 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_1|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.514      ;
+; 1.250 ; processor:processador|regn:reg_0|Q[8]    ; processor:processador|regn:reg_2|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 1.516      ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'MClock'                                                                                                                                                                                            ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node                                                                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.526 ; counter:contador|n[4] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.792      ;
+; 0.795 ; counter:contador|n[0] ; counter:contador|n[0]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.061      ;
+; 0.801 ; counter:contador|n[1] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.067      ;
+; 0.802 ; counter:contador|n[3] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.068      ;
+; 0.835 ; counter:contador|n[2] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.101      ;
+; 0.970 ; counter:contador|n[0] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; MClock       ; MClock      ; 0.000        ; 0.054      ; 1.258      ;
+; 1.178 ; counter:contador|n[0] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.444      ;
+; 1.184 ; counter:contador|n[1] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.450      ;
+; 1.185 ; counter:contador|n[3] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.451      ;
+; 1.215 ; counter:contador|n[3] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; MClock       ; MClock      ; 0.000        ; 0.054      ; 1.503      ;
+; 1.221 ; counter:contador|n[2] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.487      ;
+; 1.228 ; counter:contador|n[4] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; MClock       ; MClock      ; 0.000        ; 0.054      ; 1.516      ;
+; 1.229 ; counter:contador|n[2] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; MClock       ; MClock      ; 0.000        ; 0.054      ; 1.517      ;
+; 1.238 ; counter:contador|n[1] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; MClock       ; MClock      ; 0.000        ; 0.054      ; 1.526      ;
+; 1.249 ; counter:contador|n[0] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.515      ;
+; 1.255 ; counter:contador|n[1] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.521      ;
+; 1.292 ; counter:contador|n[2] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.558      ;
+; 1.320 ; counter:contador|n[0] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.586      ;
+; 1.326 ; counter:contador|n[1] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.592      ;
+; 1.391 ; counter:contador|n[0] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 1.657      ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'MClock'                                                                                                                                                         ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                                                                                         ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------------------------------------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; MClock ; Rise       ; MClock                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[1]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[1]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[2]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[2]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[3]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[3]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[4]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[4]                                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; MClock|combout                                                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; MClock|combout                                                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; MClock~clkctrl|inclk[0]                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; MClock~clkctrl|inclk[0]                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; MClock~clkctrl|outclk                                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; MClock~clkctrl|outclk                                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[0]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[0]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[1]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[1]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[2]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[2]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[3]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[3]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[4]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[4]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; memoria|altsyncram_component|auto_generated|ram_block1a0|clk0                                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; memoria|altsyncram_component|auto_generated|ram_block1a0|clk0                                                  ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'PClock'                                                                                 ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; PClock ; Rise       ; PClock                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_3|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_3|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_3|Q[10] ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Resetn    ; MClock     ; 0.481 ; 0.481 ; Rise       ; MClock          ;
+; Resetn    ; PClock     ; 1.560 ; 1.560 ; Rise       ; PClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Resetn    ; MClock     ; -0.251 ; -0.251 ; Rise       ; MClock          ;
+; Resetn    ; PClock     ; 0.287  ; 0.287  ; Rise       ; PClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Bus[*]    ; MClock     ; 14.045 ; 14.045 ; Rise       ; MClock          ;
+;  Bus[0]   ; MClock     ; 13.280 ; 13.280 ; Rise       ; MClock          ;
+;  Bus[1]   ; MClock     ; 12.881 ; 12.881 ; Rise       ; MClock          ;
+;  Bus[2]   ; MClock     ; 13.538 ; 13.538 ; Rise       ; MClock          ;
+;  Bus[3]   ; MClock     ; 13.060 ; 13.060 ; Rise       ; MClock          ;
+;  Bus[4]   ; MClock     ; 13.381 ; 13.381 ; Rise       ; MClock          ;
+;  Bus[5]   ; MClock     ; 12.812 ; 12.812 ; Rise       ; MClock          ;
+;  Bus[6]   ; MClock     ; 13.112 ; 13.112 ; Rise       ; MClock          ;
+;  Bus[7]   ; MClock     ; 13.939 ; 13.939 ; Rise       ; MClock          ;
+;  Bus[8]   ; MClock     ; 13.253 ; 13.253 ; Rise       ; MClock          ;
+;  Bus[9]   ; MClock     ; 13.983 ; 13.983 ; Rise       ; MClock          ;
+;  Bus[10]  ; MClock     ; 13.556 ; 13.556 ; Rise       ; MClock          ;
+;  Bus[11]  ; MClock     ; 13.260 ; 13.260 ; Rise       ; MClock          ;
+;  Bus[12]  ; MClock     ; 14.045 ; 14.045 ; Rise       ; MClock          ;
+;  Bus[13]  ; MClock     ; 13.706 ; 13.706 ; Rise       ; MClock          ;
+;  Bus[14]  ; MClock     ; 13.329 ; 13.329 ; Rise       ; MClock          ;
+;  Bus[15]  ; MClock     ; 13.173 ; 13.173 ; Rise       ; MClock          ;
+; Bus[*]    ; PClock     ; 15.771 ; 15.771 ; Rise       ; PClock          ;
+;  Bus[0]   ; PClock     ; 14.815 ; 14.815 ; Rise       ; PClock          ;
+;  Bus[1]   ; PClock     ; 14.448 ; 14.448 ; Rise       ; PClock          ;
+;  Bus[2]   ; PClock     ; 15.109 ; 15.109 ; Rise       ; PClock          ;
+;  Bus[3]   ; PClock     ; 14.651 ; 14.651 ; Rise       ; PClock          ;
+;  Bus[4]   ; PClock     ; 14.918 ; 14.918 ; Rise       ; PClock          ;
+;  Bus[5]   ; PClock     ; 14.389 ; 14.389 ; Rise       ; PClock          ;
+;  Bus[6]   ; PClock     ; 14.748 ; 14.748 ; Rise       ; PClock          ;
+;  Bus[7]   ; PClock     ; 15.604 ; 15.604 ; Rise       ; PClock          ;
+;  Bus[8]   ; PClock     ; 14.885 ; 14.885 ; Rise       ; PClock          ;
+;  Bus[9]   ; PClock     ; 15.770 ; 15.770 ; Rise       ; PClock          ;
+;  Bus[10]  ; PClock     ; 15.193 ; 15.193 ; Rise       ; PClock          ;
+;  Bus[11]  ; PClock     ; 15.047 ; 15.047 ; Rise       ; PClock          ;
+;  Bus[12]  ; PClock     ; 15.771 ; 15.771 ; Rise       ; PClock          ;
+;  Bus[13]  ; PClock     ; 15.168 ; 15.168 ; Rise       ; PClock          ;
+;  Bus[14]  ; PClock     ; 14.964 ; 14.964 ; Rise       ; PClock          ;
+;  Bus[15]  ; PClock     ; 15.097 ; 15.097 ; Rise       ; PClock          ;
+; Done      ; PClock     ; 8.381  ; 8.381  ; Rise       ; PClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Bus[*]    ; MClock     ; 12.812 ; 12.812 ; Rise       ; MClock          ;
+;  Bus[0]   ; MClock     ; 13.280 ; 13.280 ; Rise       ; MClock          ;
+;  Bus[1]   ; MClock     ; 12.881 ; 12.881 ; Rise       ; MClock          ;
+;  Bus[2]   ; MClock     ; 13.538 ; 13.538 ; Rise       ; MClock          ;
+;  Bus[3]   ; MClock     ; 13.060 ; 13.060 ; Rise       ; MClock          ;
+;  Bus[4]   ; MClock     ; 13.381 ; 13.381 ; Rise       ; MClock          ;
+;  Bus[5]   ; MClock     ; 12.812 ; 12.812 ; Rise       ; MClock          ;
+;  Bus[6]   ; MClock     ; 13.112 ; 13.112 ; Rise       ; MClock          ;
+;  Bus[7]   ; MClock     ; 13.939 ; 13.939 ; Rise       ; MClock          ;
+;  Bus[8]   ; MClock     ; 13.253 ; 13.253 ; Rise       ; MClock          ;
+;  Bus[9]   ; MClock     ; 13.983 ; 13.983 ; Rise       ; MClock          ;
+;  Bus[10]  ; MClock     ; 13.556 ; 13.556 ; Rise       ; MClock          ;
+;  Bus[11]  ; MClock     ; 13.260 ; 13.260 ; Rise       ; MClock          ;
+;  Bus[12]  ; MClock     ; 14.045 ; 14.045 ; Rise       ; MClock          ;
+;  Bus[13]  ; MClock     ; 13.706 ; 13.706 ; Rise       ; MClock          ;
+;  Bus[14]  ; MClock     ; 13.329 ; 13.329 ; Rise       ; MClock          ;
+;  Bus[15]  ; MClock     ; 13.173 ; 13.173 ; Rise       ; MClock          ;
+; Bus[*]    ; PClock     ; 6.738  ; 6.738  ; Rise       ; PClock          ;
+;  Bus[0]   ; PClock     ; 6.870  ; 6.870  ; Rise       ; PClock          ;
+;  Bus[1]   ; PClock     ; 6.738  ; 6.738  ; Rise       ; PClock          ;
+;  Bus[2]   ; PClock     ; 6.907  ; 6.907  ; Rise       ; PClock          ;
+;  Bus[3]   ; PClock     ; 6.973  ; 6.973  ; Rise       ; PClock          ;
+;  Bus[4]   ; PClock     ; 6.893  ; 6.893  ; Rise       ; PClock          ;
+;  Bus[5]   ; PClock     ; 6.745  ; 6.745  ; Rise       ; PClock          ;
+;  Bus[6]   ; PClock     ; 6.860  ; 6.860  ; Rise       ; PClock          ;
+;  Bus[7]   ; PClock     ; 7.172  ; 7.172  ; Rise       ; PClock          ;
+;  Bus[8]   ; PClock     ; 6.976  ; 6.976  ; Rise       ; PClock          ;
+;  Bus[9]   ; PClock     ; 7.152  ; 7.152  ; Rise       ; PClock          ;
+;  Bus[10]  ; PClock     ; 7.204  ; 7.204  ; Rise       ; PClock          ;
+;  Bus[11]  ; PClock     ; 6.943  ; 6.943  ; Rise       ; PClock          ;
+;  Bus[12]  ; PClock     ; 7.577  ; 7.577  ; Rise       ; PClock          ;
+;  Bus[13]  ; PClock     ; 7.006  ; 7.006  ; Rise       ; PClock          ;
+;  Bus[14]  ; PClock     ; 6.864  ; 6.864  ; Rise       ; PClock          ;
+;  Bus[15]  ; PClock     ; 6.915  ; 6.915  ; Rise       ; PClock          ;
+; Done      ; PClock     ; 7.899  ; 7.899  ; Rise       ; PClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; PClock ; -4.110 ; -543.074      ;
+; MClock ; 0.282  ; 0.000         ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Fast Model Hold Summary        ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; PClock ; 0.215 ; 0.000         ;
+; MClock ; 0.240 ; 0.000         ;
++--------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; MClock ; -1.423 ; -20.610              ;
+; PClock ; -1.380 ; -172.380             ;
++--------+--------+----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'PClock'                                                                                                                                                                                                             ;
++--------+----------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                      ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.110 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 5.140      ;
+; -4.041 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 5.071      ;
+; -4.036 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 5.066      ;
+; -4.025 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 5.056      ;
+; -4.016 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 5.046      ;
+; -3.998 ; processor:processador|upcount:Tstep|Q[1]                                                                       ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 5.028      ;
+; -3.993 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; processor:processador|regn:reg_G|Q[15] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.965      ;
+; -3.993 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; processor:processador|regn:reg_G|Q[15] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.965      ;
+; -3.993 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; processor:processador|regn:reg_G|Q[15] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.965      ;
+; -3.993 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; processor:processador|regn:reg_G|Q[15] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.965      ;
+; -3.993 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; processor:processador|regn:reg_G|Q[15] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.965      ;
+; -3.981 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 5.011      ;
+; -3.976 ; processor:processador|regn:reg_IR|Q[7]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 5.006      ;
+; -3.972 ; processor:processador|regn:reg_IR|Q[1]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 5.003      ;
+; -3.947 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.977      ;
+; -3.946 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.976      ;
+; -3.942 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.972      ;
+; -3.938 ; processor:processador|regn:reg_IR|Q[2]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.969      ;
+; -3.931 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.962      ;
+; -3.912 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.942      ;
+; -3.911 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.941      ;
+; -3.907 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.937      ;
+; -3.904 ; processor:processador|regn:reg_IR|Q[4]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.935      ;
+; -3.904 ; processor:processador|upcount:Tstep|Q[1]                                                                       ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.934      ;
+; -3.899 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; processor:processador|regn:reg_G|Q[14] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.871      ;
+; -3.899 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; processor:processador|regn:reg_G|Q[14] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.871      ;
+; -3.899 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; processor:processador|regn:reg_G|Q[14] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.871      ;
+; -3.899 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; processor:processador|regn:reg_G|Q[14] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.871      ;
+; -3.899 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; processor:processador|regn:reg_G|Q[14] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.871      ;
+; -3.896 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.927      ;
+; -3.882 ; processor:processador|regn:reg_IR|Q[7]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.912      ;
+; -3.878 ; processor:processador|regn:reg_IR|Q[1]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.909      ;
+; -3.877 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.907      ;
+; -3.876 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.906      ;
+; -3.872 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.902      ;
+; -3.869 ; processor:processador|upcount:Tstep|Q[1]                                                                       ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.899      ;
+; -3.864 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; processor:processador|regn:reg_G|Q[13] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.836      ;
+; -3.864 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; processor:processador|regn:reg_G|Q[13] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.836      ;
+; -3.864 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; processor:processador|regn:reg_G|Q[13] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.836      ;
+; -3.864 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; processor:processador|regn:reg_G|Q[13] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.836      ;
+; -3.864 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; processor:processador|regn:reg_G|Q[13] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.836      ;
+; -3.861 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.892      ;
+; -3.847 ; processor:processador|regn:reg_IR|Q[7]                                                                         ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.877      ;
+; -3.844 ; processor:processador|regn:reg_IR|Q[2]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.875      ;
+; -3.843 ; processor:processador|regn:reg_IR|Q[1]                                                                         ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.874      ;
+; -3.842 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.872      ;
+; -3.841 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.871      ;
+; -3.837 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.867      ;
+; -3.834 ; processor:processador|upcount:Tstep|Q[1]                                                                       ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.864      ;
+; -3.829 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; processor:processador|regn:reg_G|Q[12] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.801      ;
+; -3.829 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; processor:processador|regn:reg_G|Q[12] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.801      ;
+; -3.829 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; processor:processador|regn:reg_G|Q[12] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.801      ;
+; -3.829 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; processor:processador|regn:reg_G|Q[12] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.801      ;
+; -3.829 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; processor:processador|regn:reg_G|Q[12] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.801      ;
+; -3.826 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.857      ;
+; -3.823 ; processor:processador|regn:reg_IR|Q[0]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.853      ;
+; -3.820 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.850      ;
+; -3.812 ; processor:processador|regn:reg_IR|Q[7]                                                                         ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.842      ;
+; -3.810 ; processor:processador|regn:reg_IR|Q[4]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.841      ;
+; -3.809 ; processor:processador|regn:reg_IR|Q[2]                                                                         ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.840      ;
+; -3.808 ; processor:processador|regn:reg_IR|Q[1]                                                                         ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.839      ;
+; -3.807 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.837      ;
+; -3.806 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.836      ;
+; -3.803 ; processor:processador|regn:reg_IR|Q[5]                                                                         ; processor:processador|regn:reg_G|Q[15] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.834      ;
+; -3.802 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.832      ;
+; -3.799 ; processor:processador|upcount:Tstep|Q[1]                                                                       ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.829      ;
+; -3.794 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; processor:processador|regn:reg_G|Q[11] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.766      ;
+; -3.794 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; processor:processador|regn:reg_G|Q[11] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.766      ;
+; -3.794 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; processor:processador|regn:reg_G|Q[11] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.766      ;
+; -3.794 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; processor:processador|regn:reg_G|Q[11] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.766      ;
+; -3.794 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; processor:processador|regn:reg_G|Q[11] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.766      ;
+; -3.791 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.822      ;
+; -3.777 ; processor:processador|regn:reg_IR|Q[7]                                                                         ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.807      ;
+; -3.775 ; processor:processador|regn:reg_IR|Q[4]                                                                         ; processor:processador|regn:reg_G|Q[13] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.806      ;
+; -3.774 ; processor:processador|regn:reg_IR|Q[2]                                                                         ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.805      ;
+; -3.773 ; processor:processador|regn:reg_IR|Q[1]                                                                         ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.804      ;
+; -3.772 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.802      ;
+; -3.771 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_G|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.801      ;
+; -3.767 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.797      ;
+; -3.764 ; processor:processador|upcount:Tstep|Q[1]                                                                       ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.794      ;
+; -3.759 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; processor:processador|regn:reg_G|Q[10] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.731      ;
+; -3.759 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; processor:processador|regn:reg_G|Q[10] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.731      ;
+; -3.759 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; processor:processador|regn:reg_G|Q[10] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.731      ;
+; -3.759 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; processor:processador|regn:reg_G|Q[10] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.731      ;
+; -3.759 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; processor:processador|regn:reg_G|Q[10] ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.731      ;
+; -3.756 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.787      ;
+; -3.751 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.781      ;
+; -3.746 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.776      ;
+; -3.745 ; processor:processador|regn:reg_IR|Q[8]                                                                         ; processor:processador|regn:reg_7|Q[7]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.775      ;
+; -3.742 ; processor:processador|regn:reg_IR|Q[7]                                                                         ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.772      ;
+; -3.740 ; processor:processador|regn:reg_IR|Q[4]                                                                         ; processor:processador|regn:reg_G|Q[12] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.771      ;
+; -3.739 ; processor:processador|regn:reg_IR|Q[2]                                                                         ; processor:processador|regn:reg_G|Q[11] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.770      ;
+; -3.738 ; processor:processador|regn:reg_IR|Q[1]                                                                         ; processor:processador|regn:reg_G|Q[10] ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.769      ;
+; -3.737 ; processor:processador|upcount:Tstep|Q[0]                                                                       ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.767      ;
+; -3.735 ; processor:processador|regn:reg_IR|Q[3]                                                                         ; processor:processador|regn:reg_7|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.001     ; 4.766      ;
+; -3.732 ; processor:processador|regn:reg_IR|Q[6]                                                                         ; processor:processador|regn:reg_G|Q[8]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.762      ;
+; -3.729 ; processor:processador|regn:reg_IR|Q[0]                                                                         ; processor:processador|regn:reg_G|Q[14] ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.759      ;
+; -3.729 ; processor:processador|upcount:Tstep|Q[1]                                                                       ; processor:processador|regn:reg_G|Q[9]  ; PClock       ; PClock      ; 1.000        ; -0.002     ; 4.759      ;
+; -3.724 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; processor:processador|regn:reg_G|Q[9]  ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.696      ;
+; -3.724 ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; processor:processador|regn:reg_G|Q[9]  ; MClock       ; PClock      ; 1.000        ; -0.060     ; 4.696      ;
++--------+----------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'MClock'                                                                                                                                                                                           ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node                                                                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.282 ; counter:contador|n[0] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.750      ;
+; 0.314 ; counter:contador|n[1] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.718      ;
+; 0.317 ; counter:contador|n[0] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.715      ;
+; 0.318 ; counter:contador|n[1] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; MClock       ; MClock      ; 1.000        ; 0.061      ; 0.742      ;
+; 0.324 ; counter:contador|n[2] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; MClock       ; MClock      ; 1.000        ; 0.061      ; 0.736      ;
+; 0.326 ; counter:contador|n[4] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; MClock       ; MClock      ; 1.000        ; 0.061      ; 0.734      ;
+; 0.335 ; counter:contador|n[3] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; MClock       ; MClock      ; 1.000        ; 0.061      ; 0.725      ;
+; 0.336 ; counter:contador|n[2] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.696      ;
+; 0.349 ; counter:contador|n[1] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.683      ;
+; 0.352 ; counter:contador|n[0] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.680      ;
+; 0.371 ; counter:contador|n[2] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.661      ;
+; 0.384 ; counter:contador|n[3] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.648      ;
+; 0.384 ; counter:contador|n[1] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.648      ;
+; 0.387 ; counter:contador|n[0] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.645      ;
+; 0.449 ; counter:contador|n[0] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; MClock       ; MClock      ; 1.000        ; 0.061      ; 0.611      ;
+; 0.511 ; counter:contador|n[2] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.521      ;
+; 0.522 ; counter:contador|n[3] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.510      ;
+; 0.522 ; counter:contador|n[1] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.510      ;
+; 0.525 ; counter:contador|n[0] ; counter:contador|n[0]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.507      ;
+; 0.640 ; counter:contador|n[4] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 1.000        ; 0.000      ; 0.392      ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'PClock'                                                                                                                                         ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; processor:processador|upcount:Tstep|Q[1] ; processor:processador|upcount:Tstep|Q[1] ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_2|Q[0]    ; processor:processador|regn:reg_2|Q[0]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_0|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_2|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_1|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_0|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_0|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_0|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_1|Q[7]    ; processor:processador|regn:reg_1|Q[7]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_2|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_1|Q[9]    ; processor:processador|regn:reg_1|Q[9]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_2|Q[10]   ; processor:processador|regn:reg_2|Q[10]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_1|Q[11]   ; processor:processador|regn:reg_1|Q[11]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_0|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_0|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_0|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_0|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.367      ;
+; 0.359 ; processor:processador|regn:reg_1|Q[15]   ; processor:processador|regn:reg_0|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.511      ;
+; 0.375 ; processor:processador|regn:reg_2|Q[5]    ; processor:processador|regn:reg_0|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; processor:processador|regn:reg_1|Q[4]    ; processor:processador|regn:reg_0|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.528      ;
+; 0.376 ; processor:processador|regn:reg_1|Q[12]   ; processor:processador|regn:reg_0|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.528      ;
+; 0.378 ; processor:processador|regn:reg_1|Q[6]    ; processor:processador|regn:reg_0|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; processor:processador|regn:reg_2|Q[1]    ; processor:processador|regn:reg_0|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.531      ;
+; 0.383 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_A|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.535      ;
+; 0.383 ; processor:processador|regn:reg_2|Q[13]   ; processor:processador|regn:reg_0|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.535      ;
+; 0.385 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_1|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.537      ;
+; 0.397 ; processor:processador|regn:reg_1|Q[14]   ; processor:processador|regn:reg_0|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.549      ;
+; 0.434 ; processor:processador|regn:reg_2|Q[14]   ; processor:processador|regn:reg_0|Q[14]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.585      ;
+; 0.435 ; processor:processador|regn:reg_A|Q[12]   ; processor:processador|regn:reg_G|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.588      ;
+; 0.437 ; processor:processador|regn:reg_A|Q[6]    ; processor:processador|regn:reg_G|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.590      ;
+; 0.438 ; processor:processador|regn:reg_1|Q[13]   ; processor:processador|regn:reg_0|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.591      ;
+; 0.443 ; processor:processador|regn:reg_2|Q[6]    ; processor:processador|regn:reg_0|Q[6]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.594      ;
+; 0.445 ; processor:processador|regn:reg_1|Q[5]    ; processor:processador|regn:reg_0|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.598      ;
+; 0.446 ; processor:processador|regn:reg_A|Q[10]   ; processor:processador|regn:reg_G|Q[10]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.599      ;
+; 0.447 ; processor:processador|regn:reg_2|Q[12]   ; processor:processador|regn:reg_0|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.600      ;
+; 0.449 ; processor:processador|regn:reg_A|Q[4]    ; processor:processador|regn:reg_G|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.602      ;
+; 0.449 ; processor:processador|regn:reg_A|Q[9]    ; processor:processador|regn:reg_G|Q[9]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.602      ;
+; 0.449 ; processor:processador|regn:reg_1|Q[1]    ; processor:processador|regn:reg_0|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.602      ;
+; 0.451 ; processor:processador|regn:reg_0|Q[0]    ; processor:processador|regn:reg_2|Q[0]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.602      ;
+; 0.451 ; processor:processador|regn:reg_2|Q[4]    ; processor:processador|regn:reg_0|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.604      ;
+; 0.453 ; processor:processador|regn:reg_A|Q[7]    ; processor:processador|regn:reg_G|Q[7]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.606      ;
+; 0.454 ; processor:processador|regn:reg_0|Q[11]   ; processor:processador|regn:reg_1|Q[11]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.605      ;
+; 0.459 ; processor:processador|regn:reg_A|Q[2]    ; processor:processador|regn:reg_G|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.612      ;
+; 0.461 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_2|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.614      ;
+; 0.465 ; processor:processador|regn:reg_1|Q[0]    ; processor:processador|regn:reg_2|Q[0]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.616      ;
+; 0.465 ; processor:processador|regn:reg_1|Q[2]    ; processor:processador|regn:reg_2|Q[2]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.616      ;
+; 0.465 ; processor:processador|regn:reg_2|Q[11]   ; processor:processador|regn:reg_1|Q[11]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.616      ;
+; 0.466 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_2|Q[5]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.618      ;
+; 0.467 ; processor:processador|regn:reg_2|Q[0]    ; processor:processador|regn:reg_0|Q[0]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.620      ;
+; 0.467 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_A|Q[2]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.618      ;
+; 0.467 ; processor:processador|regn:reg_1|Q[11]   ; processor:processador|regn:reg_A|Q[11]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.619      ;
+; 0.467 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_5|Q[12]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.618      ;
+; 0.467 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_2|Q[12]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.618      ;
+; 0.469 ; processor:processador|regn:reg_1|Q[11]   ; processor:processador|regn:reg_4|Q[11]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.620      ;
+; 0.470 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_1|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.622      ;
+; 0.470 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_1|Q[13]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.621      ;
+; 0.470 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_A|Q[13]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.621      ;
+; 0.471 ; processor:processador|regn:reg_0|Q[2]    ; processor:processador|regn:reg_2|Q[2]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.622      ;
+; 0.474 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_2|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.627      ;
+; 0.474 ; processor:processador|regn:reg_1|Q[3]    ; processor:processador|regn:reg_0|Q[3]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.627      ;
+; 0.474 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_3|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.627      ;
+; 0.475 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_2|Q[6]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.628      ;
+; 0.475 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_3|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.628      ;
+; 0.475 ; processor:processador|regn:reg_0|Q[15]   ; processor:processador|regn:reg_2|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.628      ;
+; 0.479 ; processor:processador|regn:reg_1|Q[7]    ; processor:processador|regn:reg_4|Q[7]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.630      ;
+; 0.482 ; processor:processador|regn:reg_1|Q[7]    ; processor:processador|regn:reg_A|Q[7]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.633      ;
+; 0.482 ; processor:processador|regn:reg_1|Q[9]    ; processor:processador|regn:reg_A|Q[9]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.633      ;
+; 0.483 ; processor:processador|regn:reg_1|Q[9]    ; processor:processador|regn:reg_4|Q[9]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.634      ;
+; 0.485 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_A|Q[1]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.636      ;
+; 0.486 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_1|Q[1]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.637      ;
+; 0.529 ; processor:processador|regn:reg_1|Q[15]   ; processor:processador|regn:reg_1|Q[15]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.681      ;
+; 0.537 ; processor:processador|regn:reg_A|Q[0]    ; processor:processador|regn:reg_G|Q[0]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.690      ;
+; 0.541 ; processor:processador|regn:reg_0|Q[10]   ; processor:processador|regn:reg_2|Q[10]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.694      ;
+; 0.545 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_1|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.697      ;
+; 0.546 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_2|Q[4]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.697      ;
+; 0.549 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_6|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.701      ;
+; 0.549 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_2|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.701      ;
+; 0.549 ; processor:processador|regn:reg_0|Q[3]    ; processor:processador|regn:reg_1|Q[3]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.700      ;
+; 0.551 ; processor:processador|regn:reg_A|Q[8]    ; processor:processador|regn:reg_G|Q[8]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.702      ;
+; 0.552 ; processor:processador|regn:reg_A|Q[15]   ; processor:processador|regn:reg_G|Q[15]   ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.703      ;
+; 0.557 ; processor:processador|regn:reg_2|Q[0]    ; processor:processador|regn:reg_A|Q[0]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.708      ;
+; 0.557 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_3|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.710      ;
+; 0.558 ; processor:processador|regn:reg_0|Q[13]   ; processor:processador|regn:reg_5|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.711      ;
+; 0.559 ; processor:processador|regn:reg_0|Q[1]    ; processor:processador|regn:reg_2|Q[1]    ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.711      ;
+; 0.560 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_3|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.713      ;
+; 0.561 ; processor:processador|regn:reg_0|Q[12]   ; processor:processador|regn:reg_4|Q[12]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.714      ;
+; 0.562 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_0|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.715      ;
+; 0.564 ; processor:processador|regn:reg_0|Q[8]    ; processor:processador|regn:reg_2|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.717      ;
+; 0.566 ; processor:processador|regn:reg_2|Q[2]    ; processor:processador|regn:reg_1|Q[2]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.719      ;
+; 0.566 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_1|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.718      ;
+; 0.568 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_7|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.721      ;
+; 0.571 ; processor:processador|regn:reg_2|Q[8]    ; processor:processador|regn:reg_5|Q[8]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.724      ;
+; 0.573 ; processor:processador|regn:reg_A|Q[12]   ; processor:processador|regn:reg_G|Q[13]   ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.726      ;
+; 0.573 ; processor:processador|regn:reg_A|Q[14]   ; processor:processador|regn:reg_G|Q[14]   ; PClock       ; PClock      ; 0.000        ; 0.000      ; 0.725      ;
+; 0.576 ; processor:processador|regn:reg_0|Q[7]    ; processor:processador|regn:reg_1|Q[7]    ; PClock       ; PClock      ; 0.000        ; 0.005      ; 0.733      ;
+; 0.580 ; processor:processador|regn:reg_0|Q[6]    ; processor:processador|regn:reg_A|Q[6]    ; PClock       ; PClock      ; 0.000        ; -0.002     ; 0.730      ;
+; 0.580 ; processor:processador|regn:reg_0|Q[14]   ; processor:processador|regn:reg_A|Q[14]   ; PClock       ; PClock      ; 0.000        ; -0.002     ; 0.730      ;
+; 0.583 ; processor:processador|regn:reg_0|Q[4]    ; processor:processador|regn:reg_5|Q[4]    ; PClock       ; PClock      ; 0.000        ; 0.001      ; 0.736      ;
+; 0.584 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_1|Q[5]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.735      ;
+; 0.585 ; processor:processador|regn:reg_0|Q[5]    ; processor:processador|regn:reg_A|Q[5]    ; PClock       ; PClock      ; 0.000        ; -0.001     ; 0.736      ;
++-------+------------------------------------------+------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'MClock'                                                                                                                                                                                            ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node                                                                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.240 ; counter:contador|n[4] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.392      ;
+; 0.355 ; counter:contador|n[0] ; counter:contador|n[0]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.507      ;
+; 0.358 ; counter:contador|n[1] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; counter:contador|n[3] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.510      ;
+; 0.369 ; counter:contador|n[2] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.521      ;
+; 0.412 ; counter:contador|n[0] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ; MClock       ; MClock      ; 0.000        ; 0.061      ; 0.611      ;
+; 0.493 ; counter:contador|n[0] ; counter:contador|n[1]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.645      ;
+; 0.496 ; counter:contador|n[3] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; counter:contador|n[1] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.648      ;
+; 0.509 ; counter:contador|n[2] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.661      ;
+; 0.526 ; counter:contador|n[3] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ; MClock       ; MClock      ; 0.000        ; 0.061      ; 0.725      ;
+; 0.528 ; counter:contador|n[0] ; counter:contador|n[2]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.680      ;
+; 0.531 ; counter:contador|n[1] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.683      ;
+; 0.535 ; counter:contador|n[4] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ; MClock       ; MClock      ; 0.000        ; 0.061      ; 0.734      ;
+; 0.537 ; counter:contador|n[2] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ; MClock       ; MClock      ; 0.000        ; 0.061      ; 0.736      ;
+; 0.543 ; counter:contador|n[1] ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ; MClock       ; MClock      ; 0.000        ; 0.061      ; 0.742      ;
+; 0.544 ; counter:contador|n[2] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.696      ;
+; 0.563 ; counter:contador|n[0] ; counter:contador|n[3]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.715      ;
+; 0.566 ; counter:contador|n[1] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.718      ;
+; 0.598 ; counter:contador|n[0] ; counter:contador|n[4]                                                                                          ; MClock       ; MClock      ; 0.000        ; 0.000      ; 0.750      ;
++-------+-----------------------+----------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'MClock'                                                                                                                                                         ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                                                                                         ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------------------------------------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; MClock ; Rise       ; memory2:memoria|altsyncram:altsyncram_component|altsyncram_as71:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; MClock ; Rise       ; MClock                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[1]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[1]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[2]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[2]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[3]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[3]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; MClock ; Rise       ; counter:contador|n[4]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; MClock ; Rise       ; counter:contador|n[4]                                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; MClock|combout                                                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; MClock|combout                                                                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; MClock~clkctrl|inclk[0]                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; MClock~clkctrl|inclk[0]                                                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; MClock~clkctrl|outclk                                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; MClock~clkctrl|outclk                                                                                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[0]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[0]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[1]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[1]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[2]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[2]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[3]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[3]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; contador|n[4]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; contador|n[4]|clk                                                                                              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; MClock ; Rise       ; memoria|altsyncram_component|auto_generated|ram_block1a0|clk0                                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; MClock ; Rise       ; memoria|altsyncram_component|auto_generated|ram_block1a0|clk0                                                  ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'PClock'                                                                                 ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                 ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; PClock ; Rise       ; PClock                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_0|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_1|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_2|Q[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_3|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; PClock ; Rise       ; processor:processador|regn:reg_3|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; PClock ; Rise       ; processor:processador|regn:reg_3|Q[10] ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Resetn    ; MClock     ; -0.006 ; -0.006 ; Rise       ; MClock          ;
+; Resetn    ; PClock     ; 0.408  ; 0.408  ; Rise       ; PClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Resetn    ; MClock     ; 0.126 ; 0.126 ; Rise       ; MClock          ;
+; Resetn    ; PClock     ; 0.438 ; 0.438 ; Rise       ; PClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Bus[*]    ; MClock     ; 7.625 ; 7.625 ; Rise       ; MClock          ;
+;  Bus[0]   ; MClock     ; 7.268 ; 7.268 ; Rise       ; MClock          ;
+;  Bus[1]   ; MClock     ; 7.087 ; 7.087 ; Rise       ; MClock          ;
+;  Bus[2]   ; MClock     ; 7.405 ; 7.405 ; Rise       ; MClock          ;
+;  Bus[3]   ; MClock     ; 7.186 ; 7.186 ; Rise       ; MClock          ;
+;  Bus[4]   ; MClock     ; 7.306 ; 7.306 ; Rise       ; MClock          ;
+;  Bus[5]   ; MClock     ; 7.063 ; 7.063 ; Rise       ; MClock          ;
+;  Bus[6]   ; MClock     ; 7.188 ; 7.188 ; Rise       ; MClock          ;
+;  Bus[7]   ; MClock     ; 7.587 ; 7.587 ; Rise       ; MClock          ;
+;  Bus[8]   ; MClock     ; 7.299 ; 7.299 ; Rise       ; MClock          ;
+;  Bus[9]   ; MClock     ; 7.586 ; 7.586 ; Rise       ; MClock          ;
+;  Bus[10]  ; MClock     ; 7.420 ; 7.420 ; Rise       ; MClock          ;
+;  Bus[11]  ; MClock     ; 7.267 ; 7.267 ; Rise       ; MClock          ;
+;  Bus[12]  ; MClock     ; 7.625 ; 7.625 ; Rise       ; MClock          ;
+;  Bus[13]  ; MClock     ; 7.501 ; 7.501 ; Rise       ; MClock          ;
+;  Bus[14]  ; MClock     ; 7.294 ; 7.294 ; Rise       ; MClock          ;
+;  Bus[15]  ; MClock     ; 7.230 ; 7.230 ; Rise       ; MClock          ;
+; Bus[*]    ; PClock     ; 7.813 ; 7.813 ; Rise       ; PClock          ;
+;  Bus[0]   ; PClock     ; 7.374 ; 7.374 ; Rise       ; PClock          ;
+;  Bus[1]   ; PClock     ; 7.204 ; 7.204 ; Rise       ; PClock          ;
+;  Bus[2]   ; PClock     ; 7.520 ; 7.520 ; Rise       ; PClock          ;
+;  Bus[3]   ; PClock     ; 7.303 ; 7.303 ; Rise       ; PClock          ;
+;  Bus[4]   ; PClock     ; 7.414 ; 7.414 ; Rise       ; PClock          ;
+;  Bus[5]   ; PClock     ; 7.185 ; 7.185 ; Rise       ; PClock          ;
+;  Bus[6]   ; PClock     ; 7.313 ; 7.313 ; Rise       ; PClock          ;
+;  Bus[7]   ; PClock     ; 7.745 ; 7.745 ; Rise       ; PClock          ;
+;  Bus[8]   ; PClock     ; 7.420 ; 7.420 ; Rise       ; PClock          ;
+;  Bus[9]   ; PClock     ; 7.801 ; 7.801 ; Rise       ; PClock          ;
+;  Bus[10]  ; PClock     ; 7.546 ; 7.546 ; Rise       ; PClock          ;
+;  Bus[11]  ; PClock     ; 7.482 ; 7.482 ; Rise       ; PClock          ;
+;  Bus[12]  ; PClock     ; 7.813 ; 7.813 ; Rise       ; PClock          ;
+;  Bus[13]  ; PClock     ; 7.547 ; 7.547 ; Rise       ; PClock          ;
+;  Bus[14]  ; PClock     ; 7.419 ; 7.419 ; Rise       ; PClock          ;
+;  Bus[15]  ; PClock     ; 7.509 ; 7.509 ; Rise       ; PClock          ;
+; Done      ; PClock     ; 4.573 ; 4.573 ; Rise       ; PClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Bus[*]    ; MClock     ; 7.063 ; 7.063 ; Rise       ; MClock          ;
+;  Bus[0]   ; MClock     ; 7.268 ; 7.268 ; Rise       ; MClock          ;
+;  Bus[1]   ; MClock     ; 7.087 ; 7.087 ; Rise       ; MClock          ;
+;  Bus[2]   ; MClock     ; 7.405 ; 7.405 ; Rise       ; MClock          ;
+;  Bus[3]   ; MClock     ; 7.186 ; 7.186 ; Rise       ; MClock          ;
+;  Bus[4]   ; MClock     ; 7.306 ; 7.306 ; Rise       ; MClock          ;
+;  Bus[5]   ; MClock     ; 7.063 ; 7.063 ; Rise       ; MClock          ;
+;  Bus[6]   ; MClock     ; 7.188 ; 7.188 ; Rise       ; MClock          ;
+;  Bus[7]   ; MClock     ; 7.587 ; 7.587 ; Rise       ; MClock          ;
+;  Bus[8]   ; MClock     ; 7.299 ; 7.299 ; Rise       ; MClock          ;
+;  Bus[9]   ; MClock     ; 7.586 ; 7.586 ; Rise       ; MClock          ;
+;  Bus[10]  ; MClock     ; 7.420 ; 7.420 ; Rise       ; MClock          ;
+;  Bus[11]  ; MClock     ; 7.267 ; 7.267 ; Rise       ; MClock          ;
+;  Bus[12]  ; MClock     ; 7.625 ; 7.625 ; Rise       ; MClock          ;
+;  Bus[13]  ; MClock     ; 7.501 ; 7.501 ; Rise       ; MClock          ;
+;  Bus[14]  ; MClock     ; 7.294 ; 7.294 ; Rise       ; MClock          ;
+;  Bus[15]  ; MClock     ; 7.230 ; 7.230 ; Rise       ; MClock          ;
+; Bus[*]    ; PClock     ; 3.828 ; 3.828 ; Rise       ; PClock          ;
+;  Bus[0]   ; PClock     ; 3.889 ; 3.889 ; Rise       ; PClock          ;
+;  Bus[1]   ; PClock     ; 3.828 ; 3.828 ; Rise       ; PClock          ;
+;  Bus[2]   ; PClock     ; 3.915 ; 3.915 ; Rise       ; PClock          ;
+;  Bus[3]   ; PClock     ; 3.949 ; 3.949 ; Rise       ; PClock          ;
+;  Bus[4]   ; PClock     ; 3.896 ; 3.896 ; Rise       ; PClock          ;
+;  Bus[5]   ; PClock     ; 3.843 ; 3.843 ; Rise       ; PClock          ;
+;  Bus[6]   ; PClock     ; 3.877 ; 3.877 ; Rise       ; PClock          ;
+;  Bus[7]   ; PClock     ; 4.040 ; 4.040 ; Rise       ; PClock          ;
+;  Bus[8]   ; PClock     ; 3.957 ; 3.957 ; Rise       ; PClock          ;
+;  Bus[9]   ; PClock     ; 4.021 ; 4.021 ; Rise       ; PClock          ;
+;  Bus[10]  ; PClock     ; 4.061 ; 4.061 ; Rise       ; PClock          ;
+;  Bus[11]  ; PClock     ; 3.932 ; 3.932 ; Rise       ; PClock          ;
+;  Bus[12]  ; PClock     ; 4.220 ; 4.220 ; Rise       ; PClock          ;
+;  Bus[13]  ; PClock     ; 3.979 ; 3.979 ; Rise       ; PClock          ;
+;  Bus[14]  ; PClock     ; 3.876 ; 3.876 ; Rise       ; PClock          ;
+;  Bus[15]  ; PClock     ; 3.924 ; 3.924 ; Rise       ; PClock          ;
+; Done      ; PClock     ; 4.386 ; 4.386 ; Rise       ; PClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -10.397   ; 0.215 ; N/A      ; N/A     ; -1.423              ;
+;  MClock          ; -0.621    ; 0.240 ; N/A      ; N/A     ; -1.423              ;
+;  PClock          ; -10.397   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -1421.422 ; 0.0   ; 0.0      ; 0.0     ; -192.99             ;
+;  MClock          ; -4.308    ; 0.000 ; N/A      ; N/A     ; -20.610             ;
+;  PClock          ; -1417.114 ; 0.000 ; N/A      ; N/A     ; -172.380            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Resetn    ; MClock     ; 0.481 ; 0.481 ; Rise       ; MClock          ;
+; Resetn    ; PClock     ; 1.560 ; 1.560 ; Rise       ; PClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Resetn    ; MClock     ; 0.126 ; 0.126 ; Rise       ; MClock          ;
+; Resetn    ; PClock     ; 0.438 ; 0.438 ; Rise       ; PClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Bus[*]    ; MClock     ; 14.045 ; 14.045 ; Rise       ; MClock          ;
+;  Bus[0]   ; MClock     ; 13.280 ; 13.280 ; Rise       ; MClock          ;
+;  Bus[1]   ; MClock     ; 12.881 ; 12.881 ; Rise       ; MClock          ;
+;  Bus[2]   ; MClock     ; 13.538 ; 13.538 ; Rise       ; MClock          ;
+;  Bus[3]   ; MClock     ; 13.060 ; 13.060 ; Rise       ; MClock          ;
+;  Bus[4]   ; MClock     ; 13.381 ; 13.381 ; Rise       ; MClock          ;
+;  Bus[5]   ; MClock     ; 12.812 ; 12.812 ; Rise       ; MClock          ;
+;  Bus[6]   ; MClock     ; 13.112 ; 13.112 ; Rise       ; MClock          ;
+;  Bus[7]   ; MClock     ; 13.939 ; 13.939 ; Rise       ; MClock          ;
+;  Bus[8]   ; MClock     ; 13.253 ; 13.253 ; Rise       ; MClock          ;
+;  Bus[9]   ; MClock     ; 13.983 ; 13.983 ; Rise       ; MClock          ;
+;  Bus[10]  ; MClock     ; 13.556 ; 13.556 ; Rise       ; MClock          ;
+;  Bus[11]  ; MClock     ; 13.260 ; 13.260 ; Rise       ; MClock          ;
+;  Bus[12]  ; MClock     ; 14.045 ; 14.045 ; Rise       ; MClock          ;
+;  Bus[13]  ; MClock     ; 13.706 ; 13.706 ; Rise       ; MClock          ;
+;  Bus[14]  ; MClock     ; 13.329 ; 13.329 ; Rise       ; MClock          ;
+;  Bus[15]  ; MClock     ; 13.173 ; 13.173 ; Rise       ; MClock          ;
+; Bus[*]    ; PClock     ; 15.771 ; 15.771 ; Rise       ; PClock          ;
+;  Bus[0]   ; PClock     ; 14.815 ; 14.815 ; Rise       ; PClock          ;
+;  Bus[1]   ; PClock     ; 14.448 ; 14.448 ; Rise       ; PClock          ;
+;  Bus[2]   ; PClock     ; 15.109 ; 15.109 ; Rise       ; PClock          ;
+;  Bus[3]   ; PClock     ; 14.651 ; 14.651 ; Rise       ; PClock          ;
+;  Bus[4]   ; PClock     ; 14.918 ; 14.918 ; Rise       ; PClock          ;
+;  Bus[5]   ; PClock     ; 14.389 ; 14.389 ; Rise       ; PClock          ;
+;  Bus[6]   ; PClock     ; 14.748 ; 14.748 ; Rise       ; PClock          ;
+;  Bus[7]   ; PClock     ; 15.604 ; 15.604 ; Rise       ; PClock          ;
+;  Bus[8]   ; PClock     ; 14.885 ; 14.885 ; Rise       ; PClock          ;
+;  Bus[9]   ; PClock     ; 15.770 ; 15.770 ; Rise       ; PClock          ;
+;  Bus[10]  ; PClock     ; 15.193 ; 15.193 ; Rise       ; PClock          ;
+;  Bus[11]  ; PClock     ; 15.047 ; 15.047 ; Rise       ; PClock          ;
+;  Bus[12]  ; PClock     ; 15.771 ; 15.771 ; Rise       ; PClock          ;
+;  Bus[13]  ; PClock     ; 15.168 ; 15.168 ; Rise       ; PClock          ;
+;  Bus[14]  ; PClock     ; 14.964 ; 14.964 ; Rise       ; PClock          ;
+;  Bus[15]  ; PClock     ; 15.097 ; 15.097 ; Rise       ; PClock          ;
+; Done      ; PClock     ; 8.381  ; 8.381  ; Rise       ; PClock          ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Bus[*]    ; MClock     ; 7.063 ; 7.063 ; Rise       ; MClock          ;
+;  Bus[0]   ; MClock     ; 7.268 ; 7.268 ; Rise       ; MClock          ;
+;  Bus[1]   ; MClock     ; 7.087 ; 7.087 ; Rise       ; MClock          ;
+;  Bus[2]   ; MClock     ; 7.405 ; 7.405 ; Rise       ; MClock          ;
+;  Bus[3]   ; MClock     ; 7.186 ; 7.186 ; Rise       ; MClock          ;
+;  Bus[4]   ; MClock     ; 7.306 ; 7.306 ; Rise       ; MClock          ;
+;  Bus[5]   ; MClock     ; 7.063 ; 7.063 ; Rise       ; MClock          ;
+;  Bus[6]   ; MClock     ; 7.188 ; 7.188 ; Rise       ; MClock          ;
+;  Bus[7]   ; MClock     ; 7.587 ; 7.587 ; Rise       ; MClock          ;
+;  Bus[8]   ; MClock     ; 7.299 ; 7.299 ; Rise       ; MClock          ;
+;  Bus[9]   ; MClock     ; 7.586 ; 7.586 ; Rise       ; MClock          ;
+;  Bus[10]  ; MClock     ; 7.420 ; 7.420 ; Rise       ; MClock          ;
+;  Bus[11]  ; MClock     ; 7.267 ; 7.267 ; Rise       ; MClock          ;
+;  Bus[12]  ; MClock     ; 7.625 ; 7.625 ; Rise       ; MClock          ;
+;  Bus[13]  ; MClock     ; 7.501 ; 7.501 ; Rise       ; MClock          ;
+;  Bus[14]  ; MClock     ; 7.294 ; 7.294 ; Rise       ; MClock          ;
+;  Bus[15]  ; MClock     ; 7.230 ; 7.230 ; Rise       ; MClock          ;
+; Bus[*]    ; PClock     ; 3.828 ; 3.828 ; Rise       ; PClock          ;
+;  Bus[0]   ; PClock     ; 3.889 ; 3.889 ; Rise       ; PClock          ;
+;  Bus[1]   ; PClock     ; 3.828 ; 3.828 ; Rise       ; PClock          ;
+;  Bus[2]   ; PClock     ; 3.915 ; 3.915 ; Rise       ; PClock          ;
+;  Bus[3]   ; PClock     ; 3.949 ; 3.949 ; Rise       ; PClock          ;
+;  Bus[4]   ; PClock     ; 3.896 ; 3.896 ; Rise       ; PClock          ;
+;  Bus[5]   ; PClock     ; 3.843 ; 3.843 ; Rise       ; PClock          ;
+;  Bus[6]   ; PClock     ; 3.877 ; 3.877 ; Rise       ; PClock          ;
+;  Bus[7]   ; PClock     ; 4.040 ; 4.040 ; Rise       ; PClock          ;
+;  Bus[8]   ; PClock     ; 3.957 ; 3.957 ; Rise       ; PClock          ;
+;  Bus[9]   ; PClock     ; 4.021 ; 4.021 ; Rise       ; PClock          ;
+;  Bus[10]  ; PClock     ; 4.061 ; 4.061 ; Rise       ; PClock          ;
+;  Bus[11]  ; PClock     ; 3.932 ; 3.932 ; Rise       ; PClock          ;
+;  Bus[12]  ; PClock     ; 4.220 ; 4.220 ; Rise       ; PClock          ;
+;  Bus[13]  ; PClock     ; 3.979 ; 3.979 ; Rise       ; PClock          ;
+;  Bus[14]  ; PClock     ; 3.876 ; 3.876 ; Rise       ; PClock          ;
+;  Bus[15]  ; PClock     ; 3.924 ; 3.924 ; Rise       ; PClock          ;
+; Done      ; PClock     ; 4.386 ; 4.386 ; Rise       ; PClock          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; MClock     ; MClock   ; 20       ; 0        ; 0        ; 0        ;
+; MClock     ; PClock   ; 1445     ; 0        ; 0        ; 0        ;
+; PClock     ; PClock   ; 1002585  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; MClock     ; MClock   ; 20       ; 0        ; 0        ; 0        ;
+; MClock     ; PClock   ; 1445     ; 0        ; 0        ; 0        ;
+; PClock     ; PClock   ; 1002585  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 7     ; 7    ;
+; Unconstrained Output Ports      ; 17    ; 17   ;
+; Unconstrained Output Port Paths ; 404   ; 404  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Feb 24 19:52:23 2021
+Info: Command: quartus_sta pratica2 -c pratica2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'pratica2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name PClock PClock
+    Info (332105): create_clock -period 1.000 -name MClock MClock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -10.397
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -10.397     -1417.114 PClock 
+    Info (332119):    -0.621        -4.308 MClock 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 PClock 
+    Info (332119):     0.526         0.000 MClock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.423
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.423       -20.610 MClock 
+    Info (332119):    -1.380      -172.380 PClock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.110
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.110      -543.074 PClock 
+    Info (332119):     0.282         0.000 MClock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 PClock 
+    Info (332119):     0.240         0.000 MClock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.423
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.423       -20.610 MClock 
+    Info (332119):    -1.380      -172.380 PClock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4548 megabytes
+    Info: Processing ended: Wed Feb 24 19:52:25 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

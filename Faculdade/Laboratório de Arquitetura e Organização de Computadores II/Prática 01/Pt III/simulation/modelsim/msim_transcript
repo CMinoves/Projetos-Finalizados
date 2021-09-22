@@ -1,0 +1,52 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do parte3_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/6\ Semestre\ (ERE)/LAOC\ II/Prática\ 01/Prática\ 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3 {C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module choose_data
+# -- Compiling module parte3
+# 
+# Top level modules:
+# 	parte3
+# 
+vsim work.parte3
+# vsim work.parte3 
+# Loading work.parte3
+# Loading work.choose_data
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(57): [PCDPC] - Port size (9 or 9) does not match connection size (3) for port 'd0'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(2).
+# 
+#         Region: /parte3/mux_boladao
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(57): [PCDPC] - Port size (9 or 9) does not match connection size (3) for port 'd1'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(2).
+# 
+#         Region: /parte3/mux_boladao
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(57): [PCDPC] - Port size (9 or 9) does not match connection size (3) for port 'd2'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(2).
+# 
+#         Region: /parte3/mux_boladao
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(57): [PCDPC] - Port size (9 or 9) does not match connection size (3) for port 'd3'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 01/Prática 01_3/BrunoRochaRibeiro_CristhianMinoves/parte3/parte3.v(2).
+# 
+#         Region: /parte3/mux_boladao
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 200ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/parte3/clock
+wave create -driver freeze -pattern constant -value 011 -range 2 0 -starttime 0ps -endtime 1000ps sim:/parte3/dataIn
+wave create -driver freeze -pattern constant -value 110011 -range 4 0 -starttime 0ps -endtime 1000ps sim:/parte3/address
+wave create -driver freeze -pattern constant -value 0 -starttime 0ps -endtime 1000ps sim:/parte3/write_enable
+add wave -position end  sim:/parte3/hit
+add wave -position end  sim:/parte3/via0
+add wave -position end  sim:/parte3/via1
+add wave -position end  sim:/parte3/via2
+add wave -position end  sim:/parte3/via3
+add wave -position end  sim:/parte3/out_data
+add wave -position end  sim:/parte3/cache0
+add wave -position end  sim:/parte3/cache1
+add wave -position end  sim:/parte3/cache2
+add wave -position end  sim:/parte3/cache3
+run
+run

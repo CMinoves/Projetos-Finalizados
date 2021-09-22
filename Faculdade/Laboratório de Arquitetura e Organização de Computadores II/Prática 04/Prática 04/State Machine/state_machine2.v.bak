@@ -1,0 +1,24 @@
+module state_machine2(acao, escrita, clock);
+input clock;
+input [1:0] acao; //simboliza a entrada via CDB
+/*
+00 - Read Miss
+01 - Read hit
+10 - Write miss
+11 - write hit
+*/
+output reg [1:0] escrita;//simboliza a saida do CDB
+/*
+00 - write miss on bus
+01 - read miss on bus
+10 - invalidate on bus
+*/
+reg [1:0] estado;
+/*
+00 - invalid
+01 - shared
+10 - exclusive
+*/
+
+always @(clock, acao) begin
+	case(estado)

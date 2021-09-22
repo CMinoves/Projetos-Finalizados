@@ -1,0 +1,335 @@
+module choose_data(d0,d1,d2,d3,l0,l1,l2,l3,s);
+
+input[8:0]d0,d1,d2,d3;
+
+input l0,l1,l2,l3;
+
+wire [3:0] control;
+
+control[0] = l0;
+control[1] = l1;
+control[2] = l2;
+control[3] = l3;
+
+output reg [8:0]s;
+
+always@(*)
+    begin
+        case(control)
+            4'b0001: s = d0;
+            4'b0010: s = d1;
+            4'b0100: s = d2;
+            4'b1000: s = d3;
+        endcase
+    end
+endmodule
+
+module parte3(input [4:0]address, input [2:0]dataIn, output reg[8:0]dataOut, output Hit, input clock, /*input we,*/ output reg via_1, output reg via_2, output reg via_3, output reg via_4);
+
+//criando "quatro memorias" que vao funcionar como cache. Blocos de 9 bits e 64 blocos no total.
+	reg [8:0]cache0[0:3];
+	reg [8:0]cache1[0:3];
+	reg [8:0]cache2[0:3];
+	reg [8:0]cache3[0:3];
+	reg [3:0]LRU;
+
+//divisÃ£o dos bits para fazer as comparaÃ§Ãµes
+	wire [2:0]index = address[2:0];
+	wire [2:0]tag = address[8:6];	
+	wire [8:0]data_cache1;
+   wire [8:0]data_cache2;
+	wire [8:0]data_cache3;
+   wire [8:0]data_cache4;
+	wire valid_cache1, valid_cache2, valid_cache3, valid_cache4;
+	wire dirty;
+	wire [2:0]tag_cache1;
+	wire [2:0]tag_cache2;
+	wire [2:0]tag_cache3;
+	wire [2:0]tag_cache4;
+	assign {valid_cache1,LRU[0],dirty,tag_cache1,data_cache1} = cache0[index];
+	assign {valid_cache2,LRU[1],dirty,tag_cache2,data_cache2} = cache1[index];
+	assign {valid_cache3,LRU[2],dirty,tag_cache3,data_cache3} = cache2[index];
+	assign {valid_cache4,LRU[3],dirty,tag_cache4,data_cache4} = cache3[index];
+	
+	//wire LRU = LRU_cache1;
+   wire tag1 = (tag == tag_cache1); // COMPARAÃ‡ÃƒO DE TAGS No bloco 0 
+	wire tag2 = (tag == tag_cache2);  // COMPARAÃ‡ÃƒO DE TAGS No bloco 1
+	wire tag3 = (tag == tag_cache3); // COMPARAÃ‡ÃƒO DE TAGS No bloco 2
+	wire tag4 = (tag == tag_cache4);  // COMPARAÃ‡ÃƒO DE TAGS No bloco 3
+	wire hit_cache1 = (tag1 & valid_cache1); // VERIFICAÃ‡ÃƒO DE VALIDADE (porta AND bloco 1)
+	wire hit_cache2 = (tag2 & valid_cache2);  // VERIFICAÃ‡ÃƒO DE VALIDADE (porta AND bloco 2)
+	wire hit_cache3 = (tag3 & valid_cache3); // VERIFICAÃ‡ÃƒO DE VALIDADE (porta AND bloco 3)
+	wire hit_cache4 = (tag4 & valid_cache4);  // VERIFICAÃ‡ÃƒO DE VALIDADE (porta AND bloco 4)
+	assign Hit = hit_cache1 | hit_cache2 | hit_cache3 | hit_cache4; // verificando se deu hit na leitura
+	//wire [1:0]fix;
+	//wire via = (tag1 & 0) | (tag2 & 1) | (~tag1 & ~tag2 & LRU & 0) | (~tag1 & ~tag2 & ~LRU & 1); // se via = 0 ->  bloco 1, se via = 1 -> bloco 2
+	//wire l_via = (hit_cache1 & 0) | (hit_cache2 & 1); // Porta OR verifica HIT
+	wire [8:0]out_data;
+	choose_data mux_boladao(data_cache1, data_cache2, data_cache3, data_cache4, hit_cache1, hit_cache2, hit_cache3, hit_cache4, out_data);
+	//wire Val; 
+	
+	initial begin 
+		via_1 <= 1'b0; 
+		via_2 <= 1'b0; 
+		via_3 <= 1'b0; 
+		via_4 <= 1'b0; 
+		// conjunto 0
+		cache0[0] <= 9'b110001001;
+		cache0[1] <= 9'b000000000;
+		cache0[2] <= 9'b000000000;
+		cache0[3] <= 9'b000000000;
+		// conjunto 1
+		cache1[0] <= 9'b110000010;
+		cache1[1] <= 9'b110010110;
+		cache1[2] <= 9'b000011000;
+		cache1[3] <= 9'b000000000;
+		// conjunto 2
+		cache2[0] <= 9'b110000101;
+		cache2[1] <= 9'b000000000;
+		cache2[2] <= 9'b000000000;
+		cache2[3] <= 9'b000000000;
+		// conjunto 3
+		cache3[0] <= 9'b000100000;
+		cache3[1] <= 9'b000000000;
+		cache3[2] <= 9'b000000000;
+		cache3[3] <= 9'b000000000;
+	end
+	
+	always@(posedge clock) begin
+	if(we & ~reset) begin		// (Escrita na cache)
+		if(hit_cache1) begin
+			cache0[index] <= {2'b10,tag,dataIn};
+			cache1[index][7] <= 1;   // set LRU 
+			cache2[index][7] <= 1;
+			cache3[index][7] <= 1;   
+			via_1 <= 1'b1; //
+			via_2 <= 1'b0; //
+			via_3 <= 1'b0; //
+			via_4 <= 1'b0; //
+		end
+		if(hit_cache2) begin
+			cache1[index] <= {2'b10,tag,dataIn};
+			cache0[index][7] <= 1;   // set LRU 
+			cache2[index][7] <= 1;
+			cache3[index][7] <= 1;   
+			via_1 <= 1'b0; //
+			via_2 <= 1'b1; //
+			via_3 <= 1'b0; //
+			via_4 <= 1'b0; //
+		end
+		if(hit_cache3) begin
+			cache2[index] <= {2'b10,tag,dataIn};
+			cache1[index][7] <= 1;   // set LRU 
+			cache0[index][7] <= 1;
+			cache3[index][7] <= 1;   
+			via_1 <= 1'b0; //
+			via_2 <= 1'b0; //
+			via_3 <= 1'b1; //
+			via_4 <= 1'b0; //
+		end
+		if(hit_cache4) begin
+			cache3[index] <= {2'b10,tag,dataIn};
+			cache1[index][7] <= 1;   // set LRU 
+			cache2[index][7] <= 1;
+			cache0[index][7] <= 1;   
+			via_1 <= 1'b0; //
+			via_2 <= 1'b0; //
+			via_3 <= 1'b0; //
+			via_4 <= 1'b1; //
+		end
+		else begin
+			cache2[index] <= {2'b10,tag,dataIn};
+			cache1[index][7] <= 1;   // set LRU na cache 1
+			via_1 <= 1'b0; //
+			via_2 <= 1'b1; //
+		end
+	end
+
+	else
+		if (~we & ~reset) begin // (Leitura na cache)
+			if(Hit) begin
+				if(hit_cache1) begin         					// se via = 1 ->  bloco 0
+				dataOut <= cache0[index];
+				cache0[index][7] <= 1;  // LRU 
+				cache1[index][7] <= 0;
+				cache2[index][7] <= 0;
+				cache3[index][7] <= 0;
+				via_1 <= 1'b1; //
+				via_2 <= 1'b0; //
+				via_3 <= 1'b0; //
+				via_4 <= 1'b0; //
+				end
+				else if(hit_cache2) begin						// se via = 2 -> bloco 2
+				dataOut <= cache1[index];
+				cache0[index][7] <= 0;  // LRU 
+				cache1[index][7] <= 1;
+				cache2[index][7] <= 0;
+				cache3[index][7] <= 0;
+				via_1 <= 1'b0; //
+				via_2 <= 1'b1; //
+				via_3 <= 1'b0; //
+				via_4 <= 1'b0; //
+				end
+				else if(hit_cache3) begin						// se via = 3 -> bloco 3
+				dataOut <= cache2[index];
+				cache0[index][7] <= 0;  // LRU 
+				cache1[index][7] <= 0;
+				cache2[index][7] <= 1;
+				cache3[index][7] <= 0;
+				via_1 <= 1'b0; //
+				via_2 <= 1'b0; //
+				via_3 <= 1'b1; //
+				via_4 <= 1'b0; //
+				end
+				else if(hit_cache4) begin						// se via = 4 -> bloco 4
+				dataOut <= cache3[index];
+				cache0[index][7] <= 0;  // LRU 
+				cache1[index][7] <= 0;
+				cache2[index][7] <= 0;
+				cache3[index][7] <= 1;
+				via_1 <= 1'b0; //
+				via_2 <= 1'b0; //
+				via_3 <= 1'b0; //
+				via_4 <= 1'b1; //
+				end
+			end
+			else begin // MISS
+			case(index)
+				 2'b00: begin 		
+				cache0[0][7] <= 0;
+				cache0[3] <= 9'b110011011;
+				cache0[1][7] <= 0;
+				cache0[2][7] <= 0;
+			end
+			 2'b01: begin 		
+				cache1[0][7] <= 0;
+				cache1[3] <= 9'b110011011;
+				cache1[1][7] <= 0;
+				cache1[2][7] <= 0;
+			end
+			 2'b10: begin 		
+				cache2[0][7] <= 0;
+				cache2[3] <= 9'b110011011;
+				cache2[1][7] <= 0;
+				cache2[2][7] <= 0;
+			end
+			 2'b11: begin 		
+				cache3[0][7] <= 0;
+				cache3[3] <= 9'b110011011;
+				cache3[1][7] <= 0;
+				cache3[2][7] <= 0;
+			end
+				endcase
+				dataOut <= 9'b110011011; 
+				via_1 <= 1'b0; //
+				via_2 <= 1'b0; //
+				via_3 <= 1'b0; //
+				via_4 <= 1'b0; //
+			end
+		end
+	end
+	
+/*		//Via 1
+	wire Acerto_ram01;
+	wire [(`TAM_DADOS-1):0]Dados_ram01;
+	wire [(`TAM_TAG-1):0]Tag_ram01;
+	//wire BitVal_ram01; valid_cache1
+	assign {valid_cache1,LRU_cache1,tag_cache1,data_cache1} = cache0[index];
+	cache0 ram01(Indice, Clock, wren, {BitVal_ram01, Tag_ram01, Dados_ram01});
+	assign Acerto_ram01 = ((EnderecoMemoria[4:2] == Tag_ram01[(`TAM_TAG-1):0]) & BitVal_ram01);
+	assign Out_ram01 = Dados_ram01;
+	
+	//Via 2
+	wire Acerto_ram02;
+	wire [(`TAM_DADOS-1):0]Dados_ram02;
+	wire [(`TAM_TAG-1):0]Tag_ram02;
+	wire BitVal_ram02;
+	cache1 ram02(Indice, Clock, wren, {BitVal_ram02, Tag_ram02, Dados_ram02});
+	assign Acerto_ram02 = ((EnderecoMemoria[4:2] == Tag_ram02[(`TAM_TAG-1):0]) & BitVal_ram02);
+	assign Out_ram02 = Dados_ram02;
+	
+	//Via 3
+	wire Acerto_ram03;
+	wire [(`TAM_DADOS-1):0]Dados_ram03;
+	wire [(`TAM_TAG-1):0]Tag_ram03;
+	wire BitVal_ram03;
+	cache2 ram03(Indice, Clock, wren, {BitVal_ram03, Tag_ram03, Dados_ram03});
+	assign Acerto_ram03 = ((EnderecoMemoria[4:2] == Tag_ram03[(`TAM_TAG-1):0]) & BitVal_ram03);
+	assign Out_ram03 = Dados_ram03;
+	
+	//Via 4
+	wire Acerto_ram04;
+	wire [(`TAM_DADOS-1):0]Dados_ram04;
+	wire [(`TAM_TAG-1):0]Tag_ram04;
+	wire BitVal_ram04;
+	cache3 ram04(Indice, Clock, wren, {BitVal_ram04, Tag_ram04, Dados_ram04});
+	assign Acerto_ram04 = ((EnderecoMemoria[4:2] == Tag_ram04[(`TAM_TAG-1):0]) & BitVal_ram04);
+	assign Out_ram04 = Dados_ram04;
+		
+	
+	
+	always@(posedge clock) begin
+	if(we & ~reset) begin		// (Escrita na cache)
+		if(via == 0) begin
+			cache1[index] <= {2'b10,tag,dataIn};
+			cache2[index][7] <= 1;   // set LRU na cache 2
+			via_1 <= 1'b1; //
+			via_2 <= 1'b0; //
+		end
+		else begin
+			cache2[index] <= {2'b10,tag,dataIn};
+			cache1[index][7] <= 1;   // set LRU na cache 1
+			via_1 <= 1'b0; //
+			via_2 <= 1'b1; //
+		end
+	end
+
+	else if (~we & ~reset) begin // (Leitura na cache)
+		if(Hit) begin
+			if(l_via == 0) begin         // se via = 0 ->  bloco 1
+			dataOut <= cache1[index][7:0];
+			cache1[index][7] <= 0;  // LRU 
+			cache2[index][7] <= 1;
+			via_1 <= 1'b1; //
+			via_2 <= 1'b0; //
+			end
+			else begin						// se via = 1 -> bloco 2
+			dataOut <= cache2[index][7:0];
+			cache2[index][7] <= 0;   // LRU
+			cache1[index][7] <= 1;
+			via_1 <= 1'b0; //
+			via_2 <= 1'b1; //
+			end
+		end
+		else begin
+			dataOut <= 4'b0000; // MISS
+			via_1 <= 1'b0; //
+			via_2 <= 1'b0; //
+		end
+	end
+		else begin
+				//reset
+				// conjunto 0
+				cache0[0] <= 9'b110001001;
+				cache0[1] <= 9'b000000000;
+				cache0[2] <= 9'b000000000;
+				cache0[3] <= 9'b000000000;
+				// conjunto 1
+				cache1[0] <= 9'b110000010;
+				cache1[1] <= 9'b110010110;
+				cache1[2] <= 9'b110001011;
+				cache1[3] <= 9'b000011000;
+				// conjunto 2
+				cache2[0] <= 9'b110000101;
+				cache2[1] <= 9'b000000000;
+				cache2[2] <= 9'b000000000;
+				cache2[3] <= 9'b000000000;
+				// conjunto 3
+				cache3[0] <= 9'b000100000;
+				cache3[1] <= 9'b000000000;
+				cache3[2] <= 9'b000000000;
+				cache3[3] <= 9'b000000000;
+		end
+	end*/
+
+endmodule

@@ -1,0 +1,36 @@
+module state_machine2(acao, escrita, clock, dataWriteBack);
+input clock;
+input [2:0] acao; //simboliza a entrada
+/*
+000 - read miss
+001 - read hit
+010 - write hit
+011 - invalidate
+100 - write miss
+101 - fetch
+110 - fetch invalidate
+*/
+output reg [2:0] escrita;//simboliza a saida
+/*
+000 - read miss
+001 - read hit
+010 - write hit
+011 - invalidate
+100 - write miss
+101 - fetch
+110 - fetch invalidate
+*/
+reg [1:0] estado;
+/*
+00 - invalid
+01 - shared
+10 - modified
+*/
+
+output reg dataWriteBack;
+/*
+0 - sem writeback
+1 - com writeback
+*/
+
+always @(clock, acao) begin

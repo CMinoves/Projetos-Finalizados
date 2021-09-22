@@ -1,0 +1,54 @@
+
+.data
+vec: .word 0, 1, 1,0,1,1,1,0,1,1,0 #carregando o vetor teste a ser usado
+
+tam: .word 11
+.text
+
+
+//la $s0, vec #possui o primeiro elemento
+lw $s0 0($s0) #Reg 00 -> inicio do vetor
+//la $s1,tam
+lw $s1 0($s1) #Reg 01 -> Tamanho do vetor
+#fim do carregamento
+cnt $s3 2 #Reg 03 -> Usado para contar as repetiçoes(temporariamente)
+lw $s2 0($s0) #Reg 02 -> Aqui se encontrará o ultimo valor do array
+0: #aqui será armazenado o ultimo valor do array(label)
+
+lfh $s2 1 
+cnt $s3 1
+bne $s1 $s3 0
+
+hlf $s1 $s1 #Reg 01 -> Possui metade do tamanho: ponto de parada
+set $s3 0 #Reg 03 ->Sendo zerado para realizar a contagem da repetição
+
+10: #Aqui é feita a chegagem de cada número
+
+bne $s0 $s1
+cnt $s3 1
+beq $s3 $s2 1
+
+lfh $s0 1
+lfh $s1 -1 # vale ressaltar que o Offset aqui assume valor NEGATIVO, fazendo com que seja carregado um valor anterior
+j 10
+
+0:
+set $s3 0 #o registrador receberá "0", indicando que a lista não é palíndroma
+j 11
+
+1:
+set $s3 1 #o registrador receberá "1", indicando que a lista é palíndroma
+
+11:#esse boloco serve para chegar de novo até o final da lista de números
+//la $t0, vec #possui o primeiro elemento
+lw $s0 0($s0)#Reg 00 -> inicio do vetor
+//la $t1,tam
+lw $t1, 0($t1) #Reg 01 -> Tamanho do vetor
+set $s2 2
+
+1: #aqui será armazenado o ultimo valor do array
+lfh $s0 1 #possui o ultimo elemento após terminar 
+cnt $s2 1 
+bne $s2 $s1 1
+
+sw $s3 1($s2) #colocando o resultado do processo no local de memória imediatamente posterior ao final da lista

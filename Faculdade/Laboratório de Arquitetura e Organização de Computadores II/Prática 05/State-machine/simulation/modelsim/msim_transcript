@@ -1,0 +1,31 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do state_machine_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/6\ Semestre\ (ERE)/LAOC\ II/Prática\ 05/State-machine {C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 05/State-machine/state_machine2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module state_machine2
+# 
+# Top level modules:
+# 	state_machine2
+# 
+vsim work.state_machine2
+# vsim work.state_machine2 
+# Loading work.state_machine2
+do {C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/aaaaaaa/diretorio2.do}
+# .main_pane.wave.interior.cs.body.pw.wf
+# 1
+# 1
+add wave -position 0 -format Logic -height 17 -editable 2 Edit:/state_machine2/clock
+add wave -position 1 -autoscale 1 -format Literal -height 17 -editable 2 Edit:/state_machine2/acao
+run
+restart
+run -continue

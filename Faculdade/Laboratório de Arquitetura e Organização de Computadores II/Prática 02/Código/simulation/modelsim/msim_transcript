@@ -1,0 +1,140 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do pratica2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/6\ Semestre\ (ERE)/LAOC\ II/Prática\ 02/Pratica\ bruno\ 2\ fix/Pratica\ bruno\ 2/Pratica\ bruno\ 2 {C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pratica2
+# -- Compiling module counter
+# -- Compiling module processor
+# -- Compiling module upcount
+# -- Compiling module dec3to8
+# ** Warning: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(207): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# -- Compiling module regn
+# 
+# Top level modules:
+# 	pratica2
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/6\ Semestre\ (ERE)/LAOC\ II/Prática\ 02/Pratica\ bruno\ 2\ fix/Pratica\ bruno\ 2/Pratica\ bruno\ 2 {C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/memory2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory2
+# 
+# Top level modules:
+# 	memory2
+# 
+vsim +altera -L altera_mf_ver -do pratica2_run_msim_rtl_verilog.do -l msim_transcript -gui work.processor
+# vsim +altera -L altera_mf_ver -do pratica2_run_msim_rtl_verilog.do -l msim_transcript -gui work.processor 
+# Loading work.processor
+# Loading work.upcount
+# Loading work.dec3to8
+# Loading work.regn
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(135): [PCDPC] - Port size (9 or 9) does not match connection size (16) for port 'R'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(211).
+# 
+#         Region: /processor/reg_IR
+# do pratica2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/6\ Semestre\ (ERE)/LAOC\ II/Prática\ 02/Pratica\ bruno\ 2\ fix/Pratica\ bruno\ 2/Pratica\ bruno\ 2 {C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pratica2
+# -- Compiling module counter
+# -- Compiling module processor
+# -- Compiling module upcount
+# -- Compiling module dec3to8
+# ** Warning: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(207): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# -- Compiling module regn
+# 
+# Top level modules:
+# 	pratica2
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/6\ Semestre\ (ERE)/LAOC\ II/Prática\ 02/Pratica\ bruno\ 2\ fix/Pratica\ bruno\ 2/Pratica\ bruno\ 2 {C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/memory2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memory2
+# 
+# Top level modules:
+# 	memory2
+# 
+wave create -driver freeze -pattern counter -startvalue 1 -endvalue 0 -type Range -direction Up -period 100ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps sim:/processor/Resetn
+# In Range Up Counter: Start value cannot be greater than End value
+wave create -driver freeze -pattern clock -initialvalue 0 -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/processor/Resetn
+wave modify -driver freeze -pattern counter -startvalue 1 -endvalue 0 -type Range -direction Up -period 300ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps Edit:/processor/Resetn
+# In Range Up Counter: Start value cannot be greater than End value
+wave modify -driver freeze -pattern repeater -initialvalue 1 -period 50ps -sequence { 0  } -repeat 1 -starttime 0ps -endtime 1000ps Edit:/processor/Resetn
+wave create -driver freeze -pattern counter -startvalue 0 -endvalue 1 -type Range -direction Up -period 50ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps sim:/processor/Clock
+wave create -driver freeze -pattern counter -startvalue 0 -endvalue 1 -type Range -direction Up -period 100ps -step 1 -repeat forever -starttime 0ps -endtime 1000ps sim:/processor/Run
+wave create -driver freeze -pattern counter -startvalue 1 -endvalue 0 -type Range -direction Up -period 100ps -step 1 -repeat forever -starttime 0ps -endtime 200ps sim:/processor/Resetn
+# In Range Up Counter: Start value cannot be greater than End value
+wave create -driver freeze -pattern repeater -initialvalue 1 -period 100ps -sequence { 0  } -repeat forever -starttime 0ps -endtime 200ps sim:/processor/Resetn
+wave modify -driver freeze -pattern repeater -initialvalue St1 -period 100ps -sequence { St0  } -repeat forever -starttime 0ps -endtime 500ps Edit:/processor/Resetn
+wave modify -driver freeze -pattern clock -initialvalue 1 -period 100ps -dutycycle 50 -starttime 0ps -endtime 500ps Edit:/processor/Resetn
+wave modify -driver freeze -pattern clock -initialvalue St1 -period 100ps -dutycycle 50 -starttime 0ps -endtime 100ps Edit:/processor/Resetn
+wave create -driver freeze -pattern repeater -initialvalue 1 -period 50ps -sequence { 0 0 0  } -repeat 1 -starttime 0ps -endtime 1000ps sim:/processor/Resetn
+wave modify -driver freeze -pattern repeater -initialvalue St1 -period 50ps -sequence { 1 St0 St0  } -repeat 1 -starttime 0ps -endtime 1000ps Edit:/processor/Resetn
+add wave -position 0 -format Logic -height 17 -editable 2 Edit:/processor/Resetn
+add wave -position end  sim:/processor/Bus
+wave create -driver freeze -pattern repeater -initialvalue zzzzzzzzzzzzzzzz -period 50ps -sequence { 0000000001000010 0000000001001011  } -repeat never -range 15 0 -starttime 0ps -endtime 1000ps sim:/processor/DIN
+add wave -position 3 -autoscale 1 -format Literal -height 17 -editable 2 Edit:/processor/DIN
+restart
+# Loading work.processor
+# Loading work.upcount
+# Loading work.dec3to8
+# Loading work.regn
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(135): [PCDPC] - Port size (9 or 9) does not match connection size (16) for port 'R'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(211).
+# 
+#         Region: /processor/reg_IR
+run
+wave modify -driver freeze -pattern repeater -initialvalue zzzzzzzzzzzzzzzz -period 100ps -sequence { 0000000001000010 0000000001001011  } -repeat never -range 15 0 -starttime 0ps -endtime 1000ps Edit:/processor/DIN
+restart
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(135): [PCDPC] - Port size (9 or 9) does not match connection size (16) for port 'R'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(211).
+# 
+#         Region: /processor/reg_IR
+run
+run
+add wave -position end  sim:/processor/Done
+restart
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(135): [PCDPC] - Port size (9 or 9) does not match connection size (16) for port 'R'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(211).
+# 
+#         Region: /processor/reg_IR
+run
+add wave -position end  sim:/processor/Tstep_Q
+add wave -position end  sim:/processor/IRin
+add wave -position end  sim:/processor/IR
+add wave -position end  sim:/processor/I
+add wave -position end  sim:/processor/Yreg
+add wave -position end  sim:/processor/Rout
+add wave -position end  sim:/processor/Xreg
+add wave -position end  sim:/processor/Rin
+add wave -position end  sim:/processor/R0
+add wave -position end  sim:/processor/R1
+add wave -position end  sim:/processor/DINout
+add wave -position end  sim:/processor/Clear
+add wave -position end  sim:/processor/Ain
+restart
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(135): [PCDPC] - Port size (9 or 9) does not match connection size (16) for port 'R'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(211).
+# 
+#         Region: /processor/reg_IR
+run
+wave modify -driver freeze -pattern repeater -initialvalue 0 -period 100ps -sequence { 0000000000000000 0000000001000010 0000000001001011  } -repeat never -range 15 0 -starttime 0ps -endtime 1000ps Edit:/processor/DIN
+restart
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(135): [PCDPC] - Port size (9 or 9) does not match connection size (16) for port 'R'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(211).
+# 
+#         Region: /processor/reg_IR
+run
+restart
+# ** Warning: (vsim-3015) C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(135): [PCDPC] - Port size (9 or 9) does not match connection size (16) for port 'R'. The port definition is at: C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 02/Pratica bruno 2 fix/Pratica bruno 2/Pratica bruno 2/pratica2.v(211).
+# 
+#         Region: /processor/reg_IR
+run

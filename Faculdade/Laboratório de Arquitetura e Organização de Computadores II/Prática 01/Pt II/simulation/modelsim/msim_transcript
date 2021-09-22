@@ -1,0 +1,59 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Ex2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Sala\ Minoves/Documents/Cristhian/CEFET/LAOC\ II/Prática\ 01_2 {C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2/Ex2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Ex2
+# 
+# Top level modules:
+# 	Ex2
+# 
+vsim +altera -L altera_mf_ver -do Ex2_run_msim_rtl_verilog.do -l msim_transcript -gui work.Ex2
+# vsim +altera -L altera_mf_ver -do Ex2_run_msim_rtl_verilog.do -l msim_transcript -gui work.Ex2 
+# Loading work.Ex2
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# do Ex2_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Sala\ Minoves/Documents/Cristhian/CEFET/LAOC\ II/Prática\ 01_2 {C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_2/Ex2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Ex2
+# 
+# Top level modules:
+# 	Ex2
+# 
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 50ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/Ex2/clock
+wave create -driver freeze -pattern counter -startvalue 00000 -endvalue 11111 -type Range -direction Up -period 50ps -step 1 -repeat forever -range 4 0 -starttime 0ps -endtime 1000ps sim:/Ex2/rdaddress
+add wave -position end  sim:/Ex2/q
+run
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Ex2.altsyncram_component
+restart
+# Loading work.Ex2
+run -continue
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Ex2.altsyncram_component
+restart
+run
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Ex2.altsyncram_component
+restart
+run -continue
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: Ex2.altsyncram_component

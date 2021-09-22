@@ -1,0 +1,27 @@
+module bancoReg(Read1, Read2, WriteReg, WriteData, RegWrite, Data1, Data2, clock);
+  input [1:0]Read1;
+  input [1:0]Read2;
+  input [1:0]WriteReg;
+  input [31:0]WriteData;//ver depois
+  input RegWrite, clock;
+  output [31:0]Data1;
+  output [31:0]Data2;
+  reg [31:0]RF[31:0];
+  
+  initial 
+begin
+  
+// Coloque o seu programa nas posições de memória
+  RF[5'h0] = 32'h0;
+//	...
+    
+end
+  assign Data1 = RF[Read1];
+  assign Data2 = RF[Read2];
+  
+  always@(posedge clock)begin
+    if(RegWrite)begin
+      RF[WriteReg] <= WriteData;
+    end
+  end
+endmodule

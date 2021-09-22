@@ -1,0 +1,29 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do ula_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Cristhian/Documents/CEFET/5\ Semestre(ERE)/LAOC\ I/Listas/Aula-12-Lab-AOC1_Cristhian-Sala-Minoves/Project2 {C:/Users/Cristhian/Documents/CEFET/5 Semestre(ERE)/LAOC I/Listas/Aula-12-Lab-AOC1_Cristhian-Sala-Minoves/Project2/ula.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ula
+# 
+# Top level modules:
+# 	ula
+# 
+vsim work.ula
+# vsim work.ula 
+# Loading work.ula
+wave create -driver freeze -pattern counter -startvalue 000 -endvalue 111 -type Range -direction Up -period 50ps -step 1 -repeat forever -range 2 0 -starttime 0ps -endtime 1000ps sim:/ula/ALUctl
+wave create -driver freeze -pattern constant -value 10 -range 31 0 -starttime 0ps -endtime 1000ps sim:/ula/A
+wave create -driver freeze -pattern constant -value 10 -range 31 0 -starttime 0ps -endtime 1000ps sim:/ula/B
+add wave -position end  sim:/ula/ALUOut
+add wave -position end  sim:/ula/Zero
+run
+run

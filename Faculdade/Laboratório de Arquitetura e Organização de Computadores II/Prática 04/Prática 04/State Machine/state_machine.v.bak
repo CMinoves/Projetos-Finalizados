@@ -1,0 +1,32 @@
+module state_machine(acao, escrita, clock)
+input clock;
+input [2:0] acao;
+/*
+000 - read hit -> processador
+001 - read miss -> processador
+010 - write hit -> processador
+011 - write miss -> processador
+100 - read miss -> bus
+101 - invalidate -> bus
+110 - write miss -> bus
+*/
+output reg [1:0] escrita/
+/*
+00 - read miss
+01 - write miss
+10 - cache block
+11 - 
+*/
+reg [1:0] estado
+/*
+00 - invalid
+01 - shared
+10 - exclusive
+*/
+
+always @(clock, acao)
+	
+
+
+end
+endmodule

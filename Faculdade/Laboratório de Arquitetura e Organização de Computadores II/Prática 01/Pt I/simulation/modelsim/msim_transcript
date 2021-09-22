@@ -1,0 +1,60 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Ex1_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Sala\ Minoves/Documents/Cristhian/CEFET/LAOC\ II/Prática\ 01_1 {C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_1/Ex1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Ex1
+# 
+# Top level modules:
+# 	Ex1
+# 
+vsim +altera -L altera_mf_ver -do Ex1_run_msim_rtl_verilog.do -l msim_transcript -gui work.Ex1
+# vsim +altera -L altera_mf_ver -do Ex1_run_msim_rtl_verilog.do -l msim_transcript -gui work.Ex1 
+# Loading work.Ex1
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# do Ex1_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Sala\ Minoves/Documents/Cristhian/CEFET/LAOC\ II/Prática\ 01_1 {C:/Users/Sala Minoves/Documents/Cristhian/CEFET/LAOC II/Prática 01_1/Ex1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Ex1
+# 
+# Top level modules:
+# 	Ex1
+# 
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 50ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/Ex1/clock
+wave create -driver freeze -pattern counter -startvalue 00000 -endvalue 00001 -type Range -direction Up -period 50ps -step 1 -repeat forever -range 4 0 -starttime 0ps -endtime 1000ps sim:/Ex1/address
+wave create -driver freeze -pattern counter -startvalue 00000010 -endvalue 00000011 -type Range -direction Up -period 50ps -step 1 -repeat forever -range 7 0 -starttime 0ps -endtime 1000ps sim:/Ex1/data
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/Ex1/wren
+wave modify -driver freeze -pattern clock -initialvalue HiZ -period 200ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/Ex1/wren
+add wave -position end  sim:/Ex1/q
+run
+run -continue
+run -continue
+run -continue
+run -continue
+wave modify -driver freeze -pattern clock -initialvalue HiZ -period 180ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/Ex1/wren
+restart
+run -continue
+restart
+# Loading work.Ex1
+run
+run -continue
+restart
+run -continue

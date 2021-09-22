@@ -1,0 +1,11 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 040/Prática 04/State Machine/state_machine.v
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 040/Prática 04/State Machine/state_machine2.v
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 040/Prática 04/State Machine/memoria.v
+source_file = 1, C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 040/Prática 04/State Machine/db/state_machine.cbx.xml
+design_name = state_machine2
+instance = comp, \writeback~output , writeback~output, state_machine2, 1
+instance = comp, \abort~output , abort~output, state_machine2, 1
+instance = comp, \acao[1]~input , acao[1]~input, state_machine2, 1
+instance = comp, \acao[0]~input , acao[0]~input, state_machine2, 1
+instance = comp, \clock~input , clock~input, state_machine2, 1

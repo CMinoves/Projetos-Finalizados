@@ -1,0 +1,25 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Cristhian\Documents\CEFET\6 Semestre (ERE)\LAOC II\Prática 05\State-machine\simulation\modelsim
+vstate_machine2
+!i10b 1
+!s100 bbMBn69:>I[<kBEJgfU0^3
+IgXmB`]Vd5PF7YjG81H1gH3
+Vg9H1>zCenockl51M3c_zG0
+Z1 dC:\Users\Cristhian\Documents\CEFET\6 Semestre (ERE)\LAOC II\Prática 05\State-machine\simulation\modelsim
+w1618411096
+8C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 05/State-machine/state_machine2.v
+FC:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 05/State-machine/state_machine2.v
+L0 1
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1618428398.365000
+!s107 C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 05/State-machine/state_machine2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 05/State-machine|C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 05/State-machine/state_machine2.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work {+incdir+C:/Users/Cristhian/Documents/CEFET/6 Semestre (ERE)/LAOC II/Prática 05/State-machine} -O0
