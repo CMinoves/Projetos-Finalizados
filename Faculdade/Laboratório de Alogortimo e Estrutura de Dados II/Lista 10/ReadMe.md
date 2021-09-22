@@ -19,9 +19,7 @@ arestas é apresentado na ﬁgura e na matriz de adjacências abaixo.
 
 **Grafo:**
 
-<p align="center"
-  <img src = "/Imagens/Imagem 01.png">
-</p>
+![imagem](Imagens/Imagem%2001.png)
 
 **Matriz de adjacência:**
 
