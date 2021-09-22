@@ -1,5 +1,5 @@
 
-#﻿ Exercício 01 - Árvore Binária
+# Exercício 01 - Árvore Binária
 
 ## Centro Federal de Educação Tecnológica de Minas Gerais - Departamento de Computação
 
