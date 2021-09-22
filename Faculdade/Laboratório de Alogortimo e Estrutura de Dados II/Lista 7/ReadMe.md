@@ -1,5 +1,5 @@
 
-# ﻿Exercício 07 - Caminhos mais Curtos
+# Exercício 07 - Caminhos mais Curtos
 
 ## Centro Federal de Educação Tecnológica de Minas Gerais - Departamento de Computação
 
@@ -18,13 +18,12 @@ são apresentados na ﬁgura abaixo. O peso de cada aresta do grafo é exibido n
 
 **Grafo:**
 
-<p align="center"
-  <img src = "/Imagens/Imagem 01.png">
-</p>
+![imagem](Imagens/Imagem%2001.png)
 
 **Matriz de adjacência:**
 
-| Vértice | 0 | 1 | 2 |---------|:---:|---:|---:|
+| Vértice | 0 | 1 | 2 |
+|:---------:|---|---|---|
 |0| 0 | 5 | 3 |
 |1| 0 | 0 | 3 |
 |2| 6 | 6 | 0 |
@@ -98,6 +97,7 @@ da aresta são retratados, respectivamente, no primeiro, no segundo e no terceir
 Por exemplo, o arquivo relativo ao grafo mostrado na página 1 deste documento é apresentado da seguinte
 
 forma:
+```
 
 4 6
 
@@ -112,6 +112,7 @@ forma:
 2 2 6
 
 3 2 1
+```
 
 2. Experimento 1:
 
